@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/eduvallve_portfolio/static/css/main.f855e6bc.css",
-    "main.js": "/eduvallve_portfolio/static/js/main.b8cfab59.js",
+    "main.js": "/eduvallve_portfolio/static/js/main.d490b9ca.js",
     "static/js/453.51e48114.chunk.js": "/eduvallve_portfolio/static/js/453.51e48114.chunk.js",
     "static/media/logo.svg": "/eduvallve_portfolio/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/eduvallve_portfolio/index.html",
     "main.f855e6bc.css.map": "/eduvallve_portfolio/static/css/main.f855e6bc.css.map",
-    "main.b8cfab59.js.map": "/eduvallve_portfolio/static/js/main.b8cfab59.js.map",
+    "main.d490b9ca.js.map": "/eduvallve_portfolio/static/js/main.d490b9ca.js.map",
     "453.51e48114.chunk.js.map": "/eduvallve_portfolio/static/js/453.51e48114.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.b8cfab59.js"
+    "static/js/main.d490b9ca.js"
   ]
 }
