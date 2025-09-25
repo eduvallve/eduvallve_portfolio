@@ -1,0 +1,12 @@
+:root {
+  --c-primary: grey;
+  --c-secondary: lightgrey;
+}
+
+body {
+  margin: 0;
+  color: red;
+  font-family: "figtree";
+}
+
+/*# sourceMappingURL=main.css.map */
