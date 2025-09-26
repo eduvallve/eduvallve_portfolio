@@ -1,0 +1,15 @@
+// Atoms
+@use 'components/atoms.icon' as *;
+
+// Molecules
+@use 'components/molecules.socialIcons' as *;
+
+// Organisms
+@use 'components/organisms.banner.followMe' as *;
+@use 'components/organisms.header' as *;
+@use 'components/organisms.homehero' as *;
+@use 'components/organisms.portfolio' as *;
+@use 'components/organisms.footer' as *;
+
+// Templates
+@use 'components/templates.homepage' as *;

@@ -1,0 +1,5 @@
+.home__hero {
+    height: calc(100vh / 3 * 5);
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+}

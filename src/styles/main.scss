@@ -1,8 +1,8 @@
-@use './fonts';
-@use './colorPalette';
+@use './fonts' as *;
+@use './colorPalette' as *;
+@use './indexComponents' as *;
 
 body {
   margin: 0;
-  color: red;
   font-family: 'figtree';
 }

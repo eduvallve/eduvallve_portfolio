@@ -1,0 +1,10 @@
+@use '../colorPalette' as *;
+
+.follow_me {
+    background-color: $dark-blue;
+    color: $light-grey;
+    padding: 80px 16px 100px;
+    box-sizing: content-box;
+    max-width: calc(100vw - 32px);
+    text-align: center;
+}

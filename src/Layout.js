@@ -1,10 +1,8 @@
-import { Route, Routes, NavLink, Navigate } from "react-router-dom";
-import PortfolioList from "./components/organisms/portfolioList/PortfolioList";
-import HomePage from "./components/templates/homePage/Homepage";
-import Header from "./components/organisms/header/Header";
-import Footer from "./components/organisms/footer/Footer";
-
-
+import { Route, Routes, Navigate } from "react-router-dom";
+import PortfolioList from "./components/organisms/organisms.portfolioList";
+import HomePage from "./components/templates/templates.homepage";
+import Header from "./components/organisms/organisms.header";
+import Footer from "./components/organisms/organisms.footer";
 
 function Layout() {
   return (

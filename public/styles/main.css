@@ -1,11 +1,107 @@
-:root {
-  --c-primary: grey;
-  --c-secondary: lightgrey;
+h1 {
+  font-size: 48px;
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.icon {
+  --icon-color: #fff;
+  display: block;
+  width: 40px;
+  aspect-ratio: 1;
+  border-radius: 3px;
+  outline: 2px solid;
+  outline-color: transparent;
+  outline-offset: 0;
+  transition: all 0.05s ease-in-out;
+}
+.icon:hover, .icon:focus, .icon:active {
+  outline-color: var(--icon-color);
+  outline-offset: 3px;
+}
+.icon:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  background-color: var(--icon-color);
+  background-blend-mode: color;
+  mask-size: contain;
+}
+
+.social__icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.social__icon {
+  --icon-color: #83c2c1;
+}
+.social__icon-linkedin:after {
+  mask-image: url("/eduvallve_portfolio/static/media/linkedin-rounded.a7455a3a96a01aa50c5680f8c935ad40.svg");
+}
+.social__icon-github:after {
+  mask-image: url("/eduvallve_portfolio/static/media/github-rounded.76ece863c4ef35d07852032b30151061.svg");
+}
+.social__icon-behance:after {
+  mask-image: url("/eduvallve_portfolio/static/media/behance-rounded.09750ac1373fe290074620a37feff8a9.svg");
+}
+.social__icon-vimeo:after {
+  mask-image: url("/eduvallve_portfolio/static/media/vimeo-rounded.a87461d19503fa12b47610683ccc882d.svg");
+}
+
+.follow_me {
+  background-color: #151d3c;
+  color: #eee;
+  padding: 80px 16px 100px;
+  box-sizing: content-box;
+  max-width: calc(100vw - 32px);
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  box-sizing: content-box;
+  max-width: calc(100vw - 32px);
+  margin: auto;
+  position: sticky;
+  top: 0;
+  background-color: #151d3c;
+  color: #fff;
+}
+
+.home__hero {
+  height: 166.6666666667vh;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.portfolio {
+  min-height: 100vh;
+  padding: 1px;
+  background: #00001f;
+  box-shadow: #151d3c 0px 4px 5px;
+}
+
+.footer {
+  background-color: #00001f;
+  color: #eee;
+  padding: 20px 16px;
+  box-sizing: content-box;
+  max-width: calc(100vw - 32px);
+  text-align: center;
 }
 
 body {
   margin: 0;
-  color: red;
   font-family: "figtree";
 }
 

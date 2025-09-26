@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import ProjectPage from "../../templates/projectPage/ProjectPage";
+import ProjectPage from "../templates/templates.projectPage";
 
 /**
  * PortfolioList prepares the navigation to create every single project URL. No styles needed here.

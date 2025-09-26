@@ -5,8 +5,7 @@ import { NavLink } from "react-router-dom";
  */
 const Portfolio = () => {
   return (
-    <>
-      <h1>Portfolio</h1>
+    <section className="portfolio" id="portfolio">
       <nav>
         <ul>
           <li>
@@ -17,7 +16,7 @@ const Portfolio = () => {
           </li>
         </ul>
       </nav>
-    </>
+    </section>
   );
 };
 
