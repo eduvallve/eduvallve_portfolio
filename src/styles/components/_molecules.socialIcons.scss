@@ -12,20 +12,10 @@ $homeURL: '/eduvallve_portfolio';
     &__icon {
         --icon-color: #{$pale-green};
 
-        &-linkedin:after {
-            mask-image: url('#{$homeURL}/static/media/linkedin-rounded.a7455a3a96a01aa50c5680f8c935ad40.svg');
-        }
-
-        &-github:after {
-            mask-image: url('#{$homeURL}/static/media/github-rounded.76ece863c4ef35d07852032b30151061.svg');
-        }
-
-        &-behance:after {
-            mask-image: url('#{$homeURL}/static/media/behance-rounded.09750ac1373fe290074620a37feff8a9.svg');
-        }
-
-        &-vimeo:after {
-            mask-image: url('#{$homeURL}/static/media/vimeo-rounded.a87461d19503fa12b47610683ccc882d.svg');
+        @each $network in 'linkedin', 'github', 'behance', 'vimeo' {
+            &-#{$network}:after {
+                mask-image: var(--icon-#{$network}-path);
+            }
         }
     }
 }

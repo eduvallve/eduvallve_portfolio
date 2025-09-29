@@ -4,7 +4,10 @@
     background-color: $dark-grey;
     color: $light-grey;
     padding: 20px 16px;
-    box-sizing: content-box;
-    max-width: calc(100vw - 32px);
     text-align: center;
+
+    &__content {
+        width: var(--content-size);
+        margin: auto;
+    }
 }

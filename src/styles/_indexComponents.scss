@@ -1,5 +1,7 @@
 // Atoms
+@use 'components/atoms.button' as *;
 @use 'components/atoms.icon' as *;
+@use 'components/atoms.marquee' as *;
 
 // Molecules
 @use 'components/molecules.socialIcons' as *;
