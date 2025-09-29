@@ -43,16 +43,16 @@ h2 {
   --icon-color: #83c2c1;
 }
 .social__icon-linkedin:after {
-  mask-image: url("/eduvallve_portfolio/static/media/linkedin-rounded.a7455a3a96a01aa50c5680f8c935ad40.svg");
+  mask-image: var(--icon-linkedin-path);
 }
 .social__icon-github:after {
-  mask-image: url("/eduvallve_portfolio/static/media/github-rounded.76ece863c4ef35d07852032b30151061.svg");
+  mask-image: var(--icon-github-path);
 }
 .social__icon-behance:after {
-  mask-image: url("/eduvallve_portfolio/static/media/behance-rounded.09750ac1373fe290074620a37feff8a9.svg");
+  mask-image: var(--icon-behance-path);
 }
 .social__icon-vimeo:after {
-  mask-image: url("/eduvallve_portfolio/static/media/vimeo-rounded.a87461d19503fa12b47610683ccc882d.svg");
+  mask-image: var(--icon-vimeo-path);
 }
 
 .follow_me {
