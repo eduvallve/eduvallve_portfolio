@@ -11,6 +11,11 @@
     }
 }
 
+html {
+    scroll-behavior: smooth;
+    /* This makes all links scroll smoothly */
+}
+
 body {
     margin: 0;
     font-family: 'figtree';
@@ -25,6 +30,7 @@ body {
         &-horizontal {
             flex-direction: row;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         &-vertical {
