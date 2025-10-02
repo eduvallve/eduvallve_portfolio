@@ -1,12 +1,18 @@
 @use '../colorPalette' as *;
 
 .header {
-    position: fixed;
     width: 100vw;
     z-index: 1;
-    top: 0;
     background-color: $dark-blue;
     color: $white;
+    position: sticky;
+    top: 0;
+
+    body:has(main.homepage) & {
+        position: fixed;
+        top: unset;
+        box-shadow: 0 4px 8px $dark-grey;
+    }
 
     &__content {
         width: var(--content-size);

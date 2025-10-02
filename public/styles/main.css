@@ -592,12 +592,17 @@ h2 {
 }
 
 .header {
-  position: fixed;
   width: 100vw;
   z-index: 1;
-  top: 0;
   background-color: #151d3c;
   color: #fff;
+  position: sticky;
+  top: 0;
+}
+body:has(main.homepage) .header {
+  position: fixed;
+  top: unset;
+  box-shadow: 0 4px 8px #00001f;
 }
 .header__content {
   width: var(--content-size);
@@ -812,6 +817,7 @@ h2 {
 }
 .portfolio {
   min-height: 100vh;
+  box-sizing: border-box;
   padding: 140px 0 180px;
   background: #00001f;
 }

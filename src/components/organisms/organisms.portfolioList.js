@@ -7,7 +7,7 @@ import ProjectPage from "../templates/templates.projectPage";
 const PortfolioList = () => {
   return (
     <Routes>
-      <Route path=":project_id" element={<ProjectPage />}></Route>
+      <Route path={`:project_id`} element={<ProjectPage />}></Route>
     </Routes>
   );
 };
