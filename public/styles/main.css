@@ -16,6 +16,7 @@ body {
   margin: 0;
   font-family: "figtree";
   font-size: 16px;
+  font-weight: 100;
 }
 
 .flex-direction {
@@ -811,9 +812,30 @@ h2 {
 }
 .portfolio {
   min-height: 100vh;
-  padding: 1px;
+  padding: 140px 0 180px;
   background: #00001f;
-  box-shadow: #151d3c 0px 4px 5px;
+}
+.portfolio__content {
+  width: var(--content-size);
+  max-width: calc(100vw - 32px);
+  margin: auto;
+}
+.portfolio__header {
+  color: #eee;
+}
+.portfolio__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.portfolio__list-item {
+  display: block;
+  background: #151d3c;
+  color: #eee;
+  padding: 16px;
+  aspect-ratio: 4/3;
+  width: 300px;
+  max-width: 100%;
 }
 
 .footer {

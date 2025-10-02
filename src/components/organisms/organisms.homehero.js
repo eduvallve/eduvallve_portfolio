@@ -48,7 +48,7 @@ const HomeHero = () => {
                   <TextLinkWithIcon iconUrl={graduated} alt="Master degree un Ux." label="Master's Degree in Interaction Design and User Experience (UX), UOC" />
               </div>
               <div className="grid-desktop-4-6 font-size-14">
-                  <b>Stack:</b> HTML5, CSS3, JavaScript (ES6+), React.js, Sass, npm, NodeJS, Git, Adobe Experience Manager, PHP, SQL, MariaDB
+                  <b>Stack:</b> HTML5, CSS3, JavaScript (ES6+), React.js, Sass, npm, NodeJS, Git, Adobe Experience Manager, PHP, SQL, MariaDB, and many more!
               </div>
           </div>
         </div>
