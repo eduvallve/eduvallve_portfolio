@@ -1,13 +1,16 @@
 import Marquee from "../atoms/Marquee";
 import profilePic from '../../static/images/profilePic.jpeg';
 import scrollDown from '../../static/images/scroll_down-white.svg';
+import graduated from '../../static/images/graduated-icon.svg';
 import Button from "../atoms/button";
 import NightSky from "../atoms/stars";
+import TextLinkWithIcon from "../atoms/textLinkWithIcon";
 
 const HomeHero = () => {
+  const years = new Date().getFullYear() - 2016;
   const texts = ["developer", "engineer", "creative", "explorer"];
   return (
-    <section className="home__hero">
+    <section id="hello" className="home__hero">
       <div className="home__hero-content">
         <div className="home__hero-greet">
           <span>
@@ -34,18 +37,18 @@ const HomeHero = () => {
                   </div>
                   <p>Front-end first, but with a full-stack view.</p>
                   <p>
-                      9 years of experience and passionate about creating clear, useful
+                      {years} years of experience and passionate about creating clear, useful
                       and attractive interfaces.
                   </p>
               </div>
           </div>
           <div className="flex-direction flex-direction-mobile-vertical grid-desktop grid-desktop-6-cols">
-              <div className="flex-direction flex-direction-mobile-vertical grid-desktop-1-2 font-size-14">
-                  <p>Multimedia (UPC).</p>
-                  <p>Master in UX & Interface design (UOC).</p>
+              <div className="flex-direction flex-direction-mobile-vertical grid-desktop-1-3 font-size-14">
+                  <TextLinkWithIcon iconUrl={graduated} alt="Bachelor's degree in Multimedia" label="Bachelor's degree in Multimedia, UPC" />
+                  <TextLinkWithIcon iconUrl={graduated} alt="Master degree un Ux." label="Master's Degree in Interaction Design and User Experience (UX), UOC" />
               </div>
-              <div className="grid-desktop-3-6 font-size-14">
-                  Stack: HTML5, CSS3, JavaScript (ES6+), React.js, Sass, npm, NodeJS, Git, Adobe Experience Manager, PHP, SQL, MariaDB
+              <div className="grid-desktop-4-6 font-size-14">
+                  <b>Stack:</b> HTML5, CSS3, JavaScript (ES6+), React.js, Sass, npm, NodeJS, Git, Adobe Experience Manager, PHP, SQL, MariaDB
               </div>
           </div>
         </div>

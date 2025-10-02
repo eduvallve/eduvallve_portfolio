@@ -19,8 +19,22 @@
         max-width: calc(100vw - 32px);
     }
 
-    ul {
-        display: flex;
-        margin: 10px 0;
+    &__navigation {
+        &-list {
+            display: flex;
+            margin: 10px 0;
+            padding: 0;
+            gap: 24px;
+        }
+
+        &-item {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                color: $light-grey;
+                text-transform: capitalize;
+            }
+        }
     }
 }
