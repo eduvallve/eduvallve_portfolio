@@ -61,20 +61,15 @@ body {
                 grid-template-columns: repeat(6, 1fr);
             }
 
-            &-1-1 {
-                grid-column: 1/2;
-            }
-
-            &-1-3 {
-                grid-column: 1/4;
-            }
-
-            &-2-6 {
-                grid-column: 2/7;
-            }
-
-            &-4-6 {
-                grid-column: 4/7;
+            /**
+            We create the grid classes to allocate content within the 12 column grid in desktop
+            */
+            @for $i from 1 through 12 {
+                @for $j from 1 through 12 {
+                    &-#{$i}-#{$j} {
+                        grid-column: #{$i} / #{$j + 1};
+                    }
+                }
             }
         }
     }
