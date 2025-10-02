@@ -51,8 +51,7 @@ const HomeHero = () => {
         </div>
       </div>
       <div className="home__hero-night-box">
-        <NightSky coef={1} />
-        <NightSky maxStarRadius={2} starSpacing={25} canvasgrowth={.75} radius={'100%'} coef={.75} />
+        <NightSky />
       </div>
     </section>
   );

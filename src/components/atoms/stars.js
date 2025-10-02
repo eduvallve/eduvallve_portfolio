@@ -5,7 +5,7 @@ function randomInt(max) {
 }
 
 /** Component for Night Sky Containers */
-const NightSky = ({maxStarRadius = 1.25, starSpacing = 30, canvasgrowth = 1.2, radius = '0px', coef = 12}) => {
+const NightSky = ({maxStarRadius = 1.25, starSpacing = 30, canvasgrowth = 1.2, radius = '0px', coef = 1}) => {
   const el = useRef();
   const canvas = useRef();
 

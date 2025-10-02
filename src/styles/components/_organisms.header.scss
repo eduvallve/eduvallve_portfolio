@@ -1,7 +1,8 @@
 @use '../colorPalette' as *;
 
 .header {
-    position: sticky;
+    position: fixed;
+    width: 100vw;
     z-index: 1;
     top: 0;
     background-color: $dark-blue;

@@ -5,7 +5,8 @@
 
     &-content {
         display: grid;
-        grid-template-rows: .785fr 1fr 1fr 1fr 1fr;
+        // grid-template-rows: .785fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(5, 1fr);
         height: calc(100vh / 3 * 5 - 70px);
         padding: 16px;
         box-sizing: content-box;
@@ -14,12 +15,12 @@
 
         @media screen and (width > 768px) {
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(5, 1fr);
+            // grid-template-rows: repeat(5, 1fr);
         }
 
-        @media screen and (width > 992px) {
-            grid-template-rows: .65fr 1fr 1fr 1fr 1fr;
-        }
+        // @media screen and (width > 992px) {
+        //     grid-template-rows: .65fr 1fr 1fr 1fr 1fr;
+        // }
     }
 
     &-greet,
@@ -85,7 +86,7 @@
         align-self: center;
         height: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         justify-content: space-around;
         grid-row: 3 / 4;
 
@@ -157,8 +158,9 @@
 
 .container__night-sky {
     width: 100vw;
-    height: calc(100vh - 70px);
-    position: fixed;
+    height: 100vh;
+    position: sticky;
+    top: 0;
     z-index: -1;
     overflow: hidden;
     display: flex;
