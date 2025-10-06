@@ -15,9 +15,9 @@ const Header = ({basename}) => {
             <li className="header__navigation-item">
               <a href={`${basename}#about`}>About</a>
             </li>
-            <li className="header__navigation-item">
+            {/* <li className="header__navigation-item">
               <a href={`${basename}#portfolio`}>portfolio</a>
-            </li>
+            </li> */}
             <li className="header__navigation-item">
               <a href={`${basename}#follow`}>Follow</a>
             </li>
