@@ -5,7 +5,7 @@ import Layout from './Layout';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const basename = "";
+const basename = "eduvallve_portfolio/";
 root.render(
   <React.StrictMode>
     <BrowserRouter basename={`/${basename}`} >
