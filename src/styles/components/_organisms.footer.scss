@@ -1,0 +1,13 @@
+@use '../colorPalette' as *;
+
+.footer {
+    background-color: $dark-grey;
+    color: $light-grey;
+    padding: 20px 16px;
+    text-align: center;
+
+    &__content {
+        width: var(--content-size);
+        margin: auto;
+    }
+}

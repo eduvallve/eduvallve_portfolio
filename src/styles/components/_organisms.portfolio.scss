@@ -1,0 +1,34 @@
+@use '../colorPalette' as *;
+
+.portfolio {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 140px 0 180px;
+    background: $dark-grey;
+
+    &__content {
+        width: var(--content-size);
+        max-width: calc(100vw - 32px);
+        margin: auto;
+    }
+
+    &__header {
+        color: $light-grey;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        &-item {
+            display: block;
+            background: $dark-blue;
+            color: $light-grey;
+            padding: 16px;
+            aspect-ratio: 4 / 3;
+            width: 300px;
+            max-width: 100%;
+        }
+    }
+}

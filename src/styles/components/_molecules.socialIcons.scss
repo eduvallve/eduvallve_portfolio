@@ -1,0 +1,21 @@
+@use '../colorPalette' as *;
+
+$homeURL: '/eduvallve_portfolio';
+
+.social {
+    &__icons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    &__icon {
+        --icon-color: #{$pale-green};
+
+        @each $network in 'linkedin', 'github', 'behance', 'vimeo' {
+            &-#{$network}:after {
+                mask-image: var(--icon-#{$network}-path);
+            }
+        }
+    }
+}

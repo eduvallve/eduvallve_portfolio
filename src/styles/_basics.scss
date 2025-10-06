@@ -1,0 +1,92 @@
+// Mobile & tablet
+:root {
+    --content-size: calc(100vw - 32px);
+}
+
+@media screen and (min-width: 1232px) {
+
+    // Desktop
+    :root {
+        --content-size: 1200px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    /* This makes all links scroll smoothly */
+}
+
+body {
+    margin: 0;
+    font-family: 'figtree';
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.flex-direction {
+    display: flex;
+    gap: 16px;
+
+    &-mobile {
+        &-horizontal {
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        &-vertical {
+            flex-direction: column;
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        &-desktop {
+            &-horizontal {
+                flex-direction: row;
+            }
+
+            &-vertical {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+.grid {
+    @media screen and (min-width: 992px) {
+        &-desktop {
+            display: grid;
+            gap: 16px;
+
+            &-6-cols {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            /**
+            We create the grid classes to allocate content within the 12 column grid in desktop
+            */
+            @for $i from 1 through 12 {
+                @for $j from 1 through 12 {
+                    &-#{$i}-#{$j} {
+                        grid-column: #{$i} / #{$j + 1};
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin ctaHover() {
+    outline: 2px solid;
+    outline-color: transparent;
+    outline-offset: 0;
+    transition: all .05s ease-in-out;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+        outline-color: var(--icon-color);
+        outline-offset: 3px;
+    }
+}
