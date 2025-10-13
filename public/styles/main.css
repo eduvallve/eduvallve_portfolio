@@ -748,6 +748,12 @@ body:has(main.homepage) .header {
   width: 85px;
   height: 85px;
   border-radius: 100%;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .home__hero-brief--profile {
+    display: unset;
+  }
 }
 .home__hero-brief--title {
   margin: 0;
@@ -853,6 +859,84 @@ body:has(main.homepage) .header {
 .footer__content {
   width: var(--content-size);
   margin: auto;
+}
+.footer__link {
+  color: #83c2c1;
+  margin-right: 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.privacy {
+  width: var(--content-size);
+  max-width: calc(100vw - 32px);
+  margin: auto;
+}
+
+body:has(main.tree) {
+  background-color: #00001f;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+}
+body:has(main.tree) .header,
+body:has(main.tree) .footer {
+  display: none;
+}
+
+.tree {
+  width: 600px;
+  max-width: calc(100vw - 32px);
+  margin: auto;
+  text-align: center;
+}
+.tree ul {
+  padding: 16px;
+  border-radius: 4px;
+  background-color: #151d3c;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.tree li {
+  list-style: none;
+}
+.tree li a {
+  color: #eee;
+  text-decoration: none;
+}
+.tree li a:has(.icon) {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+}
+.tree li a:has(.icon) .icon {
+  width: 32px;
+  position: relative;
+  --icon-color: #151d3c;
+}
+.tree li a:has(.icon) .icon::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.tree .social-tech {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.tree .social-tech li a {
+  color: #83c2c1;
+}
+.tree .social-tech li a i::before {
+  background-color: #83c2c1;
 }
 
 /*# sourceMappingURL=main.css.map */

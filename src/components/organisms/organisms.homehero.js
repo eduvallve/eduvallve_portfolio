@@ -28,7 +28,7 @@ const HomeHero = () => {
           </a>
         </div>
         <div className="home__hero-brief flex-direction flex-direction-mobile-vertical">
-          <div className="flex-direction flex-direction-mobile-vertical  grid-desktop grid-desktop-6-cols">
+          <div className="flex-direction grid-desktop grid-desktop-6-cols">
               <img src={profilePic} alt="profile" className="home__hero-brief--profile grid-desktop-1-1"></img>
               <div className="flex-direction flex-direction-mobile-vertical grid-desktop-2-6">
                   <div className="flex-direction flex-direction-mobile-horizontal">
