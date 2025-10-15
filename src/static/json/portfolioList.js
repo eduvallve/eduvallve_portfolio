@@ -27,4 +27,32 @@ export const projects = [
     thumbnail: "#",
     timestamp: "1525946400",
   },
+  {
+    id: 5,
+    title: "Project 05",
+    description: "Description of project 05",
+    thumbnail: "#",
+    timestamp: "1525946400",
+  },
+  {
+    id: 6,
+    title: "Project 06",
+    description: "Description of project 06",
+    thumbnail: "#",
+    timestamp: "1525946400",
+  },
+  {
+    id: 7,
+    title: "Project 07",
+    description: "Description of project 07",
+    thumbnail: "#",
+    timestamp: "1525946400",
+  },
+  {
+    id: 8,
+    title: "Project 08",
+    description: "Description of project 08",
+    thumbnail: "#",
+    timestamp: "1525946400",
+  },
 ];

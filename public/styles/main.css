@@ -827,27 +827,31 @@ body:has(main.homepage) .header {
   padding: 140px 0 180px;
   background: #00001f;
 }
-.portfolio__content {
+.portfolio__area {
+  overflow: hidden;
+}
+.portfolio__header {
   width: var(--content-size);
   max-width: calc(100vw - 32px);
   margin: auto;
-}
-.portfolio__header {
   color: #eee;
 }
 .portfolio__list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  min-width: 100vw;
+  padding-left: calc(50vw - var(--content-size) / 2);
+  height: 100%;
+  box-sizing: border-box;
 }
 .portfolio__list-item {
   display: block;
   background: #151d3c;
   color: #eee;
   padding: 16px;
-  aspect-ratio: 4/3;
-  width: 300px;
+  width: var(--content-size);
   max-width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .footer {
