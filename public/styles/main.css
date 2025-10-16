@@ -836,22 +836,34 @@ body:has(main.homepage) .header {
   margin: auto;
   color: #eee;
 }
+.portfolio__group {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
 .portfolio__list {
   display: flex;
   min-width: 100vw;
   padding-left: calc(50vw - var(--content-size) / 2);
   height: 100%;
   box-sizing: border-box;
+  gap: 16px;
+  width: calc(var(--content-size) * var(--project-groups-amount) + 16px);
 }
 .portfolio__list-item {
   display: block;
   background: #151d3c;
   color: #eee;
   padding: 16px;
-  width: var(--content-size);
+  width: 100%;
   max-width: 100%;
   flex-shrink: 0;
   box-sizing: border-box;
+  aspect-ratio: 2/1;
+}
+.portfolio__list-item:nth-child(3), .portfolio__list-item:nth-child(4) {
+  transform: translateX(16px);
 }
 
 .footer {

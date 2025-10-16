@@ -13,11 +13,18 @@ const Portfolio = () => {
 
   const projectRef = useRef([]);
   const portfolioSectionRef = useRef();
+  
+  // Group projects into arrays of 4
+  const projectsGrouped = [];
+  for (let i = 0; i < projects.length; i += 4) {
+    projectsGrouped.push(projects.slice(i, i + 4));
+  }
+  
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
     gsap.to(projectRef.current, {
-      xPercent: -100 * (projectRef.current.length - 1),
+      xPercent: -100 * (projectsGrouped.length - 1),
       ease: "none",
       scrollTrigger: {
         markers: false,
@@ -27,12 +34,10 @@ const Portfolio = () => {
         anticipatePin: 1,
         scrub: 0.1,
         start: "top",
-        end: ("top+=" + (projectRef.current.length * 100 * 2) + "vh"),
+        end: ("top+=" + (projectsGrouped.length * 100) + "vh"),
       }
     })
-  }, []);
-
-
+  }, [projectsGrouped.length]);
 
   return (
     <section className="portfolio" id="portfolio" ref={portfolioSectionRef}>
@@ -45,14 +50,21 @@ const Portfolio = () => {
               useful and attractive interfaces.
             </p>
           </div>
-          <div className="portfolio__list">
-            {projects.map(({id, title, thumbnail}, i) => {
-              return (
-                <NavLink key={i} className="portfolio__list-item" to={`/portfolio/project-${id}`} style={{'--portfolio-item-thumbnail': thumbnail}} ref={(ref) => projectRef.current[i] = ref}>
-                  <span className="portfolio__list-item-label">{title}</span>
-                </NavLink>
-              );
-            })}
+          <div className="portfolio__list" style={{'--project-groups-amount': projectsGrouped.length}}>
+            {projectsGrouped.map((projectGroup, groupIndex) => (
+              <div key={groupIndex} className="portfolio__group" ref={(ref) => projectRef.current[groupIndex] = ref}>
+                {projectGroup.map(({id, title, thumbnail}, projectIndex) => (
+                  <NavLink 
+                    key={`${groupIndex}-${projectIndex}`} 
+                    className="portfolio__list-item" 
+                    to={`/portfolio/project-${id}`} 
+                    style={{'--portfolio-item-thumbnail': thumbnail}}
+                  >
+                    <span className="portfolio__list-item-label">{title}</span>
+                  </NavLink>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </div>
