@@ -849,7 +849,7 @@ body:has(main.homepage) .header {
   height: 100%;
   box-sizing: border-box;
   gap: 16px;
-  width: calc(var(--content-size) * var(--project-groups-amount) + 16px);
+  width: calc(var(--content-size) * var(--project-groups-amount) + 50vw - var(--content-size) / 2 - 32px);
 }
 .portfolio__list-item {
   display: block;
