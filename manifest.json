@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "EduVallve",
+  "name": "Web portfolio, by Edu Vallve",
   "icons": [
     {
       "src": "static/images/evp-logo-black.svg",
@@ -8,18 +8,18 @@
       "type": "image/x-icon"
     },
     {
-      "src": "static/images/logo192.png",
+      "src": "static/images/evp-logo-black.svg",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "static/images/logo512.png",
+      "src": "static/images/evp-logo-black.svg",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#151d3c",
+  "background_color": "#00001f"
 }

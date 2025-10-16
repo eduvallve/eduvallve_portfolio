@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "/eduvallve_portfolio/static/js/main.3f2d78dc.js",
+    "main.js": "/eduvallve_portfolio/static/js/main.7bbbeeff.js",
     "static/js/453.51e48114.chunk.js": "/eduvallve_portfolio/static/js/453.51e48114.chunk.js",
     "static/media/profilePic.jpeg": "/eduvallve_portfolio/static/media/profilePic.2d4ec2f1f946c00950f7.jpeg",
     "static/media/scroll_down-white.svg": "/eduvallve_portfolio/static/media/scroll_down-white.fea1575b32b24c1631a3a6dd28dce259.svg",
     "index.html": "/eduvallve_portfolio/index.html",
     "static/media/evp-logo-white.svg": "/eduvallve_portfolio/static/media/evp-logo-white.6c350dcb046dce8d216199fc7082140c.svg",
     "static/media/graduated-icon.svg": "/eduvallve_portfolio/static/media/graduated-icon.ae9d20ba42de2a501f5385cbcc49d93b.svg",
-    "main.3f2d78dc.js.map": "/eduvallve_portfolio/static/js/main.3f2d78dc.js.map",
+    "main.7bbbeeff.js.map": "/eduvallve_portfolio/static/js/main.7bbbeeff.js.map",
     "453.51e48114.chunk.js.map": "/eduvallve_portfolio/static/js/453.51e48114.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.3f2d78dc.js"
+    "static/js/main.7bbbeeff.js"
   ]
 }
