@@ -1,4 +1,6 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { scrollTo } from "./utils/utils.js";
 import PortfolioList from "./components/organisms/organisms.portfolioList";
 import HomePage from "./components/templates/templates.homepage";
 import Header from "./components/organisms/organisms.header";
@@ -7,6 +9,13 @@ import PrivacyPage from "./components/templates/templates.privacyPage";
 import Tree from "./components/templates/templates.tree";
 
 function Layout({basename}) {
+  const location = useLocation(); // Get current location in the app
+
+  // When Location changes, check for hash and scroll to the corresponding element if it exists
+  useEffect(() => {
+    scrollTo(location.hash.replace("#", ""));
+  }, [location]);
+
   return (
     <>
       <Header basename={basename} />

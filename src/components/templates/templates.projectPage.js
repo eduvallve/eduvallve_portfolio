@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { projects } from "../../static/json/portfolioList.js";
 import Button from "../atoms/button.js";
 
@@ -34,9 +34,9 @@ const TextBlock = ({ children, className = "", ...props }) => {
 
 const LinkBlock = ({ children, className = "", path="/", ...props }) => {
   return (
-    <a href={`/eduvallve_portfolio${path}`} className={`link-block ${className}`.trim()} {...props}>
+    <Link to={path} className={`link-block ${className}`.trim()} {...props}>
       {renderHTMLContent(children)}
-    </a>
+    </Link>
   );
 };
 

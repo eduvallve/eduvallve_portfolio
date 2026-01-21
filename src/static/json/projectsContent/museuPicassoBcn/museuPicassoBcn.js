@@ -11,8 +11,8 @@ export const museuPicassoBcn = [
     [
       [
         "@LinkBlock",
-        "<< Back to portfolio",
-        { className: "", path: "/portfolio" },
+        "Back to portfolio",
+        { className: "navigation navigation--back", path: "/portfolio/" },
       ],
     ],
     { className: "grid-desktop-1-12" },

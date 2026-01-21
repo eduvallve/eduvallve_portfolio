@@ -1,6 +1,9 @@
+@use './colorPalette' as *;
+
 h1 {
     font-size: clamp(32px, 5vw, 64px);
     font-weight: 100;
+    margin: 0;
 }
 
 h2 {
@@ -10,4 +13,23 @@ h2 {
 
 .font-size-14 {
     font-size: 14px;
+}
+
+.text {
+    &-highlighted {
+        color: $pale-green;
+    }
+
+    &-small {
+        font-size: 0.875rem;
+    }
+
+    &-italic {
+        font-style: italic;
+    }
+}
+
+.link-block {
+    color: $pale-green;
+    text-decoration: none;
 }

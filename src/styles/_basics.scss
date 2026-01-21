@@ -147,29 +147,6 @@ body {
     }
 }
 
-h1 {
-    margin: 0;
-}
-
-.text {
-    &-highlighted {
-        color: $pale-green;
-    }
-
-    &-small {
-        font-size: 0.875rem;
-    }
-}
-
-.link-block {
-    color: $pale-green;
-    text-decoration: none;
-}
-
 .no-margin-up {
     margin-top: 0;
-}
-
-.text-italic {
-    font-style: italic;
 }

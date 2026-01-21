@@ -33,7 +33,7 @@ const HomeHero = () => {
               <div className="flex-direction flex-direction-mobile-vertical grid-desktop-2-6">
                   <div className="flex-direction flex-direction-mobile-horizontal">
                       <h2 className="home__hero-brief--title">Briefly about me</h2>
-                      <Button classes="button__secondary" type="link" url="https://www.linkedin.com/in/eduvallve/">linkedin</Button>
+                      <Button className="button__secondary" type="link" url="https://www.linkedin.com/in/eduvallve/">linkedin</Button>
                   </div>
                   <p>Front-end first, but with a full-stack view.</p>
                   <p>
