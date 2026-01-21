@@ -1,3 +1,5 @@
+@use './colorPalette' as *;
+
 // Mobile & tablet
 :root {
     --content-size: calc(100vw - 32px);
@@ -21,6 +23,7 @@ body {
     font-family: 'figtree';
     font-size: 16px;
     font-weight: 100;
+    background-color: $dark-grey;
 }
 
 .flex-direction {
@@ -59,7 +62,11 @@ body {
             gap: 16px;
 
             &-6-cols {
-                grid-template-columns: repeat(6, 1fr);
+                grid-template-columns: repeat(6, minmax(0, 1fr));
+            }
+
+            &-12-cols {
+                grid-template-columns: repeat(12, minmax(0, 1fr));
             }
 
             /**
@@ -89,4 +96,80 @@ body {
         outline-color: var(--icon-color);
         outline-offset: 3px;
     }
+}
+
+
+.container {
+    margin-top: 16px;
+
+    @media screen and (min-width: 992px) {
+        margin-top: 0;
+    }
+
+    &.area-fullwidth {
+        width: 100vw;
+        margin-left: calc(-1 * (100vw - var(--content-size)) / 2);
+        margin-right: calc(-1 * (100vw - var(--content-size)) / 2);
+        background-color: $pale-green;
+        min-height: 300px;
+        padding: 0;
+        aspect-ratio: 21 / 9;
+
+        .project__mockup-image-fullwidth {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.align {
+    &-vertical-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+
+        > * {
+            margin: 0;
+        }
+    }
+
+    &-horizontal-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+
+        > * {
+            margin: 0;
+        }
+    }
+}
+
+h1 {
+    margin: 0;
+}
+
+.text {
+    &-highlighted {
+        color: $pale-green;
+    }
+
+    &-small {
+        font-size: 0.875rem;
+    }
+}
+
+.link-block {
+    color: $pale-green;
+    text-decoration: none;
+}
+
+.no-margin-up {
+    margin-top: 0;
+}
+
+.text-italic {
+    font-style: italic;
 }

@@ -13,13 +13,16 @@ const Portfolio = () => {
 
   const projectRef = useRef([]);
   const portfolioSectionRef = useRef();
-  
+
+  // Sort projects by timestamp in descending order (newest first)
+  const sortedProjects = [...projects].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
   // Group projects into arrays of 4
   const projectsGrouped = [];
-  for (let i = 0; i < projects.length; i += 4) {
-    projectsGrouped.push(projects.slice(i, i + 4));
+  for (let i = 0; i < sortedProjects.length; i += 4) {
+    projectsGrouped.push(sortedProjects.slice(i, i + 4));
   }
-  
+
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
@@ -53,14 +56,17 @@ const Portfolio = () => {
           <div className="portfolio__list" style={{'--project-groups-amount': projectsGrouped.length}}>
             {projectsGrouped.map((projectGroup, groupIndex) => (
               <div key={groupIndex} className="portfolio__group" ref={(ref) => projectRef.current[groupIndex] = ref}>
-                {projectGroup.map(({id, title, thumbnail}, projectIndex) => (
+                {projectGroup.map(({slug, title, description, thumbnail}, projectIndex) => (
                   <NavLink 
                     key={`${groupIndex}-${projectIndex}`} 
                     className="portfolio__list-item" 
-                    to={`/portfolio/project-${id}`} 
-                    style={{'--portfolio-item-thumbnail': thumbnail}}
+                    to={`/portfolio/${slug}`} 
+                    style={{'--portfolio-item-thumbnail': `url(${thumbnail})`}}
                   >
-                    <span className="portfolio__list-item-label">{title}</span>
+                    <span className="portfolio__list-item-label">
+                      <span className="portfolio__list-item-label-title">{title}</span>
+                      <span className="portfolio__list-item-label-description">{description}</span>
+                      </span>
                   </NavLink>
                 ))}
               </div>

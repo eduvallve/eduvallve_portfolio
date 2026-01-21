@@ -15,5 +15,9 @@
         color: $pale-green;
     }
 
+    &--fit-content {
+        width: fit-content;
+    }
+
     @include ctaHover();
 }

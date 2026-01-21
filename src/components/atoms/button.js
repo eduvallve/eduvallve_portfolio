@@ -1,8 +1,8 @@
-function Button({ children, classes, type, url }) {
+function Button({ children, className, type, url }) {
   if (type === "link") {
     return (
       <a
-        className={`button ${classes}`}
+        className={`button ${className}`}
         href={url}
         target="_blank"
         rel="noreferrer"
@@ -11,7 +11,7 @@ function Button({ children, classes, type, url }) {
       </a>
     );
   } else {
-    return <button className={`button ${classes}`}>{children}</button>;
+    return <button className={`button ${className}`}>{children}</button>;
   }
 }
 
