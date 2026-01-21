@@ -1166,8 +1166,9 @@ body:has(main.tree) .footer {
 .tree li a:has(.icon) {
   display: flex;
   align-items: center;
-  gap: 4px;
+  column-gap: 4px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .tree li a:has(.icon) .icon {
   width: 32px;
@@ -1182,6 +1183,9 @@ body:has(main.tree) .footer {
   position: absolute;
   top: 0;
   left: 0;
+}
+.tree li:last-child:nth-child(odd) {
+  grid-column: 1/span 2;
 }
 .tree .social-tech {
   display: grid;
