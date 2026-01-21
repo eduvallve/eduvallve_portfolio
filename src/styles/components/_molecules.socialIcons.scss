@@ -12,7 +12,7 @@ $homeURL: '/eduvallve_portfolio';
     &__icon {
         --icon-color: #{$pale-green};
 
-        @each $network in 'linkedin', 'github', 'behance', 'vimeo' {
+        @each $network in 'linkedin', 'github', 'codepen', 'behance', 'vimeo' {
             &-#{$network}:after {
                 mask-image: var(--icon-#{$network}-path);
             }

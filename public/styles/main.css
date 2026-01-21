@@ -704,6 +704,9 @@ h2 {
 .social__icon-github:after {
   mask-image: var(--icon-github-path);
 }
+.social__icon-codepen:after {
+  mask-image: var(--icon-codepen-path);
+}
 .social__icon-behance:after {
   mask-image: var(--icon-behance-path);
 }

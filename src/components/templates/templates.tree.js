@@ -18,6 +18,9 @@ const Tree = () => {
                         <a target="_blank" rel="noreferrer" href="https://github.com/eduvallve"><i className="icon social__icon social__icon-github"></i> Github</a>
                     </li>
                     <li>
+                        <a target="_blank" rel="noreferrer" href="https://codepen.io/eduvallve"><i className="icon social__icon social__icon-codepen"></i> CodePen</a>
+                    </li>
+                    <li>
                         <a target="_blank" rel="noreferrer" href="https://www.behance.net/eduvallve"><i className="icon social__icon social__icon-behance"></i> Behance</a>
                     </li>
                     <li>
