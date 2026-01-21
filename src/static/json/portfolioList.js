@@ -25,7 +25,7 @@ export const projects = [
     thumbnail: PicassoThumbnail,
     timestamp: 1525946400,
     content: museuPicassoBcn,
-    tags: ['design', 'figma', 'uiux'],
+    tags: ['design', 'figma', 'uiux', 'javascript'],
   },
   {
     slug: 3,

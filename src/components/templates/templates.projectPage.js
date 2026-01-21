@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { projects } from "../../static/json/portfolioList.js";
 import Button from "../atoms/button.js";
+import RelatedProjects from "../organisms/organisms.relatedProjects.js";
 
 /**
  * This ProjectPage shows everything that is inside of a project single page
@@ -282,12 +283,12 @@ const ProjectPage = () => {
       )} */}
       {currentProject?.content?.map((section, index) => {
         const [componentType, containerContent, sectionProps = {}] = section;
-        console.log("Section:", {
-          componentType,
-          containerContent,
-          sectionProps,
-          index,
-        });
+        // console.log("Section:", {
+        //   componentType,
+        //   containerContent,
+        //   sectionProps,
+        //   index,
+        // });
 
         return (
           <ComponentSelector key={index} comp={componentType} {...sectionProps}>
@@ -296,11 +297,7 @@ const ProjectPage = () => {
         );
       })}
       {currentProject ? (
-        <div className="project-page__related-projects grid-desktop-1-12 grid-desktop grid-desktop-12-cols">
-          <h2 className="grid-desktop-1-12">Related projects</h2>
-          <div className="grid-desktop-1-3">Project</div>
-          <div className="grid-desktop-4-6">Project</div>
-        </div>
+        <RelatedProjects slug={currentProject.slug} tags={currentProject.tags}></RelatedProjects>
       ) : (
         <p>Project not found</p>
       )}
