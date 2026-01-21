@@ -105,7 +105,7 @@ const PrivacyPage = () => {
                 <li>Spain — Agencia Española de Protección de Datos (AEPD)</li>
                 <li>Germany — Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI)</li>
             </ul>
-            <p>Find the appropriate authority at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank" rel="noopener">EDPB members list</a>.</p>
+            <p>Find the appropriate authority at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank" rel="noopener noreferrer">EDPB members list</a>.</p>
             </section>
 
             <section>

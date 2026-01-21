@@ -3,7 +3,7 @@
 .portfolio {
     min-height: 100vh;
     box-sizing: border-box;
-    padding: 140px 0 180px;
+    padding:80px 0;
     background: $dark-grey;
 
     &__area {
@@ -46,7 +46,7 @@
             align-items: end;
             aspect-ratio: 3 / 4;
             height: 100%;
-            max-height: 30vh;
+            max-height: 33vh;
             
             &::after {
                 position: absolute;
