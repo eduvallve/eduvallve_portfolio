@@ -1,5 +1,14 @@
 import { museuPicassoBcn } from "./projectsContent/museuPicassoBcn/museuPicassoBcn";
 import PicassoThumbnail from "../json/projectsContent/museuPicassoBcn/museuPicassoBcn_mockup_02.webp";
+import { myDictionary } from "./projectsContent/myDictionary/myDictionary";
+import MyDictionaryThumbnail from "../json/projectsContent/myDictionary/myDictionary-v1-rectangle.webp";
+import { myCarousel } from "./projectsContent/myCarousel/myCarousel";
+import MyCarouselThumbnail from "../json/projectsContent/myCarousel/myCarousel-v1-rectangle.webp";
+// import { caLesTaronges } from "./projectsContent/caLesTaronges/caLesTaronges";
+// import { magiPomesAlRif } from "./projectsContent/magiPomesAlRif/magiPomesAlRif";
+// import { tecnoSferanow } from "./projectsContent/tecnoSferanow/tecnoSferanow";
+// import { jewelsBarcelona } from "./projectsContent/jewelsBarcelona/jewelsBarcelona";
+// import { iceStick } from "./projectsContent/iceStick/iceStick";
 
 export const projects = [
   {
@@ -16,20 +25,25 @@ export const projects = [
     thumbnail: PicassoThumbnail,
     timestamp: 1525946400,
     content: museuPicassoBcn,
+    tags: ['design', 'figma', 'uiux'],
   },
   {
     slug: 3,
     title: "My Dictionary",
     description: "Wordpress plugin for multilingual sites",
-    thumbnail: "#",
+    thumbnail: MyDictionaryThumbnail,
     timestamp: 1525946400,
+    content: myDictionary,
+    tags: ['wordpress', 'plugin', 'php', 'javascript'],
   },
   {
     slug: 4,
     title: "My Carousel",
     description: "Wordpress plugin for image galleries and carousels",
-    thumbnail: "#",
-    timestamp: 1525946400,
+    thumbnail: MyCarouselThumbnail,
+    timestamp: 1759320000,
+    content: myCarousel,
+    tags: ['wordpress', 'plugin', 'php', 'javascript'],
   },
   {
     slug: 5,
@@ -58,7 +72,7 @@ export const projects = [
     description:
       "Collection of my experiments with Blender for 3D modeling and animation",
     thumbnail: "#",
-    timestamp: 1759320000,
+    timestamp: 1525946400,
   },
   {
     slug: 9,
