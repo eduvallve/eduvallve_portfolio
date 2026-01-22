@@ -29,7 +29,7 @@
 
 
 // Linear gradient mask for portfolio items
-$linear-gradient-mask: linear-gradient(black, transparent);
+$linear-gradient-mask: linear-gradient(black 25%, transparent 100%);
 
 @mixin portfolioItemStyle() {
     display: block;
@@ -45,6 +45,7 @@ $linear-gradient-mask: linear-gradient(black, transparent);
     height: 100%;
     max-height: 33vh;
     position: relative;
+    border-radius: 8px;
 
     &::after {
         position: absolute;

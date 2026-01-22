@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { projects } from "../../static/json/portfolioList.js";
+import { scrollUp } from "../../utils/utils.js";
 
 const RelatedProjects = ({ slug, tags }) => {
   const shuffledProjects = [...projects].sort(() => Math.random() - 0.5);
@@ -22,6 +23,7 @@ const RelatedProjects = ({ slug, tags }) => {
           className="related-projects__item"
           to={`/portfolio/${project.slug}`}
           style={{ "--portfolio-item-thumbnail": `url(${project.thumbnail})` }}
+          onClick={() => scrollUp()}
         >
           <h3 className="related-projects__item-title">{project.title}</h3>
         </Link>
