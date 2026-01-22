@@ -1,0 +1,19 @@
+.image {
+    &--boxed {
+        max-width: 100%;
+        height: auto;
+    }
+
+    &--size {
+        &-small {
+            width: 150px;
+        }
+    }
+
+    &--aligned {
+        &-centered {
+            display: block;
+            margin-inline: auto;
+        }
+    }
+}

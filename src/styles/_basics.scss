@@ -27,6 +27,7 @@ body {
     background-color: $dark-grey;
 }
 
+// Flexbox styles
 .flex-direction {
     display: flex;
     gap: 16px;
@@ -56,14 +57,17 @@ body {
     }
 }
 
+// Grid styles
 .grid {
     @media screen and (max-width: 991px) {
         &-mobile {
             display: grid;
             gap: 16px;
 
-            &-2-cols {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+            @each $i in 2, 4 {
+                &-#{$i}-cols {
+                    grid-template-columns: repeat($i, minmax(0, 1fr));
+                }
             }
 
             @include grid-positioning(1, 4);
@@ -86,12 +90,22 @@ body {
     }
 }
 
-
+// Container styles
 .container {
     margin-top: 16px;
 
     @media screen and (min-width: 992px) {
         margin-top: 0;
+    }
+
+    &--no-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .project-page:has(> &) {
+            min-height: 100vh;
+        }
     }
 
     &.area-fullwidth {
@@ -111,6 +125,7 @@ body {
     }
 }
 
+// Alignment utilities
 .align {
     &-vertical-center {
         display: flex;
@@ -135,6 +150,15 @@ body {
     }
 }
 
-.no-margin-up {
-    margin-top: 0;
+// Margin utilities
+.margin {
+    @each $direction in top, bottom {
+        &-#{$direction} {
+            @each $size in 16, 24 {
+                &--#{$size} {
+                    margin-#{$direction}: #{$size}px;
+                }
+            }
+        }
+    }
 }

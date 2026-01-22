@@ -9,9 +9,20 @@ import RelatedProjects from "../organisms/organisms.relatedProjects.js";
 
 // Helper function to render HTML content or plain children
 const renderHTMLContent = (children) => {
-  const content = typeof children === 'string' ? children : children;
-  const isHTMLString = typeof content === 'string' && (content.includes('<b>') || content.includes('<i>') || content.includes('<strong>') || content.includes('<em>') || content.includes('<i>') || content.includes('<br>'));
-  return isHTMLString ? <span dangerouslySetInnerHTML={{ __html: content }} /> : children;
+  const content = typeof children === "string" ? children : children;
+  const isHTMLString =
+    typeof content === "string" &&
+    (content.includes("<b>") ||
+      content.includes("<i>") ||
+      content.includes("<strong>") ||
+      content.includes("<em>") ||
+      content.includes("<i>") ||
+      content.includes("<br>"));
+  return isHTMLString ? (
+    <span dangerouslySetInnerHTML={{ __html: content }} />
+  ) : (
+    children
+  );
 };
 
 // Define your components
@@ -23,8 +34,6 @@ const Container = ({ children, className = "", ...props }) => {
   );
 };
 
-
-
 const TextBlock = ({ children, className = "", ...props }) => {
   return (
     <p className={`text-block ${className}`.trim()} {...props}>
@@ -33,7 +42,7 @@ const TextBlock = ({ children, className = "", ...props }) => {
   );
 };
 
-const LinkBlock = ({ children, className = "", path="/", ...props }) => {
+const LinkBlock = ({ children, className = "", path = "/", ...props }) => {
   return (
     <Link to={path} className={`link-block ${className}`.trim()} {...props}>
       {renderHTMLContent(children)}
@@ -43,42 +52,42 @@ const LinkBlock = ({ children, className = "", path="/", ...props }) => {
 
 const HeaderBlock = ({ children, className = "", label, ...props }) => {
   const renderedContent = renderHTMLContent(children);
-  
-  if (label === 'h1') {
-      return (
-        <h1 className={`${className}`.trim()} {...props}>
-          {renderedContent}
-        </h1>
+
+  if (label === "h1") {
+    return (
+      <h1 className={`${className}`.trim()} {...props}>
+        {renderedContent}
+      </h1>
     );
-  } else if (label === 'h2') {
-      return (
-        <h2 className={`${className}`.trim()} {...props}>
-          {renderedContent}
-        </h2>
+  } else if (label === "h2") {
+    return (
+      <h2 className={`${className}`.trim()} {...props}>
+        {renderedContent}
+      </h2>
     );
-  } else if (label === 'h3') {
-      return (
-        <h3 className={`${className}`.trim()} {...props}>
-          {renderedContent}
-        </h3>
+  } else if (label === "h3") {
+    return (
+      <h3 className={`${className}`.trim()} {...props}>
+        {renderedContent}
+      </h3>
     );
-  } else if (label === 'h4') {
-      return (
-        <h4 className={`${className}`.trim()} {...props}>
-          {renderedContent}
-        </h4>
+  } else if (label === "h4") {
+    return (
+      <h4 className={`${className}`.trim()} {...props}>
+        {renderedContent}
+      </h4>
     );
-  } else if (label === 'h5') {
-      return (
-        <h5 className={`${className}`.trim()} {...props}>
-          {renderedContent}
-        </h5>
+  } else if (label === "h5") {
+    return (
+      <h5 className={`${className}`.trim()} {...props}>
+        {renderedContent}
+      </h5>
     );
-  } else if (label === 'h6') {
-      return (
-        <h6 className={`${className}`.trim()} {...props}>
-          {renderedContent}
-        </h6>
+  } else if (label === "h6") {
+    return (
+      <h6 className={`${className}`.trim()} {...props}>
+        {renderedContent}
+      </h6>
     );
   } else {
     return (
@@ -91,13 +100,30 @@ const HeaderBlock = ({ children, className = "", label, ...props }) => {
 
 const ImageBlock = ({ className, src, alt, ...props }) => {
   return (
-    <img className={`image-block ${className}`.trim()} src={src} alt={alt} {...props} />
+    <img
+      className={`image-block ${className}`.trim()}
+      src={src}
+      alt={alt}
+      {...props}
+    />
   );
 };
 
-const IframeBlock = ({ src, title = "iframe", className = "", width = "100%", height = "100%", styles, ...props }) => (
+const IframeBlock = ({
+  src,
+  title = "iframe",
+  className = "",
+  width = "100%",
+  height = "100%",
+  styles,
+  ...props
+}) => (
   <div className={`iframe-block ${className}`.trim()} {...props}>
-  <iframe src={src} title={title} style={{width, height, border: "none", ...styles}} />
+    <iframe
+      src={src}
+      title={title}
+      style={{ width, height, border: "none", ...styles }}
+    />
   </div>
 );
 
@@ -250,28 +276,19 @@ const ProjectPage = () => {
 
   // Find the project data by matching slug with project_id
   const currentProject = projects.find(
-    (project) => project.slug === parseInt(project_id)
+    (project) => project.slug === parseInt(project_id),
   );
 
   return (
-    <main className="project-page grid-desktop grid-desktop-12-cols">
-      {/* {currentProject ? (
-        <div className="grid-desktop-1-12">
-          <h2>Project's slug is: {project_id}</h2>
-          <h3>{currentProject.title}</h3>
-          <p>{currentProject.description}</p>
-        </div>
-      ) : (
-        <p>Project not found</p>
-      )} */}
+    <main className="project-page grid-mobile grid-mobile-4-cols grid-desktop grid-desktop-12-cols">
+      {currentProject && !currentProject.content && (
+        <section className="grid-mobile-1-4 grid-desktop-1-12 container--no-content">
+          <h2>Project: {currentProject.title}</h2>
+          <p>No content available for this project yet.</p>
+        </section>
+      )}
       {currentProject?.content?.map((section, index) => {
         const [componentType, containerContent, sectionProps = {}] = section;
-        // console.log("Section:", {
-        //   componentType,
-        //   containerContent,
-        //   sectionProps,
-        //   index,
-        // });
 
         return (
           <ComponentSelector key={index} comp={componentType} {...sectionProps}>
@@ -280,9 +297,12 @@ const ProjectPage = () => {
         );
       })}
       {currentProject ? (
-        <RelatedProjects slug={currentProject.slug} tags={currentProject.tags}></RelatedProjects>
+        <RelatedProjects
+          slug={currentProject.slug}
+          tags={currentProject.tags}
+        ></RelatedProjects>
       ) : (
-        <p>Project not found</p>
+        <p className="grid-mobile-1-4 grid-desktop-1-12">Project not found</p>
       )}
     </main>
   );

@@ -5,7 +5,6 @@ import Mockup02 from "./museuPicassoBcn_mockup_02.webp";
 
 export const museuPicassoBcn = [
   // Format: ['@ComponentName', 'Content', { props }]
-  ["@Container", [""], { className: "grid-desktop-1-12" }],
   [
     "@Container",
     [
@@ -15,7 +14,7 @@ export const museuPicassoBcn = [
         { className: "navigation navigation--back", path: "/portfolio/" },
       ],
     ],
-    { className: "grid-desktop-1-12" },
+    { className: "grid-mobile-1-4 grid-desktop-1-12 margin-top--24" },
   ],
   [
     "@Container",
@@ -34,7 +33,7 @@ export const museuPicassoBcn = [
         { className: "text-highlighted text-small" },
       ],
     ],
-    { className: "grid-desktop-1-9 align-vertical-center" },
+    { className: "grid-mobile-1-3 grid-desktop-1-9 align-vertical-center" },
   ],
   [
     "@Container",
@@ -49,16 +48,16 @@ export const museuPicassoBcn = [
         },
       ],
     ],
-    { className: "grid-desktop-10-12" },
+    { className: "grid-mobile-4-4 grid-desktop-10-12" },
   ],
-  ["@Container", ["<br>"], { className: "grid-desktop-1-12" }],
+  ["@Container", ["<br>"], { className: "grid-mobile-1-4 grid-desktop-1-12" }],
   [
       "@ImageBlock",
       "",
       {
         src: Mockup02,
         alt: "Image 1",
-        className: "project__image grid-desktop-1-6",
+        className: "project__image grid-mobile-1-4 grid-desktop-1-6",
       },
   ],
   [
@@ -71,7 +70,7 @@ export const museuPicassoBcn = [
       "3. Evaluation phase: Usability testing, Cognitive walkthrough, Euristic evaluation and Feedback analysis.",
       ["@Button", "View prototype in Figma", { type: "link", url: "https://www.figma.com/proto/OayvxxOwv4kcHV7nRbENXw/TFM-Edu-Vallv%C3%A9---Prototip-redisseny-web-Museu-Picasso-BCN---Amb-colors-i-imatges?content-scaling=fixed&kind=proto&node-id=14-359&page-id=14%3A268&scaling=min-zoom&starting-point-node-id=14%3A359", className: "button__secondary button--fit-content" } ],
     ],
-    { className: "grid-desktop-7-12 align-vertical-center" },
+    { className: "grid-mobile-1-4 grid-desktop-7-12 align-vertical-center" },
   ],
-  ["@Container", ["<br>"], { className: "grid-desktop-1-12" }],
+  ["@Container", ["<br>"], { className: "grid-mobile-1-4 grid-desktop-1-12" }],
 ];
