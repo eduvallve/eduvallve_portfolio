@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/eduvallve_portfolio/static/js/main.832f2f9d.js",
+    "main.js": "/eduvallve_portfolio/static/js/main.20c484bf.js",
     "static/js/453.51e48114.chunk.js": "/eduvallve_portfolio/static/js/453.51e48114.chunk.js",
     "static/media/museuPicassoBcn_mockup_02.webp": "/eduvallve_portfolio/static/media/museuPicassoBcn_mockup_02.55f5052d717a20a5c0b1.webp",
     "static/media/myDictionary-v1-rectangle.webp": "/eduvallve_portfolio/static/media/myDictionary-v1-rectangle.b16da610658629bf9304.webp",
@@ -17,10 +17,10 @@
     "index.html": "/eduvallve_portfolio/index.html",
     "static/media/evp-logo-white.svg": "/eduvallve_portfolio/static/media/evp-logo-white.6c350dcb046dce8d216199fc7082140c.svg",
     "static/media/graduated-icon.svg": "/eduvallve_portfolio/static/media/graduated-icon.ae9d20ba42de2a501f5385cbcc49d93b.svg",
-    "main.832f2f9d.js.map": "/eduvallve_portfolio/static/js/main.832f2f9d.js.map",
+    "main.20c484bf.js.map": "/eduvallve_portfolio/static/js/main.20c484bf.js.map",
     "453.51e48114.chunk.js.map": "/eduvallve_portfolio/static/js/453.51e48114.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.832f2f9d.js"
+    "static/js/main.20c484bf.js"
   ]
 }
