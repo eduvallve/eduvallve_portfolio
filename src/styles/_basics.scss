@@ -1,4 +1,5 @@
 @use './colorPalette' as *;
+@use './mixins' as *;
 
 // Mobile & tablet
 :root {
@@ -56,45 +57,32 @@ body {
 }
 
 .grid {
+    @media screen and (max-width: 991px) {
+        &-mobile {
+            display: grid;
+            gap: 16px;
+
+            &-2-cols {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            @include grid-positioning(1, 4);
+        }
+    }
+
     @media screen and (min-width: 992px) {
         &-desktop {
             display: grid;
             gap: 16px;
 
-            &-6-cols {
-                grid-template-columns: repeat(6, minmax(0, 1fr));
-            }
-
-            &-12-cols {
-                grid-template-columns: repeat(12, minmax(0, 1fr));
-            }
-
-            /**
-            We create the grid classes to allocate content within the 12 column grid in desktop
-            */
-            @for $i from 1 through 12 {
-                @for $j from 1 through 12 {
-                    &-#{$i}-#{$j} {
-                        grid-column: #{$i} / #{$j + 1};
-                    }
+            @for $cols from 2 through 12 {
+                &-#{$cols}-cols {
+                    grid-template-columns: repeat($cols, minmax(0, 1fr));
                 }
             }
+
+            @include grid-positioning();
         }
-    }
-}
-
-@mixin ctaHover() {
-    outline: 2px solid;
-    outline-color: transparent;
-    outline-offset: 0;
-    transition: all .05s ease-in-out;
-    cursor: pointer;
-
-    &:hover,
-    &:focus,
-    &:active {
-        outline-color: var(--icon-color);
-        outline-offset: 3px;
     }
 }
 

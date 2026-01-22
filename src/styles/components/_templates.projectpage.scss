@@ -2,17 +2,10 @@
 
 .project {
     &-page {
-        color: white;
+        color: $white;
         width: var(--content-size);
         max-width: calc(100vw - 32px);
         margin: auto;
-
-        &__related-projects {
-            width: var(--content-size);
-            margin-inline: calc(-1 * (100vw - var(--content-size)) / 2);
-            background-color: $dark-blue;
-            padding: 24px calc((100vw - var(--content-size)) / 2) 48px;
-        }
     }
 
     &__main-image {
@@ -24,7 +17,10 @@
 
         @media screen and (min-width: 1024px) {
             object-fit: cover;
-            background-color: #151d3c;
+
+            &--bg-blue {
+                background-color: $dark-blue;
+            }
         }
 
         &-logo {
@@ -37,37 +33,5 @@
 
     &__image {
         max-width: 100%;
-    }
-
-    &__tablet-styled {
-        position: relative;
-        transform: rotate(-1deg);
-        transition: transform 0.3s ease-in-out;
-
-        &:hover {
-            transform: rotate(0deg);
-        }
-
-        &::after {
-            content: "";
-            outline: 1px solid $light-grey;
-            outline-offset: 24px;
-            width: calc(100% - 48px);
-            height: calc(100% - 180px);
-            position: absolute;
-            top: 88px;
-            left: 24px;
-            border-radius: 8px;
-            z-index: -1;
-        }
-
-        iframe {
-            width: 1440px;
-            height: 900px;
-            border: none;
-            transform: scale(0.8) translateX(30px);
-            transform-origin: left center;
-            max-width: calc(125% - 60px);
-        }
     }
 }

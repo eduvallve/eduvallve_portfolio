@@ -45,7 +45,7 @@ export const museuPicassoBcn = [
         {
           src: ProjectLogo,
           alt: "Image 1",
-          className: "project__main-image project__main-image-logo",
+          className: "project__main-image project__main-image--bg-blue project__main-image-logo",
         },
       ],
     ],

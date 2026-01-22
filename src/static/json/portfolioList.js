@@ -58,6 +58,7 @@ export const projects = [
     description: "Website about a postal card exhibition",
     thumbnail: "#",
     timestamp: 1525946400,
+    tags: ['design', 'branding', 'react'],
   },
   {
     slug: 7,
@@ -65,6 +66,7 @@ export const projects = [
     description: "To be defined",
     thumbnail: "#",
     timestamp: 1525946400,
+    tags: ['design', 'branding'],
   },
   {
     slug: 8,
@@ -73,6 +75,7 @@ export const projects = [
       "Collection of my experiments with Blender for 3D modeling and animation",
     thumbnail: "#",
     timestamp: 1525946400,
+    tags: ['3d', 'blender', 'animation'],
   },
   {
     slug: 9,

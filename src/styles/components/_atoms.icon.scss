@@ -1,13 +1,16 @@
-@use '../colorPalette' as *;
 @use '../basics' as *;
+@use '../colorPalette' as *;
+@use '../mixins' as *;
 
 .icon {
     --icon-color: #{$white};
+
+    @include ctaHover();
+    
     display: block;
     width: 40px;
     aspect-ratio: 1;
     border-radius: 3px;
-    @include ctaHover();
 
     &:after {
         content: '';

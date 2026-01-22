@@ -1,7 +1,10 @@
-@use '../colorPalette' as *;
 @use '../basics' as *;
+@use '../colorPalette' as *;
+@use '../mixins' as *;
 
 .button {
+    @include ctaHover();
+
     padding: 6px 12px;
     height: fit-content;
     font-size: 14px;
@@ -13,11 +16,9 @@
         border: 1px solid $pale-green;
         background: transparent;
         color: $pale-green;
-    }
+    }    
 
     &--fit-content {
         width: fit-content;
-    }
-
-    @include ctaHover();
+    }        
 }

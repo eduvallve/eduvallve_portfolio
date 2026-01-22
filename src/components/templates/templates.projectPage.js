@@ -148,11 +148,6 @@ const ComponentSelector = ({ comp, children, data, className, ...props }) => {
         // Check if item is a sub-component array like ["@TextBlock", content, props]
         if (isComponentArray(item)) {
           const [subCompType, subContent, subProps = {}] = item;
-          console.log("Found sub-component:", {
-            subCompType,
-            subContent,
-            subProps,
-          });
           return (
             <ComponentSelector key={index} comp={subCompType} {...subProps}>
               {renderContent(subContent)}
@@ -162,7 +157,6 @@ const ComponentSelector = ({ comp, children, data, className, ...props }) => {
 
         // Check if item is just a component identifier string
         if (isComponent(item)) {
-          console.log("Found component identifier:", item);
           return <ComponentSelector key={index} comp={item} />;
         }
 
@@ -238,17 +232,6 @@ const ComponentSelector = ({ comp, children, data, className, ...props }) => {
   };
 
   const Component = componentMap[componentName];
-
-  console.log("ComponentSelector:", {
-    comp,
-    componentName,
-    Component,
-    children,
-    data,
-    hasSubComponents:
-      Array.isArray(children) &&
-      children.some((child) => isComponentArray(child) || isComponent(child)),
-  });
 
   if (!Component) {
     console.warn(`Component "${componentName}" not found in componentMap`);
