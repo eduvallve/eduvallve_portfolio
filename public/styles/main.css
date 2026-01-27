@@ -676,6 +676,9 @@ h2 {
 .text-italic {
   font-style: italic;
 }
+.text--aligned-centered {
+  text-align: center;
+}
 
 .link-block {
   color: #83c2c1;
@@ -757,10 +760,16 @@ h2 {
 .button {
   padding: 6px 12px;
   height: fit-content;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 4px;
   font-family: "figtree";
   text-decoration: none;
+}
+.button__primary {
+  border: none;
+  background: #83c2c1;
+  color: #151d3c;
+  font-weight: 500;
 }
 .button__secondary {
   border: 1px solid #83c2c1;
@@ -769,6 +778,10 @@ h2 {
 }
 .button--fit-content {
   width: fit-content;
+}
+.button--centered {
+  display: block;
+  margin-inline: auto;
 }
 
 .icon {
@@ -810,10 +823,6 @@ h2 {
 .image--size-small {
   width: 150px;
 }
-.image--aligned-centered {
-  display: block;
-  margin-inline: auto;
-}
 .image__svg {
   margin-inline: initial;
 }
@@ -838,6 +847,10 @@ h2 {
 .image__svg svg {
   fill: inherit;
   transform: rotate(var(--rotation-angle, 0deg));
+}
+.image--aligned-centered {
+  display: block;
+  margin-inline: auto;
 }
 
 .marquee {

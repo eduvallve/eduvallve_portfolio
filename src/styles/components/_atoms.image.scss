@@ -12,13 +12,6 @@
         }
     }
 
-    &--aligned {
-        &-centered {
-            display: block;
-            margin-inline: auto;
-        }
-    }
-
     &__svg {
         margin-inline: initial;
         
@@ -44,6 +37,13 @@
         svg {
             fill: inherit;
             transform: rotate(var(--rotation-angle, 0deg));
+        }
+    }
+
+    &--aligned {
+        &-centered {
+            display: block;
+            margin-inline: auto;
         }
     }
 }

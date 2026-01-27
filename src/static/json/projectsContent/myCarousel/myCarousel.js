@@ -91,5 +91,16 @@ export const myCarousel = [
       className: "grid-mobile-1-4 grid-desktop-7-12",
     },
   ],
+  ["@Container", [
+    "<br>",
+    ["@ImageBlock", "", { src: HandDrawnArrowBrokenLine, alt: "Pointing arrow to github repo link in desktop.", className: "image--aligned-centered", style: { width: "60px", height: "auto", fill: "#83c2c1", "--rotation-angle": "192deg" } }],
+    ["@HeaderBlock", "Ready to use!", { label: "h2" }],
+    ["@TextBlock", "Try the plugin and enhance your WordPress site with beautiful, responsive carousels!", { className: "text--aligned-centered text-highlighted" }],
+    ["@Button", "Download the .ZIP plugin", { type: "link", url: "#", className: "button__primary button--fit-content button--centered" } ],
+    ["@Button", "View source code on GitHub", { type: "link", url: "https://github.com/eduvallve/my-carousel", className: "button__secondary button--fit-content button--centered", target: "_blank", rel: "noopener noreferrer" } ],
+    "<br>",
+  ],
+  { className: "grid-mobile-1-4 grid-desktop-1-12 align-vertical-center text--aligned-centered" }
+  ],
   ["@Container", [""], { className: "grid-mobile-1-4 grid-desktop-1-12" }],
 ];

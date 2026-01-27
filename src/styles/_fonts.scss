@@ -28,6 +28,10 @@ h2 {
     &-italic {
         font-style: italic;
     }
+
+    &--aligned-centered {
+        text-align: center;
+    }
 }
 
 .link-block {
