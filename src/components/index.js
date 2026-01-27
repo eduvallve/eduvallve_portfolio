@@ -8,7 +8,6 @@ export { default as Marquee } from './atoms/atoms.marquee.js';
 export { default as Separator } from './atoms/atoms.separator.js';
 export { default as Slide } from './atoms/atoms.slide.js';
 export { default as Stars } from './atoms/atoms.stars.js';
-export { default as TextBlock } from './atoms/atoms.textBlock.js';
 export { default as TextLinkWithIcon } from './atoms/atoms.textLinkWithIcon.js';
 
 // Molecules

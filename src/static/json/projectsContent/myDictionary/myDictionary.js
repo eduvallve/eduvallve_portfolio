@@ -15,12 +15,12 @@ const MyDictionaryContent = () => {
       <Container className="grid-mobile-1-3 grid-desktop-1-9 align-vertical-center">
         <h1>My Dictionary</h1>
         A fast, user-friendly WordPress plugin for effortless multilingual content management. Focused on performance and usability. Project in continuous development.
-        <TextBlock className="text-highlighted text-small">
+        <p className="text-highlighted text-small">
           Stack: WordPress, PHP, JavaScript
-        </TextBlock>
-        <TextBlock className="text-highlighted text-small">
-          {renderHTMLContent("Developed in <b>2025</b>")}
-        </TextBlock>
+        </p>
+        <p className="text-highlighted text-small">
+          Developed in <b>2025</b>
+        </p>
       </Container>
 
       <Image
@@ -33,7 +33,7 @@ const MyDictionaryContent = () => {
 
       <Container className="grid-mobile-1-2 grid-desktop-1-3">
         <h2 className="text-highlighted">Purpose</h2>
-        {renderHTMLContent("<b>User-friendly WordPress plugin</b> for <b>multilingual content</b>")}
+        <b>User-friendly WordPress plugin</b> for <b>multilingual content</b>
         <Image
           src={AppIcon}
           alt="My Carousel purpose"
@@ -81,9 +81,9 @@ const MyDictionaryContent = () => {
             alt="Slide 1 mockup"
             className="image--boxed image--size-medium image--aligned-centered"
           />
-          <TextBlock className="text-small">
+          <p className="text-small">
             A short intro slide demonstrating layout and basic content.
-          </TextBlock>
+          </p>
         </Slide>
 
         <Slide className="carousel__slide carousel__slide--2">
@@ -93,9 +93,9 @@ const MyDictionaryContent = () => {
             alt="Slide 2 mockup"
             className="image--boxed image--size-medium image--aligned-centered"
           />
-          <TextBlock className="text-small">
+          <p className="text-small">
             Highlights: responsive behavior, touch support, and smooth transitions.
-          </TextBlock>
+          </p>
         </Slide>
 
         <Slide className="carousel__slide carousel__slide--3">
@@ -105,9 +105,9 @@ const MyDictionaryContent = () => {
             alt="Slide 3 mockup"
             className="image--boxed image--size-medium image--aligned-centered"
           />
-          <TextBlock className="text-small">
+          <p className="text-small">
             Final slide with a mock CTA and brief summary.
-          </TextBlock>
+          </p>
         </Slide>
       </Carousel>
 

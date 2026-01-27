@@ -15,14 +15,14 @@ const MuseuPicassoBcnContent = () => {
 
       <Container className="grid-mobile-1-3 grid-desktop-1-9 align-vertical-center">
         <h1>Museu Picasso de Barcelona</h1>
-        {renderHTMLContent("<b>Fictional redesign</b> of the website for the Picasso Museum in Barcelona")}
+        <b>Fictional redesign</b> of the website for the Picasso Museum in Barcelona
         Full website redesign based on UI/UX techniques learnt during the Master's Degree in Interaction Design and User Experience (UX), UOC.
-        <TextBlock className="text-highlighted text-small">
+        <p className="text-highlighted text-small">
           Stack: FIGMA
-        </TextBlock>
-        <TextBlock className="text-highlighted text-small">
+        </p>
+        <p className="text-highlighted text-small">
           Academical project developed in 2022.
-        </TextBlock>
+        </p>
       </Container>
 
       <Container className="grid-mobile-4-4 grid-desktop-10-12">
