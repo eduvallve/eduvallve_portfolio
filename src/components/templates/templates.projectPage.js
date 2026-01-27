@@ -1,7 +1,9 @@
+import React from 'react';
 import { useParams, Link } from "react-router-dom";
 import { projects } from "../../static/json/portfolioList.js";
 import Button from "../atoms/button.js";
 import RelatedProjects from "../organisms/organisms.relatedProjects.js";
+import Carousel from "../molecules/molecules.carousel.js";
 
 /**
  * This ProjectPage shows everything that is inside of a project single page
@@ -135,6 +137,14 @@ const Hero = ({ children, className = "", ...props }) => {
   );
 };
 
+const Slide = ({ children, className = "", ...props }) => {
+  return (
+    <div className={`carousel__slide ${className}`.trim()} {...props}>
+      {renderHTMLContent(children)}
+    </div>
+  );
+};
+
 const ComponentSelector = ({ comp, children, data, className, ...props }) => {
   // Extract component name after '@' symbol
   const componentName = comp?.split("@")[1]?.toLowerCase();
@@ -148,6 +158,8 @@ const ComponentSelector = ({ comp, children, data, className, ...props }) => {
     linkblock: LinkBlock,
     imageblock: ImageBlock,
     image: ImageBlock,
+    carousel: Carousel,
+    slide: Slide,
     hero: Hero,
     iframeblock: IframeBlock,
     iframe: IframeBlock,
@@ -168,9 +180,13 @@ const ComponentSelector = ({ comp, children, data, className, ...props }) => {
   const renderContent = (content) => {
     if (!content) return null;
 
+    // If it's already a React element, return it unchanged to avoid re-processing
+    if (React.isValidElement(content)) return content;
+
     // If content is an array, process each item
     if (Array.isArray(content)) {
       return content.map((item, index) => {
+        if (React.isValidElement(item)) return item;
         // Check if item is a sub-component array like ["@TextBlock", content, props]
         if (isComponentArray(item)) {
           const [subCompType, subContent, subProps = {}] = item;
@@ -188,6 +204,9 @@ const ComponentSelector = ({ comp, children, data, className, ...props }) => {
 
         // Check if item is an object that might contain sub-components
         if (typeof item === "object" && item !== null) {
+          // If it's a React element-like object, return as-is
+          if (React.isValidElement(item)) return item;
+
           return (
             <div key={index} className="content-object">
               {Object.entries(item).map(([key, value], objIndex) => {
