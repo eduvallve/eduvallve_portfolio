@@ -1,8 +1,8 @@
-import { museuPicassoBcn } from "./projectsContent/museuPicassoBcn/museuPicassoBcn";
+import MuseuPicassoBcnContent from "./projectsContent/museuPicassoBcn/museuPicassoBcn";
 import PicassoThumbnail from "../json/projectsContent/museuPicassoBcn/museuPicassoBcn_mockup_02.webp";
-import { myDictionary } from "./projectsContent/myDictionary/myDictionary";
+import MyDictionaryContent from "./projectsContent/myDictionary/myDictionary";
 import MyDictionaryThumbnail from "../json/projectsContent/myDictionary/myDictionary-v1-rectangle.webp";
-import { myCarousel } from "./projectsContent/myCarousel/myCarousel";
+import MyCarouselContent from "./projectsContent/myCarousel/myCarousel";
 import MyCarouselThumbnail from "../json/projectsContent/myCarousel/myCarousel-v1-rectangle.webp";
 // import { caLesTaronges } from "./projectsContent/caLesTaronges/caLesTaronges";
 // import { magiPomesAlRif } from "./projectsContent/magiPomesAlRif/magiPomesAlRif";
@@ -24,7 +24,7 @@ export const projects = [
     description: "Fictional redesign of the website for the Picasso Museum in Barcelona",
     thumbnail: PicassoThumbnail,
     timestamp: 1525946400,
-    content: museuPicassoBcn,
+    content: MuseuPicassoBcnContent,
     tags: ['design', 'figma', 'uiux', 'javascript'],
   },
   {
@@ -33,7 +33,7 @@ export const projects = [
     description: "Wordpress plugin for multilingual sites",
     thumbnail: MyDictionaryThumbnail,
     timestamp: 1525946400,
-    content: myDictionary,
+    content: MyDictionaryContent,
     tags: ['wordpress', 'plugin', 'php', 'javascript'],
   },
   {
@@ -42,7 +42,7 @@ export const projects = [
     description: "Wordpress plugin for image galleries and carousels",
     thumbnail: MyCarouselThumbnail,
     timestamp: 1759320000,
-    content: myCarousel,
+    content: MyCarouselContent,
     tags: ['wordpress', 'plugin', 'php', 'javascript'],
   },
   {

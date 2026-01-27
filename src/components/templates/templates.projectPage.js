@@ -26,7 +26,10 @@ const ProjectPage = () => {
           <p>No content available for this project yet.</p>
         </section>
       )}
-      {currentProject?.content?.map((section, index) => {
+      {currentProject?.content && typeof currentProject.content === 'function' && (
+        <currentProject.content />
+      )}
+      {currentProject?.content && Array.isArray(currentProject.content) && currentProject.content.map((section, index) => {
         const [componentType, containerContent, sectionProps = {}] = section;
 
         return (

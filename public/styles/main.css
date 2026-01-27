@@ -859,6 +859,11 @@ h2 {
   width: fit-content;
 }
 
+.separator {
+  grid-column: 1/-1;
+  color: transparent;
+}
+
 .text-link-with-icon {
   display: flex;
   gap: 16px;
