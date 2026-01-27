@@ -1,7 +1,7 @@
 // Content for the My Dictionary project page
 
 import { Link } from 'react-router-dom';
-import { Container, TextBlock, ImageBlock, Carousel, Slide, Separator } from '../../../../components';
+import { Container, TextBlock, Image, Carousel, Slide, Separator } from '../../../../components';
 import renderHTMLContent from '../../../../utils/renderHTMLContent.js';
 import AppIcon from "./myDictionary-v1-square.webp";
 
@@ -23,7 +23,7 @@ const MyDictionaryContent = () => {
         </TextBlock>
       </Container>
 
-      <ImageBlock
+      <Image
         src={AppIcon}
         alt="Logo of My Dictionary WordPress plugin"
         className="project__main-image project__main-image-logo grid-mobile-4-4 grid-desktop-10-12"
@@ -34,7 +34,7 @@ const MyDictionaryContent = () => {
       <Container className="grid-mobile-1-2 grid-desktop-1-3">
         <h2 className="text-highlighted">Purpose</h2>
         {renderHTMLContent("<b>User-friendly WordPress plugin</b> for <b>multilingual content</b>")}
-        <ImageBlock
+        <Image
           src={AppIcon}
           alt="My Carousel purpose"
           className="image--boxed image--size-small image--aligned-centered"
@@ -42,7 +42,7 @@ const MyDictionaryContent = () => {
       </Container>
 
       <Container className="grid-mobile-3-4 grid-desktop-4-6">
-        <ImageBlock
+        <Image
           src={AppIcon}
           alt="My Carousel role"
           className="image--boxed image--size-small image--aligned-centered"
@@ -54,7 +54,7 @@ const MyDictionaryContent = () => {
       <Container className="grid-mobile-1-2 grid-desktop-7-9">
         <h2 className="text-highlighted">Challenges</h2>
         {renderHTMLContent("<b>Wordpress hooks</b>, database structure, <b>SEO</b> optimization")}
-        <ImageBlock
+        <Image
           src={AppIcon}
           alt="My Carousel role"
           className="image--boxed image--size-small image--aligned-centered"
@@ -62,7 +62,7 @@ const MyDictionaryContent = () => {
       </Container>
 
       <Container className="grid-mobile-3-4 grid-desktop-10-12">
-        <ImageBlock
+        <Image
           src={AppIcon}
           alt="My Carousel role"
           className="image--boxed image--size-small image--aligned-centered"
@@ -76,7 +76,7 @@ const MyDictionaryContent = () => {
       <Carousel className="grid-mobile-1-4 grid-desktop-1-6">
         <Slide className="carousel__slide carousel__slide--1">
           <h3>Slide 1 — Intro</h3>
-          <ImageBlock
+          <Image
             src="https://picsum.photos/900/600?random=2"
             alt="Slide 1 mockup"
             className="image--boxed image--size-medium image--aligned-centered"
@@ -88,7 +88,7 @@ const MyDictionaryContent = () => {
 
         <Slide className="carousel__slide carousel__slide--2">
           <h3>Slide 2 — Features</h3>
-          <ImageBlock
+          <Image
             src="https://picsum.photos/900/600?random=2"
             alt="Slide 2 mockup"
             className="image--boxed image--size-medium image--aligned-centered"
@@ -100,7 +100,7 @@ const MyDictionaryContent = () => {
 
         <Slide className="carousel__slide carousel__slide--3">
           <h3>Slide 3 — Call to Action</h3>
-          <ImageBlock
+          <Image
             src="https://picsum.photos/900/600?random=2"
             alt="Slide 3 mockup"
             className="image--boxed image--size-medium image--aligned-centered"

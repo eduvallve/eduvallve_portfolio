@@ -1,7 +1,7 @@
 // Content for the Museu Picasso de Barcelona project page
 
 import { Link } from 'react-router-dom';
-import { Container, TextBlock, ImageBlock, Button, Separator } from '../../../../components';
+import { Container, TextBlock, Image, Button, Separator } from '../../../../components';
 import renderHTMLContent from '../../../../utils/renderHTMLContent.js';
 import ProjectLogo from "./Logo-Picasso-black.svg";
 import Mockup02 from "./museuPicassoBcn_mockup_02.webp";
@@ -26,7 +26,7 @@ const MuseuPicassoBcnContent = () => {
       </Container>
 
       <Container className="grid-mobile-4-4 grid-desktop-10-12">
-        <ImageBlock
+        <Image
           src={ProjectLogo}
           alt="Logo of Museu Picasso de Barcelona"
           className="project__main-image project__main-image--bg-blue project__main-image-logo"
@@ -35,7 +35,7 @@ const MuseuPicassoBcnContent = () => {
 
       <Separator />
 
-      <ImageBlock
+      <Image
         src={Mockup02}
         alt="Mockup of the Museu Picasso de Barcelona website redesign"
         className="project__image grid-mobile-1-4 grid-desktop-1-6"

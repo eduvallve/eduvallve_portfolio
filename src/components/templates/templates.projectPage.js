@@ -1,8 +1,6 @@
-import React from 'react';
 import { useParams } from "react-router-dom";
 import { projects } from "../../static/json/portfolioList.js";
 import RelatedProjects from "../organisms/organisms.relatedProjects.js";
-import ComponentSelector from "../molecules/molecules.componentSelector.js";
 
 /**
  * This ProjectPage shows everything that is inside of a project single page
@@ -29,15 +27,6 @@ const ProjectPage = () => {
       {currentProject?.content && typeof currentProject.content === 'function' && (
         <currentProject.content />
       )}
-      {currentProject?.content && Array.isArray(currentProject.content) && currentProject.content.map((section, index) => {
-        const [componentType, containerContent, sectionProps = {}] = section;
-
-        return (
-          <ComponentSelector key={index} comp={componentType} {...sectionProps}>
-            {containerContent}
-          </ComponentSelector>
-        );
-      })}
       {currentProject ? (
         <RelatedProjects
           slug={currentProject.slug}

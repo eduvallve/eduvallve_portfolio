@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const ImageBlock = ({ className = '', src, alt = '', label = '', ...props }) => {
+const Image = ({ className = '', src, alt = '', label = '', ...props }) => {
   const [svgContent, setSvgContent] = useState(null);
   const isSvg = src && src.includes('.svg');
 
@@ -29,4 +29,4 @@ const ImageBlock = ({ className = '', src, alt = '', label = '', ...props }) => 
   );
 };
 
-export default ImageBlock;
+export default Image;

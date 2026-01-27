@@ -1,7 +1,7 @@
 // Content for the My Carousel project page
 
 import { Link } from 'react-router-dom';
-import { Container, TextBlock, ImageBlock, Carousel, Button, Separator } from '../../../../components';
+import { Container, TextBlock, Image, Carousel, Button, Separator } from '../../../../components';
 import renderHTMLContent from '../../../../utils/renderHTMLContent.js';
 import AppIcon from "./myCarousel-v1-square.webp";
 import HandDrawnArrowBrokenLine from "../../../images/arrow-handdrawn-broken-line.svg";
@@ -26,7 +26,7 @@ const MyCarouselContent = () => {
       </Container>
 
       <Container className="grid-mobile-4-4 grid-desktop-10-12">
-        <ImageBlock
+        <Image
           src={AppIcon}
           alt="Logo of My Carousel WordPress plugin"
           className="project__main-image project__main-image-logo"
@@ -58,7 +58,7 @@ const MyCarouselContent = () => {
       <Separator />
 
       <Container className="grid-mobile-1-4 grid-desktop-1-12">
-        <ImageBlock
+        <Image
           src={HandDrawnArrowBrokenLine}
           alt="Pointing arrow to demo carousel"
           label="This is a live demo of one SwiperJS carousel in action."
@@ -73,7 +73,7 @@ const MyCarouselContent = () => {
         <h2>Functional result</h2>
         The carousel plugin offers a seamless way to showcase images and content with customizable options for transitions, navigation, and responsiveness:
         {renderHTMLContent("<ol><li><b>Smooth slide transitions</b> and <b>touch/swipe support for mobile devices</b>.</li><li><b>Customizable navigation</b> and <b>pagination</b>.</li><li><b>Responsive design adapting to various screen sizes</b>.</li><li><b>Easy integration with WordPress via shortcode</b>.</li></ol>")}
-        <ImageBlock
+        <Image
           src={HandDrawnArrowBrokenLine}
           alt="Pointing arrow to demo carousel"
           label="This is a live demo of one SwiperJS carousel in action."
@@ -90,14 +90,14 @@ const MyCarouselContent = () => {
         {renderHTMLContent("<ol><li><b>Intuitive UI</b> for creating and managing carousels.</li><li>Minimal field requirements.</li><li>Full CSS customization.</li></ol>")}
       </Container>
 
-      <ImageBlock
+      <Image
         src="https://picsum.photos/900/600?random=2"
         alt="Random image representing the back-office of My Carousel plugin"
         className="grid-mobile-1-4 grid-desktop-7-12"
       />
 
       <Container className="grid-mobile-1-4 grid-desktop-1-12 align-vertical-center text--aligned-centered">
-        <ImageBlock
+        <Image
           src={HandDrawnArrowBrokenLine}
           alt="Pointing arrow to github repo link in desktop."
           className="image--aligned-centered"
