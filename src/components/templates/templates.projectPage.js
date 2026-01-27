@@ -19,7 +19,7 @@ const ProjectPage = () => {
   );
 
   return (
-    <main className="project-page grid-mobile grid-mobile-4-cols grid-desktop grid-desktop-12-cols">
+    <main className="project-page grid-mobile grid-mobile-4-cols grid-desktop grid-desktop-12-cols" role='main' aria-labelledby='project-title'>
       {currentProject && !currentProject.content && (
         <section className="grid-mobile-1-4 grid-desktop-1-12 container--no-content">
           <h2>Project: {currentProject.title}</h2>

@@ -1,5 +1,5 @@
 function Button({ children, className, type, url }) {
-  if (type === "link") {
+  if (type === "external-link") {
     return (
       <a
         className={`button ${className}`}

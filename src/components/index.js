@@ -1,7 +1,6 @@
 // Atoms
 export { default as Button } from './atoms/atoms.button.js';
 export { default as Container } from './atoms/atoms.container.js';
-export { default as HeaderBlock } from './atoms/atoms.headerBlock.js';
 export { default as Hero } from './atoms/atoms.hero.js';
 export { default as IframeBlock } from './atoms/atoms.iframeBlock.js';
 export { default as ImageBlock } from './atoms/atoms.imageBlock.js';
