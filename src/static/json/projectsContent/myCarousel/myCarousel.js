@@ -54,8 +54,8 @@ export const myCarousel = [
     "<b>User-friendly WordPress plugin</b> for <b>responsive carousels</b>",
   ], { className: "grid-mobile-1-2 grid-desktop-1-3" }],
   ["@Container", [
-    ["@HeaderBlock", "👨🏻‍💻 My role", { label: "h2", className: "text-highlighted" }],
-    "Architecture, <b>SwiperJS integration</b>, and <b>performance checks</b>",
+    ["@HeaderBlock", "👨🏻‍💻 My role: full-stack", { label: "h2", className: "text-highlighted" }],
+    "Back-end architecture, Front-end development & QA testing</b>",
   ], { className: "grid-mobile-3-4 grid-desktop-4-6" }],
   ["@Container", [
     ["@HeaderBlock", "💪🏼 Challenges", { label: "h2", className: "text-highlighted" }],
@@ -67,14 +67,14 @@ export const myCarousel = [
   ], { className: "grid-mobile-3-4 grid-desktop-10-12" }],
   ["@Container", [
     "",
-    ["@ImageBlock", "", { src: HandDrawnArrowBrokenLine, alt: "Pointing arrow to demo carousel", label: "This is a live demo of one SwiperJS carousel in action.", className: "image__svg--show-alt hidden--desktop", style: { width: "60px", height: "auto", fill: "#83c2c1", color: "#83c2c1", "--rotation-angle": "155deg" } }],
+    ["@ImageBlock", "", { src: HandDrawnArrowBrokenLine, alt: "Pointing arrow to demo carousel", label: "This is a live demo of one SwiperJS carousel in action.", className: "image__svg--show-alt hidden--desktop text-small", style: { width: "60px", height: "auto", fill: "#83c2c1", color: "#83c2c1", "--rotation-angle": "155deg" } }],
   ], { className: "grid-mobile-1-4 grid-desktop-1-12" }],
   ["@Carousel", [], { className: "grid-mobile-1-4 grid-desktop-1-6 carousel--default" }],
   ["@Container", [
     ["@HeaderBlock", "Functional result", { label: "h2" }],
     "The carousel plugin offers a seamless way to showcase images and content with customizable options for transitions, navigation, and responsiveness:",
     "<ol><li><b>Smooth slide transitions</b> and <b>touch/swipe support for mobile devices</b>.</li><li><b>Customizable navigation</b> and <b>pagination</b>.</li><li><b>Responsive design adapting to various screen sizes</b>.</li><li><b>Easy integration with WordPress via shortcode</b>.</li></ol>",
-    ["@ImageBlock", "", { src: HandDrawnArrowBrokenLine, alt: "Pointing arrow to demo carousel", label: "This is a live demo of one SwiperJS carousel in action.", className: "image__svg--show-alt hidden--mobile", style: { width: "60px", height: "auto", fill: "#83c2c1", color: "#83c2c1", "--rotation-angle": "-45deg" } }],
+    ["@ImageBlock", "", { src: HandDrawnArrowBrokenLine, alt: "Pointing arrow to demo carousel", label: "This is a live demo of one SwiperJS carousel in action.", className: "image__svg--show-alt hidden--mobile text-small", style: { width: "60px", height: "auto", fill: "#83c2c1", color: "#83c2c1", "--rotation-angle": "-45deg" } }],
   ], { className: "grid-mobile-1-4 grid-desktop-7-12 align-vertical-center" }],
   ["@Container", [""], { className: "grid-mobile-1-4 grid-desktop-1-12" }],
   ["@Container", [
