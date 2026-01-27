@@ -105,6 +105,8 @@ const MyCarouselContent = () => {
         className="grid-mobile-1-4 grid-desktop-7-12"
       />
 
+      <Separator />
+
       <Container className="grid-mobile-1-4 grid-desktop-1-12 align-vertical-center text--aligned-centered">
         <Image
           src={HandDrawnArrowBrokenLine}
