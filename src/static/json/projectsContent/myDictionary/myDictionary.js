@@ -71,4 +71,38 @@ export const myDictionary = [
     "Project in development. Updates will be provided soon.",
   ], { className: "grid-mobile-3-4 grid-desktop-10-12" }],
   ["@Container", ["<br>"], { className: "grid-mobile-1-4 grid-desktop-1-12" }],
+  [
+    "@Carousel",
+    [
+      [
+        "@Slide",
+        [
+          ["@HeaderBlock", "Slide 1 — Intro", { label: "h3" }],
+          ["@ImageBlock", "", { src: "https://picsum.photos/900/600?random=2", alt: "Slide 1 mockup", className: "image--boxed image--size-medium image--aligned-centered" }],
+          ["@TextBlock", "A short intro slide demonstrating layout and basic content.", { className: "text-small" }]
+        ],
+        { className: "carousel__slide carousel__slide--1" }
+      ],
+      [
+        "@Slide",
+        [
+          ["@HeaderBlock", "Slide 2 — Features", { label: "h3" }],
+          ["@ImageBlock", "", { src: "https://picsum.photos/900/600?random=2", alt: "Slide 2 mockup", className: "image--boxed image--size-medium image--aligned-centered" }],
+          ["@TextBlock", "Highlights: responsive behavior, touch support, and smooth transitions.", { className: "text-small" }]
+        ],
+        { className: "carousel__slide carousel__slide--2" }
+      ],
+      [
+        "@Slide",
+        [
+          ["@HeaderBlock", "Slide 3 — Call to Action", { label: "h3" }],
+          ["@ImageBlock", "", { src: "https://picsum.photos/900/600?random=2", alt: "Slide 3 mockup", className: "image--boxed image--size-medium image--aligned-centered" }],
+          ["@TextBlock", "Final slide with a mock CTA and brief summary.", { className: "text-small" }]
+        ],
+        { className: "carousel__slide carousel__slide--3" }
+      ]
+    ],
+    { className: "grid-mobile-1-4 grid-desktop-1-6" }
+  ],
+  ["@Container", ["<br>"], { className: "grid-mobile-1-4 grid-desktop-1-12" }],
 ];

@@ -1,14 +1,8 @@
-// Content for the My Dictionary project page
 
 import AppIcon from "./myCarousel-v1-square.webp";
-import PurposeImage from "./myCarousel-purpose-square.svg";
-import RoleImage from "./myCarousel-role-square.svg";
-import ChallengesImage from "./myCarousel-challenges-square.svg";
-import ResultsImage from "./myCarousel-results-square.svg";
-// import Mockup02 from "../museuPicassoBcn/museuPicassoBcn_mockup_02.webp";
+import HandDrawnArrowBrokenLine from "../../../images/arrow-handdrawn-broken-line.svg";
 
 export const myCarousel = [
-  // Format: ['@ComponentName', 'Content', { props }]
   [
     "@Container",
     [
@@ -24,8 +18,8 @@ export const myCarousel = [
     "@Container",
     [
       ["@HeaderBlock", "My Carousel", { label: "h1" }],
-      "A <b>WordPress carousel plugin</b> built with <b>SwiperJS</b> for creating <b>responsive, customizable sliders</b> with smooth animations and touch interactions.",
-      "Status: <b>Under development</b>",
+      "A <b>WordPress carousel plugin</b> built with <b>SwiperJS</b> for creating <b>responsive, mobile-friendly, and customizable sliders</b> with <b>fast performance</b>, smooth animations, and <b>touch interactions</b>.",
+      "Status: Under development",
       [
         "@TextBlock",
         "Stack: <b>WordPress, PHP, JavaScript, SwiperJS</b>",
@@ -54,60 +48,48 @@ export const myCarousel = [
     ],
     { className: "grid-mobile-4-4 grid-desktop-10-12" },
   ],
-  ["@Container", ["<br>"], { className: "grid-mobile-1-4 grid-desktop-1-12" }],
+  ["@Container", [""], { className: "grid-mobile-1-4 grid-desktop-1-12" }],
   ["@Container", [
-    ["@HeaderBlock", "Purpose", { label: "h2" }],
+    ["@HeaderBlock", "💡 Purpose", { label: "h2", className: "text-highlighted" }],
     "<b>User-friendly WordPress plugin</b> for <b>responsive carousels</b>",
-    ["@ImageBlock", "", { src: PurposeImage, alt: "My Carousel purpose", className: "image--boxed image--size-small image--aligned-centered" }],
   ], { className: "grid-mobile-1-2 grid-desktop-1-3" }],
   ["@Container", [
-    ["@ImageBlock", "", { src: RoleImage, alt: "My Carousel role", className: "image--boxed image--size-small image--aligned-centered" }],
-    ["@HeaderBlock", "My role", { label: "h2" }],
-    "<b>Lead Developer</b>: Architecture, <b>SwiperJS integration</b>, and performance optimization",
+    ["@HeaderBlock", "👨🏻‍💻 My role", { label: "h2", className: "text-highlighted" }],
+    "Architecture, <b>SwiperJS integration</b>, and <b>performance checks</b>",
   ], { className: "grid-mobile-3-4 grid-desktop-4-6" }],
   ["@Container", [
-    ["@HeaderBlock", "Challenges", { label: "h2" }],
-    "<b>WordPress integration</b>, theme compatibility, and <b>intuitive UI design</b>",
-    ["@ImageBlock", "", { src: ChallengesImage, alt: "My Carousel role", className: "image--boxed image--size-small image--aligned-centered" }],
+    ["@HeaderBlock", "💪🏼 Challenges", { label: "h2", className: "text-highlighted" }],
+    "<b>WordPress integration</b>, <b>theme compatibility</b>, and <b>intuitive UI design</b>",
   ], { className: "grid-mobile-1-2 grid-desktop-7-9" }],
   ["@Container", [
-    ["@ImageBlock", "", { src: ResultsImage, alt: "My Carousel role", className: "image--boxed image--size-small image--aligned-centered" }],
-    ["@HeaderBlock", "Results", { label: "h2" }],
-    "<b>Smooth animations</b>, touch interactions, and <b>full customization</b>",
+    ["@HeaderBlock", "☑️ Results", { label: "h2", className: "text-highlighted" }],
+    "<b>Smooth animations</b>, <b>touch interactions</b>, and <b>full customization</b>",
   ], { className: "grid-mobile-3-4 grid-desktop-10-12" }],
-  ["@Container", ["<br>"], { className: "grid-mobile-1-4 grid-desktop-1-12" }],
+  ["@Container", [
+    "",
+    ["@ImageBlock", "", { src: HandDrawnArrowBrokenLine, alt: "Pointing arrow to demo carousel", label: "This is a live demo of one SwiperJS carousel in action.", className: "image__svg--show-alt hidden--desktop", style: { width: "60px", height: "auto", fill: "#83c2c1", color: "#83c2c1", "--rotation-angle": "155deg" } }],
+  ], { className: "grid-mobile-1-4 grid-desktop-1-12" }],
+  ["@Carousel", [], { className: "grid-mobile-1-4 grid-desktop-1-6 carousel--default" }],
+  ["@Container", [
+    ["@HeaderBlock", "Functional result", { label: "h2" }],
+    "The carousel plugin offers a seamless way to showcase images and content with customizable options for transitions, navigation, and responsiveness:",
+    "<ol><li><b>Smooth slide transitions</b> and <b>touch/swipe support for mobile devices</b>.</li><li><b>Customizable navigation</b> and <b>pagination</b>.</li><li><b>Responsive design adapting to various screen sizes</b>.</li><li><b>Easy integration with WordPress via shortcode</b>.</li></ol>",
+    ["@ImageBlock", "", { src: HandDrawnArrowBrokenLine, alt: "Pointing arrow to demo carousel", label: "This is a live demo of one SwiperJS carousel in action.", className: "image__svg--show-alt hidden--mobile", style: { width: "60px", height: "auto", fill: "#83c2c1", color: "#83c2c1", "--rotation-angle": "-45deg" } }],
+  ], { className: "grid-mobile-1-4 grid-desktop-7-12 align-vertical-center" }],
+  ["@Container", [""], { className: "grid-mobile-1-4 grid-desktop-1-12" }],
+  ["@Container", [
+    ["@HeaderBlock", "Transparent back-office", { label: "h2" }],
+    "The plugin includes a user-friendly back-office interface for easy management of carousel settings and content:",
+    "<ol><li><b>Intuitive UI</b> for creating and managing carousels.</li><li>Minimal field requirements.</li><li>Full CSS customization.</li></ol>",
+  ], { className: "grid-mobile-1-4 grid-desktop-1-6 align-vertical-center" }],
   [
-    "@Carousel",
-    [
-      [
-        "@Slide",
-        [
-          ["@HeaderBlock", "Slide 1 — Intro", { label: "h3" }],
-          ["@ImageBlock", "", { src: "myCarousel_slide_01.webp", alt: "Slide 1 mockup", className: "image--boxed image--size-medium image--aligned-centered" }],
-          ["@TextBlock", "A short intro slide demonstrating layout and basic content.", { className: "text-small" }]
-        ],
-        { className: "carousel__slide carousel__slide--1" }
-      ],
-      [
-        "@Slide",
-        [
-          ["@HeaderBlock", "Slide 2 — Features", { label: "h3" }],
-          ["@ImageBlock", "", { src: "myCarousel_slide_02.webp", alt: "Slide 2 mockup", className: "image--boxed image--size-medium image--aligned-centered" }],
-          ["@TextBlock", "Highlights: responsive behavior, touch support, and smooth transitions.", { className: "text-small" }]
-        ],
-        { className: "carousel__slide carousel__slide--2" }
-      ],
-      [
-        "@Slide",
-        [
-          ["@HeaderBlock", "Slide 3 — Call to Action", { label: "h3" }],
-          ["@ImageBlock", "", { src: "myCarousel_slide_03.webp", alt: "Slide 3 mockup", className: "image--boxed image--size-medium image--aligned-centered" }],
-          ["@TextBlock", "Final slide with a mock CTA and brief summary.", { className: "text-small" }]
-        ],
-        { className: "carousel__slide carousel__slide--3" }
-      ]
-    ],
-    { className: "grid-mobile-1-4 grid-desktop-1-6" }
+    "@ImageBlock",
+    "",
+    {
+      src: "https://picsum.photos/900/600?random=2",
+      alt: "Image 1",
+      className: "grid-mobile-1-4 grid-desktop-7-12",
+    },
   ],
-  ["@Container", ["<br>"], { className: "grid-mobile-1-4 grid-desktop-1-12" }],
+  ["@Container", [""], { className: "grid-mobile-1-4 grid-desktop-1-12" }],
 ];

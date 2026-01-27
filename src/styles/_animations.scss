@@ -12,6 +12,7 @@
 
 // Assign fade up animation to all containers and image blocks
 .container,
-.image-block {
+.image,
+.carousel {
     animation: fade-up 0.5s ease-in-out forwards;
 }

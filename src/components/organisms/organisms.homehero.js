@@ -1,10 +1,10 @@
-import Marquee from "../atoms/Marquee";
+import Marquee from "../atoms/atoms.marquee";
 import profilePic from '../../static/images/profilePic.jpeg';
 import scrollDown from '../../static/images/scroll_down-white.svg';
 import graduated from '../../static/images/graduated-icon.svg';
-import Button from "../atoms/button";
-import NightSky from "../atoms/stars";
-import TextLinkWithIcon from "../atoms/textLinkWithIcon";
+import Button from "../atoms/atoms.button";
+import NightSky from "../atoms/atoms.stars";
+import TextLinkWithIcon from "../atoms/atoms.textLinkWithIcon";
 
 const HomeHero = () => {
   const years = new Date().getFullYear() - 2016;

@@ -586,7 +586,7 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-.project-page:has(.container--no-content) {
+.project-page:has(> .container--no-content) {
   min-height: 100vh;
 }
 .container.area-fullwidth {
@@ -636,6 +636,21 @@ body {
   margin-bottom: 24px;
 }
 
+@media screen and (max-width: 991px) {
+  .hidden--mobile {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  .hidden--desktop {
+    display: none;
+  }
+}
+
+.container li:not(:first-child) {
+  margin-top: 8px;
+}
+
 h1 {
   font-size: clamp(32px, 5vw, 64px);
   font-weight: 100;
@@ -645,6 +660,7 @@ h1 {
 h2 {
   font-size: clamp(18px, 3vw, 20px);
   font-weight: 700;
+  margin: 0;
 }
 
 .font-size-14 {
@@ -722,7 +738,8 @@ h2 {
   }
 }
 .container,
-.image-block {
+.image,
+.carousel {
   animation: fade-up 0.5s ease-in-out forwards;
 }
 
@@ -732,16 +749,18 @@ h2 {
   outline-offset: 0;
   transition: all 0.05s ease-in-out;
   cursor: pointer;
+}
+.button:hover, .button:focus, .button:active {
+  outline-color: var(--icon-color);
+  outline-offset: 3px;
+}
+.button {
   padding: 6px 12px;
   height: fit-content;
   font-size: 14px;
   border-radius: 4px;
   font-family: "figtree";
   text-decoration: none;
-}
-.button:hover, .button:focus, .button:active {
-  outline-color: var(--icon-color);
-  outline-offset: 3px;
 }
 .button__secondary {
   border: 1px solid #83c2c1;
@@ -759,14 +778,16 @@ h2 {
   outline-offset: 0;
   transition: all 0.05s ease-in-out;
   cursor: pointer;
-  display: block;
-  width: 40px;
-  aspect-ratio: 1;
-  border-radius: 3px;
 }
 .icon:hover, .icon:focus, .icon:active {
   outline-color: var(--icon-color);
   outline-offset: 3px;
+}
+.icon {
+  display: block;
+  width: 40px;
+  aspect-ratio: 1;
+  border-radius: 3px;
 }
 .icon:after {
   content: "";
@@ -779,6 +800,9 @@ h2 {
   mask-size: contain;
 }
 
+.image {
+  max-width: 100%;
+}
 .image--boxed {
   max-width: 100%;
   height: auto;
@@ -789,6 +813,31 @@ h2 {
 .image--aligned-centered {
   display: block;
   margin-inline: auto;
+}
+.image__svg {
+  margin-inline: initial;
+}
+.image__svg--show-alt {
+  position: relative;
+}
+.image__svg--show-alt::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 50%;
+  width: var(--content-size);
+  margin-left: 16px;
+  color: inherit;
+  max-width: calc(var(--content-size) - 80px);
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 992px) {
+  .image__svg--show-alt::after {
+    max-width: calc(var(--content-size) * 0.5);
+  }
+}
+.image__svg svg {
+  fill: inherit;
+  transform: rotate(var(--rotation-angle, 0deg));
 }
 
 .marquee {
@@ -801,6 +850,27 @@ h2 {
   display: flex;
   gap: 16px;
   align-items: flex-start;
+}
+
+.carousel--default {
+  --swiper-navigation-color: #83c2c1;
+  --swiper-pagination-color: #83c2c1;
+  z-index: 0;
+}
+.carousel--default .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  background-color: #151d3c;
+  aspect-ratio: 3/2;
+  min-height: 200px;
+  outline: 2px solid rgba(131, 194, 193, 0.25);
+  outline-offset: -32px;
+}
+.carousel--default .slide {
+  margin: auto 16px;
 }
 
 .social__icons {
@@ -1110,8 +1180,6 @@ body:has(main.homepage) .header {
   max-height: 33vh;
   position: relative;
   border-radius: 8px;
-  background-color: #151d3c;
-  aspect-ratio: 3/4;
 }
 .portfolio__list-item::after {
   position: absolute;
@@ -1130,6 +1198,10 @@ body:has(main.homepage) .header {
   -o-mask-image: linear-gradient(black 25%, transparent 100%);
   z-index: 0;
   pointer-events: none;
+}
+.portfolio__list-item {
+  background-color: #151d3c;
+  aspect-ratio: 3/4;
 }
 @media screen and (min-width: 1024px) {
   .portfolio__list-item {
@@ -1180,10 +1252,6 @@ body:has(main.homepage) .header {
   max-height: 33vh;
   position: relative;
   border-radius: 8px;
-  aspect-ratio: 5/4;
-  border-radius: 8px;
-  background-color: #00001f;
-  transition: background-color 0.25s ease-in-out;
 }
 .related-projects__item::after {
   position: absolute;
@@ -1202,6 +1270,12 @@ body:has(main.homepage) .header {
   -o-mask-image: linear-gradient(black 25%, transparent 100%);
   z-index: 0;
   pointer-events: none;
+}
+.related-projects__item {
+  aspect-ratio: 5/4;
+  border-radius: 8px;
+  background-color: #00001f;
+  transition: background-color 0.25s ease-in-out;
 }
 .related-projects__item:hover {
   background-color: rgba(131, 194, 193, 0.1);

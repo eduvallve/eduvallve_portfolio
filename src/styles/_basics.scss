@@ -162,3 +162,23 @@ body {
         }
     }
 }
+
+.hidden {
+    &--mobile {
+        @media screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+
+    &--desktop {
+        @media screen and (min-width: 992px) {
+            display: none;
+        }
+    }
+}
+
+.container li {
+    &:not(:first-child) {
+        margin-top: 8px;
+    }
+}

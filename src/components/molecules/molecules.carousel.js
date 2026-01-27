@@ -32,7 +32,7 @@ const Carousel = ({ children, className = '', ...props }) => {
                 spaceBetween={30}
                 slidesPerView={1}
                 loop={true}
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                autoplay={{ delay: 4000, disableOnInteraction: false }}
                 pagination={{ clickable: true }}
                 navigation={true}
                 keyboard={{ enabled: true, onlyInViewport: true }}

@@ -1,0 +1,27 @@
+@use '../colorPalette' as *;
+
+.carousel {
+    &--default {
+        --swiper-navigation-color: #{$pale-green};
+        --swiper-pagination-color: #{$pale-green};
+
+        z-index: 0;
+        
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            text-align: center;
+            background-color: $dark-blue;
+            aspect-ratio: 3 / 2;
+            min-height: 200px;
+            outline: 2px solid rgba($pale-green, 0.25);
+            outline-offset: -32px;
+        }
+        
+        .slide {
+            margin: auto 16px;
+        }
+    }
+}
