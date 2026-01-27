@@ -1,17 +1,16 @@
 // Content for the My Dictionary project page
 
-import { Container, LinkBlock, HeaderBlock, TextBlock, ImageBlock, Carousel, Slide, Separator } from '../../../../components';
+import { Link } from 'react-router';
+import { Container, HeaderBlock, TextBlock, ImageBlock, Carousel, Slide, Separator } from '../../../../components';
 import renderHTMLContent from '../../../../utils/renderHTMLContent.js';
 import AppIcon from "./myDictionary-v1-square.webp";
 
 const MyDictionaryContent = () => {
   return (
     <>
-      <Container className="grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
-        <LinkBlock className="navigation navigation--back" path="/portfolio/">
+      <Link to="/portfolio/" className="navigation navigation--back grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
           Back to portfolio
-        </LinkBlock>
-      </Container>
+      </Link>
 
       <Container className="grid-mobile-1-3 grid-desktop-1-9 align-vertical-center">
         <HeaderBlock label="h1">My Dictionary</HeaderBlock>
@@ -24,13 +23,11 @@ const MyDictionaryContent = () => {
         </TextBlock>
       </Container>
 
-      <Container className="grid-mobile-4-4 grid-desktop-10-12">
-        <ImageBlock
-          src={AppIcon}
-          alt="Image 1"
-          className="project__main-image project__main-image-logo"
-        />
-      </Container>
+      <ImageBlock
+        src={AppIcon}
+        alt="Image 1"
+        className="project__main-image project__main-image-logo grid-mobile-4-4 grid-desktop-10-12"
+      />
 
       <Separator />
 

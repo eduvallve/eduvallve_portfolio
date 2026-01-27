@@ -1,6 +1,7 @@
 // Content for the Museu Picasso de Barcelona project page
 
-import { Container, LinkBlock, HeaderBlock, TextBlock, ImageBlock, Button, Separator } from '../../../../components';
+import { Link } from 'react-router';
+import { Container, HeaderBlock, TextBlock, ImageBlock, Button, Separator } from '../../../../components';
 import renderHTMLContent from '../../../../utils/renderHTMLContent.js';
 import ProjectLogo from "./Logo-Picasso-black.svg";
 import Mockup02 from "./museuPicassoBcn_mockup_02.webp";
@@ -8,11 +9,9 @@ import Mockup02 from "./museuPicassoBcn_mockup_02.webp";
 const MuseuPicassoBcnContent = () => {
   return (
     <>
-      <Container className="grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
-        <LinkBlock className="navigation navigation--back" path="/portfolio/">
+      <Link to="/portfolio/" className="navigation navigation--back grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
           Back to portfolio
-        </LinkBlock>
-      </Container>
+      </Link>
 
       <Container className="grid-mobile-1-3 grid-desktop-1-9 align-vertical-center">
         <HeaderBlock label="h1">Museu Picasso de Barcelona</HeaderBlock>

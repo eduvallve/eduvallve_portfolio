@@ -2,7 +2,6 @@ import React from 'react';
 import Container from '../atoms/atoms.container.js';
 import HeaderBlock from '../atoms/atoms.headerBlock.js';
 import TextBlock from '../atoms/atoms.textBlock.js';
-import LinkBlock from '../atoms/atoms.linkBlock.js';
 import ImageBlock from '../atoms/atoms.imageBlock.js';
 import Hero from '../atoms/atoms.hero.js';
 import IframeBlock from '../atoms/atoms.iframeBlock.js';
@@ -19,7 +18,6 @@ const ComponentSelector = ({ comp, children, data, className, ...props }) => {
     headerblock: HeaderBlock,
     textblock: TextBlock,
     text: TextBlock,
-    linkblock: LinkBlock,
     imageblock: ImageBlock,
     image: ImageBlock,
     carousel: Carousel,

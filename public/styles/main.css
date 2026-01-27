@@ -680,7 +680,8 @@ h2 {
   text-align: center;
 }
 
-.link-block {
+.link-block,
+a {
   color: #83c2c1;
   text-decoration: none;
 }

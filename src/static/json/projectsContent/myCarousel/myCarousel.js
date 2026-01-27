@@ -1,6 +1,7 @@
 // Content for the My Carousel project page
 
-import { Container, HeaderBlock, TextBlock, LinkBlock, ImageBlock, Carousel, Button, Separator } from '../../../../components';
+import { Link } from 'react-router';
+import { Container, HeaderBlock, TextBlock, ImageBlock, Carousel, Button, Separator } from '../../../../components';
 import renderHTMLContent from '../../../../utils/renderHTMLContent.js';
 import AppIcon from "./myCarousel-v1-square.webp";
 import HandDrawnArrowBrokenLine from "../../../images/arrow-handdrawn-broken-line.svg";
@@ -8,11 +9,9 @@ import HandDrawnArrowBrokenLine from "../../../images/arrow-handdrawn-broken-lin
 const MyCarouselContent = () => {
   return (
     <>
-      <Container className="grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
-        <LinkBlock className="navigation navigation--back" path="/portfolio/">
+      <Link to="/portfolio/" className="navigation navigation--back grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
           Back to portfolio
-        </LinkBlock>
-      </Container>
+      </Link>
 
       <Container className="grid-mobile-1-3 grid-desktop-1-9 align-vertical-center">
         <HeaderBlock label="h1">My Carousel</HeaderBlock>

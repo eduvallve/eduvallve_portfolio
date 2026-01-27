@@ -34,7 +34,8 @@ h2 {
     }
 }
 
-.link-block {
+.link-block,
+a {
     color: $pale-green;
     text-decoration: none;
 }

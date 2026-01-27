@@ -5,7 +5,6 @@ export { default as HeaderBlock } from './atoms/atoms.headerBlock.js';
 export { default as Hero } from './atoms/atoms.hero.js';
 export { default as IframeBlock } from './atoms/atoms.iframeBlock.js';
 export { default as ImageBlock } from './atoms/atoms.imageBlock.js';
-export { default as LinkBlock } from './atoms/atoms.linkBlock.js';
 export { default as Marquee } from './atoms/atoms.marquee.js';
 export { default as Separator } from './atoms/atoms.separator.js';
 export { default as Slide } from './atoms/atoms.slide.js';
