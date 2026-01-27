@@ -1,0 +1,18 @@
+*** Begin Patch
+*** Update File: src/static/json/projectsContent/myCarousel/myCarousel.js
+@@
+-import { Container, HeaderBlock, TextBlock, LinkBlock, ImageBlock, Carousel, Button, Separator } from '../../../../components';
++import { Container, HeaderBlock, TextBlock, ImageBlock, Carousel, Button, Separator } from '../../../../components';
++import { Link } from 'react-router-dom';
+@@
+-      <Container className="grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
+-        <LinkBlock className="navigation navigation--back" path="/portfolio/">
+-          Back to portfolio
+-        </LinkBlock>
+-      </Container>
++      <Container className="grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
++        <Link to="/portfolio/" className="link-block navigation navigation--back">
++          Back to portfolio
++        </Link>
++      </Container>
+*** End Patch
