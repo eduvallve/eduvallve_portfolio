@@ -19,7 +19,7 @@ export const myCarousel = [
     [
       ["@HeaderBlock", "My Carousel", { label: "h1" }],
       "A <b>WordPress carousel plugin</b> built with <b>SwiperJS</b> for creating <b>responsive, mobile-friendly, and customizable sliders</b> with <b>fast performance</b>, smooth animations, and <b>touch interactions</b>.",
-      "Status: Under development",
+      "Status: Completed",
       [
         "@TextBlock",
         "Stack: <b>WordPress, PHP, JavaScript, SwiperJS</b>",
