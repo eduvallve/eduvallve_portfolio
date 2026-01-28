@@ -861,7 +861,7 @@ a {
 
 .separator {
   grid-column: 1/-1;
-  color: transparent;
+  visibility: hidden;
 }
 
 .text-link-with-icon {

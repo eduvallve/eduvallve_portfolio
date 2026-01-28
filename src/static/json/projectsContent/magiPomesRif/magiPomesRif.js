@@ -32,7 +32,7 @@ const MagiPomesRif = () => {
         className="project__main-image project__main-image--bg-muted grid-mobile-4-4 grid-desktop-10-12"
       />
 
-      <Separator />
+      <Separator className="hidden--mobile" />
       
       <Container className="grid-mobile-1-4 grid-desktop-1-6">
         <h2>Purpose & approach</h2>
@@ -42,7 +42,7 @@ const MagiPomesRif = () => {
         </p>
       </Container>
 
-      <Container className="grid-mobile-3-4 grid-desktop-7-12">
+      <Container className="grid-mobile-1-4 grid-desktop-7-12">
         <h2>What I built</h2>
         <ol>
           <li><b>Lightweight static site</b> in React and CSS.</li>
@@ -51,7 +51,7 @@ const MagiPomesRif = () => {
         </ol>
       </Container>
 
-      <Separator />
+      <Separator className="hidden--mobile" />
 
       <Image
         src={Mockup}

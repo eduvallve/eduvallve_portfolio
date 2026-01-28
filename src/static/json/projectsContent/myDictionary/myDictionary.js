@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Container, Button, Image, Carousel, Slide, Separator } from '../../../../components';
 import AppIcon from "./myDictionary-v2-square.png";
 import HandDrawnArrowBrokenLine from "../../../images/arrow-handdrawn-broken-line.svg";
+import DownloadZip from "./my-dictionary.zip";
 
 const MyDictionaryContent = () => {
   return (
@@ -14,7 +15,7 @@ const MyDictionaryContent = () => {
 
       <Container className="grid-mobile-1-3 grid-desktop-1-9 align-vertical-center">
         <h1>My Dictionary</h1>
-        <p>My Dictionary is a compact WordPress plugin designed to simplify multilingual content publishing. It provides editors with an intuitive translation workflow, while offering developers lightweight integration options via shortcodes.</p>
+        <p>My Dictionary is a compact <b>WordPress plugin</b> designed to simplify multilingual content publishing. It provides editors with an intuitive translation workflow, while offering developers lightweight integration options via shortcodes.</p>
         <p>Status: <i>Minimal Viable Product</i>. Improvements will come soon.</p>
         
         <p className="text-highlighted text-small">
@@ -25,11 +26,13 @@ const MyDictionaryContent = () => {
         </p>
       </Container>
 
-      <Image
-        src={AppIcon}
-        alt="My Dictionary plugin logo"
-        className="project__main-image project__main-image-logo grid-mobile-4-4 grid-desktop-10-12"
-      />
+      <Container className="grid-mobile-4-4 grid-desktop-10-12">
+        <Image
+          src={AppIcon}
+          alt="My Dictionary plugin logo"
+          className="project__main-image project__main-image-logo"
+          />
+      </Container>
 
       <Separator />
 
@@ -117,7 +120,7 @@ const MyDictionaryContent = () => {
         </p>
         <Button
           type="external-link"
-          url="#"
+          url={DownloadZip}
           className="button__primary button--fit-content button--centered">
           Download the .ZIP plugin
         </Button>

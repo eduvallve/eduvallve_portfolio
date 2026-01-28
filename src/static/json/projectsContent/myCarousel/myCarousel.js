@@ -1,9 +1,10 @@
 // Content for the My Carousel project page
 
 import { Link } from 'react-router-dom';
-import { Container, TextBlock, Image, Carousel, Button, Separator } from '../../../../components';
+import { Container, Image, Carousel, Button, Separator } from '../../../../components';
 import AppIcon from "./myCarousel-v2-square.png";
 import HandDrawnArrowBrokenLine from "../../../images/arrow-handdrawn-broken-line.svg";
+import DownloadZip from './my-carousel.zip';
 
 const MyCarouselContent = () => {
   return (
@@ -86,7 +87,7 @@ const MyCarouselContent = () => {
         />
       </Container>
 
-      <Separator />
+      <Separator className="hidden--mobile" />
 
       <Container className="grid-mobile-1-4 grid-desktop-1-6 align-vertical-center">
         <h2>Transparent back-office</h2>
@@ -97,6 +98,8 @@ const MyCarouselContent = () => {
           <li>Full CSS customization.</li>
         </ol>
       </Container>
+
+      <Separator className="hidden--desktop" />
 
       <Image
         src="https://picsum.photos/900/600?random=2"
@@ -119,7 +122,7 @@ const MyCarouselContent = () => {
         </p>
         <Button
           type="external-link"
-          url="#"
+          url={DownloadZip}
           className="button__primary button--fit-content button--centered">
           Download the .ZIP plugin
         </Button>

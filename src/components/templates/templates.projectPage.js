@@ -13,7 +13,7 @@ const ProjectPage = () => {
 
   // Find the project data by matching slug with project_id
   const currentProject = projects.find(
-    (project) => project.slug === parseInt(project_id),
+    (project) => project.slug === project_id,
   );
 
   return (
