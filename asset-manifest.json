@@ -1,13 +1,15 @@
 {
   "files": {
     "main.css": "/eduvallve_portfolio/static/css/main.3248dcc4.css",
-    "main.js": "/eduvallve_portfolio/static/js/main.127b166e.js",
+    "main.js": "/eduvallve_portfolio/static/js/main.150ebf5b.js",
     "static/js/453.51e48114.chunk.js": "/eduvallve_portfolio/static/js/453.51e48114.chunk.js",
+    "static/media/magiPomesRif-mockup.png": "/eduvallve_portfolio/static/media/magiPomesRif-mockup.7199a72bb1ebedcb59aa.png",
     "static/media/museuPicassoBcn_mockup_02.webp": "/eduvallve_portfolio/static/media/museuPicassoBcn_mockup_02.55f5052d717a20a5c0b1.webp",
-    "static/media/myDictionary-v1-rectangle.webp": "/eduvallve_portfolio/static/media/myDictionary-v1-rectangle.b16da610658629bf9304.webp",
-    "static/media/myDictionary-v1-square.webp": "/eduvallve_portfolio/static/media/myDictionary-v1-square.437e6e61201a7c474991.webp",
-    "static/media/myCarousel-v1-rectangle.webp": "/eduvallve_portfolio/static/media/myCarousel-v1-rectangle.3060be0ad935a7afc707.webp",
-    "static/media/myCarousel-v1-square.webp": "/eduvallve_portfolio/static/media/myCarousel-v1-square.18711e82d1839cd137df.webp",
+    "static/media/myDictionary-v2-square.png": "/eduvallve_portfolio/static/media/myDictionary-v2-square.1607839d171a4beb6c9b.png",
+    "static/media/my-dictionary.zip": "/eduvallve_portfolio/static/media/my-dictionary.3af048077030ff2ec44c.zip",
+    "static/media/myCarousel-v2-square.png": "/eduvallve_portfolio/static/media/myCarousel-v2-square.1a672be0042a1521bc8a.png",
+    "static/media/my-carousel.zip": "/eduvallve_portfolio/static/media/my-carousel.93289cfe9c144901597c.zip",
+    "static/media/magiPomesRif-thumbnail.png": "/eduvallve_portfolio/static/media/magiPomesRif-thumbnail.5f0d1d844d467e2dfff8.png",
     "static/media/profilePic.jpeg": "/eduvallve_portfolio/static/media/profilePic.2d4ec2f1f946c00950f7.jpeg",
     "static/media/Logo-Picasso-black.svg": "/eduvallve_portfolio/static/media/Logo-Picasso-black.5c4625a1f88b69b4ac289ac880700c8c.svg",
     "static/media/arrow-handdrawn-broken-line.svg": "/eduvallve_portfolio/static/media/arrow-handdrawn-broken-line.0ce1645123cb646684a30b5b348fb574.svg",
@@ -16,11 +18,11 @@
     "static/media/evp-logo-white.svg": "/eduvallve_portfolio/static/media/evp-logo-white.6c350dcb046dce8d216199fc7082140c.svg",
     "static/media/graduated-icon.svg": "/eduvallve_portfolio/static/media/graduated-icon.ae9d20ba42de2a501f5385cbcc49d93b.svg",
     "main.3248dcc4.css.map": "/eduvallve_portfolio/static/css/main.3248dcc4.css.map",
-    "main.127b166e.js.map": "/eduvallve_portfolio/static/js/main.127b166e.js.map",
+    "main.150ebf5b.js.map": "/eduvallve_portfolio/static/js/main.150ebf5b.js.map",
     "453.51e48114.chunk.js.map": "/eduvallve_portfolio/static/js/453.51e48114.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3248dcc4.css",
-    "static/js/main.127b166e.js"
+    "static/js/main.150ebf5b.js"
   ]
 }
