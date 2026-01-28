@@ -1,75 +1,75 @@
 import { Link } from 'react-router-dom';
-import { Container, HeaderBlock, TextBlock, ImageBlock, Button, Separator } from '../../../../components';
-import renderHTMLContent from '../../../../utils/renderHTMLContent.js';
+import { Container, Image, Button, Separator } from '../../../../components';
+import Thumbnail from "./magiPomesRif-thumbnail.png";
+import Mockup from "./magiPomesRif-mockup.png";
 
-const MagiPomesRifContent = () => {
+const MagiPomesRif = () => {
   return (
     <>
-      <Container className="grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
-        <Link to="/portfolio/" className="link-block navigation navigation--back">
-          Back to portfolio
-        </Link>
-      </Container>
+      <Link to="/portfolio/" className="navigation navigation--back grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
+        Back to portfolio
+      </Link>
 
       <Container className="grid-mobile-1-3 grid-desktop-1-9 align-vertical-center" role="main" aria-labelledby="project-title">
-        <HeaderBlock id="project-title" label="h1">Magí Pomés — Al Rif (Memorial)</HeaderBlock>
-        {renderHTMLContent("<b>Memorial site</b> documenting the 1900 Morocco / Rif conflict and its local resonances")}
+        <h1 id="project-title">Magí Pomés al Rif</h1>
+        <span><b>Postcards collection</b> presenting the postcards Magí Pomés sent to his relatives during the Rif campaign</span>
         <p>
-          A respectfully curated memorial site exploring the historical context, personal stories,
-          and cultural impact of the 1900 conflict in the Rif region of Morocco. The project
-          combines archival material, interpretive text, and a visual timeline to make the history
-          accessible and reflective.
+          This project curates Magí Pomés' postcards exchanged with family while he was involved in the Rif conflict around 1900.
+          The site focuses exclusively on those personal postcards: images, transcriptions, dates and short contextual notes
+          that help trace the correspondence and its emotional and historical contours.
         </p>
-        <TextBlock className="text-highlighted text-small">
-          Topics: History, Memorial, Archival research
-        </TextBlock>
+        <p className="text-highlighted text-small">
+          Stack: React · CSS · GitHub Pages
+        </p>
+        <p className="text-highlighted text-small">
+          Developed in <b>2020</b>
+        </p>
       </Container>
 
-      <Container className="grid-mobile-4-4 grid-desktop-10-12">
-        <ImageBlock
-          src="https://picsum.photos/1200/700?random=3"
-          alt="Archival photograph related to the Rif region, early 20th century"
-          className="project__main-image project__main-image--bg-muted"
-        />
-      </Container>
+      <Image
+        src={Thumbnail}
+        alt="Screenshot of Magí Pomés — Al Rif project homepage"
+        className="project__main-image project__main-image--bg-muted grid-mobile-4-4 grid-desktop-10-12"
+      />
 
       <Separator />
-
-      <Container className="grid-mobile-1-4 grid-desktop-1-6 align-vertical-center">
-        <HeaderBlock label="h2">Purpose and approach</HeaderBlock>
+      
+      <Container className="grid-mobile-1-4 grid-desktop-1-6">
+        <h2>Purpose & approach</h2>
         <p>
-          The site documents events, shares biographical notes of people affected, and provides
-          primary sources and translations where possible. It aims to be historically accurate,
-          sensitive to descendants, and useful for researchers and the public.
+          The site presents individual postcards as primary documents: legible images, transcriptions and brief translations
+          when needed. The aim is a respectful, focused presentation of personal correspondence rather than a broad military history.
         </p>
       </Container>
 
       <Container className="grid-mobile-3-4 grid-desktop-7-12">
-        <HeaderBlock label="h2">Project contents</HeaderBlock>
+        <h2>What I built</h2>
         <ol>
-          <li><strong>Archival Research:</strong> Collect and transcribe primary documents and images.</li>
-          <li><strong>Oral Histories:</strong> Record personal accounts and family memories.</li>
-          <li><strong>Interpretation:</strong> Provide timelines, context, and references to scholarly work.</li>
+          <li><b>Lightweight static site</b> in React and CSS.</li>
+          <li><b>Image-first layout</b> to showcase the postcards themselves.</li>
+          <li><b>Readable transcriptions</b> and short contextual notes for each item.</li>
         </ol>
       </Container>
 
-      <ImageBlock
-        src="https://picsum.photos/900/600?random=4"
-        alt="Detail of a historical document photographed for the memorial"
+      <Separator />
+
+      <Image
+        src={Mockup}
+        alt="Sample archival postcard displayed in the project"
         className="project__image grid-mobile-1-4 grid-desktop-1-6"
       />
 
       <Container className="grid-mobile-1-4 grid-desktop-7-12 align-vertical-center">
-        <HeaderBlock label="h2">Further reading</HeaderBlock>
-        <p>Selected external resources and archives for deeper research.</p>
+        <h2>Visit the site</h2>
+        <p>See the full postcard collection online:</p>
         <Button
-          type="link"
-          url="https://en.wikipedia.org/wiki/Rif_War"
+          type="external-link"
+          url="https://eduvallve.github.io/magi-pomes/"
           className="button__secondary button--fit-content"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Read background (external)
+          View the live memorial site
         </Button>
       </Container>
 
@@ -78,4 +78,4 @@ const MagiPomesRifContent = () => {
   );
 };
 
-export default MagiPomesRifContent;
+export default MagiPomesRif;

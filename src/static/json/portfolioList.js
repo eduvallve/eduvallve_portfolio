@@ -1,11 +1,12 @@
 import MuseuPicassoBcnContent from "./projectsContent/museuPicassoBcn/museuPicassoBcn";
 import PicassoThumbnail from "../json/projectsContent/museuPicassoBcn/museuPicassoBcn_mockup_02.webp";
 import MyDictionaryContent from "./projectsContent/myDictionary/myDictionary";
-import MyDictionaryThumbnail from "../json/projectsContent/myDictionary/myDictionary-v1-rectangle.webp";
+import MyDictionaryThumbnail from "../json/projectsContent/myDictionary/myDictionary-v2-square.png";
 import MyCarouselContent from "./projectsContent/myCarousel/myCarousel";
-import MyCarouselThumbnail from "../json/projectsContent/myCarousel/myCarousel-v1-rectangle.webp";
+import MyCarouselThumbnail from "../json/projectsContent/myCarousel/myCarousel-v2-square.png";
 // import { caLesTaronges } from "./projectsContent/caLesTaronges/caLesTaronges";
-// import { magiPomesAlRif } from "./projectsContent/magiPomesAlRif/magiPomesAlRif";
+import MagiPomesRif from "./projectsContent/magiPomesRif/magiPomesRif";
+import MagiPomesRifThumbnail from "../json/projectsContent/magiPomesRif/magiPomesRif-mockup.png";
 // import { tecnoSferanow } from "./projectsContent/tecnoSferanow/tecnoSferanow";
 // import { jewelsBarcelona } from "./projectsContent/jewelsBarcelona/jewelsBarcelona";
 // import { iceStick } from "./projectsContent/iceStick/iceStick";
@@ -56,8 +57,9 @@ export const projects = [
     slug: 6,
     title: "Magí Pomés al Rif",
     description: "Website about a postal card exhibition",
-    thumbnail: "#",
+    thumbnail: MagiPomesRifThumbnail,
     timestamp: 1525946400,
+    content: MagiPomesRif,
     tags: ['design', 'branding', 'react'],
   },
   {

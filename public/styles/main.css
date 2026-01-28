@@ -741,7 +741,7 @@ a {
   }
 }
 .container,
-.image,
+.image:not(.carousel .image),
 .carousel {
   animation: fade-up 0.5s ease-in-out forwards;
 }
@@ -889,6 +889,52 @@ a {
 }
 .carousel--default .slide {
   margin: auto 16px;
+}
+.carousel--basic {
+  --swiper-navigation-color: #eee;
+  --swiper-pagination-color: #eee;
+  z-index: 0;
+}
+.carousel--basic .swiper-slide {
+  background-color: #00001f;
+  aspect-ratio: 3/2;
+  min-height: 200px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.carousel--basic .carousel__slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-start;
+  text-align: center;
+  padding: 16px 16px 40px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.carousel--basic .carousel__slide > :not(img) {
+  margin-block: 8px 0;
+}
+.carousel--basic .carousel__slide > :first-child {
+  margin-top: 0;
+}
+.carousel--basic .slide {
+  margin: auto 16px;
+}
+.carousel--basic img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  -webkit-mask-image: linear-gradient(black 55%, rgba(0, 0, 0, 0.25) 100%);
+  -moz-mask-image: linear-gradient(black 55%, rgba(0, 0, 0, 0.25) 100%);
+  -o-mask-image: linear-gradient(black 55%, rgba(0, 0, 0, 0.25) 100%);
+  mask-image: linear-gradient(black 55%, rgba(0, 0, 0, 0.25) 100%);
 }
 
 .social__icons {
@@ -1198,6 +1244,7 @@ body:has(main.homepage) .header {
   max-height: 33vh;
   position: relative;
   border-radius: 8px;
+  z-index: -2;
 }
 .portfolio__list-item::after {
   position: absolute;
@@ -1214,7 +1261,7 @@ body:has(main.homepage) .header {
   -webkit-mask-image: linear-gradient(black 25%, transparent 100%);
   -moz-mask-image: linear-gradient(black 25%, transparent 100%);
   -o-mask-image: linear-gradient(black 25%, transparent 100%);
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
 }
 .portfolio__list-item {
@@ -1254,6 +1301,7 @@ body:has(main.homepage) .header {
   margin-inline: calc(-1 * (100vw - var(--content-size)) / 2);
   padding: 24px calc((100vw - var(--content-size)) / 2) 48px;
   background-color: #151d3c;
+  z-index: 0;
 }
 .related-projects__item {
   display: block;
@@ -1270,6 +1318,7 @@ body:has(main.homepage) .header {
   max-height: 33vh;
   position: relative;
   border-radius: 8px;
+  z-index: -2;
 }
 .related-projects__item::after {
   position: absolute;
@@ -1286,7 +1335,7 @@ body:has(main.homepage) .header {
   -webkit-mask-image: linear-gradient(black 25%, transparent 100%);
   -moz-mask-image: linear-gradient(black 25%, transparent 100%);
   -o-mask-image: linear-gradient(black 25%, transparent 100%);
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
 }
 .related-projects__item {

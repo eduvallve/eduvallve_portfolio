@@ -4,7 +4,7 @@ import { Autoplay, Pagination, Navigation, Keyboard } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-const Carousel = ({ children, className = '', ...props }) => {
+const Carousel = ({ children, className = '', autoplay = true, autoplayDelay = 4000, navigation = true, loop = true, ...props }) => {
     const slides = React.Children.toArray(children).filter(Boolean);
 
     const renderSlides = () => {
@@ -31,10 +31,10 @@ const Carousel = ({ children, className = '', ...props }) => {
                 modules={[Autoplay, Pagination, Navigation, Keyboard]}
                 spaceBetween={30}
                 slidesPerView={1}
-                loop={true}
-                autoplay={{ delay: 4000, disableOnInteraction: false }}
+                loop={loop}
+                autoplay={autoplay ? { delay: autoplayDelay, disableOnInteraction: false } : false}
                 pagination={{ clickable: true }}
-                navigation={true}
+                navigation={navigation}
                 keyboard={{ enabled: true, onlyInViewport: true }}
                 className="my-swiper"
                 onSwiper={(swiper) => { if (swiper && swiper.el) swiper.el.tabIndex = 0; }}

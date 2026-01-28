@@ -2,8 +2,7 @@
 
 import { Link } from 'react-router-dom';
 import { Container, TextBlock, Image, Carousel, Button, Separator } from '../../../../components';
-import renderHTMLContent from '../../../../utils/renderHTMLContent.js';
-import AppIcon from "./myCarousel-v1-square.webp";
+import AppIcon from "./myCarousel-v2-square.png";
 import HandDrawnArrowBrokenLine from "../../../images/arrow-handdrawn-broken-line.svg";
 
 const MyCarouselContent = () => {
