@@ -6,6 +6,7 @@ function Button({ children, className, type, url }) {
         href={url}
         target="_blank"
         rel="noreferrer"
+        aria-label={`Link to external site: ${url}`}
       >
         {children}
       </a>

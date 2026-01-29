@@ -1,9 +1,0 @@
-*** Begin Patch
-*** Update File: src/components/index.js
-@@
--export { default as ImageBlock } from './atoms/atoms.imageBlock.js';
--export { default as LinkBlock } from './atoms/atoms.linkBlock.js';
--export { default as Marquee } from './atoms/atoms.marquee.js';
-+export { default as ImageBlock } from './atoms/atoms.imageBlock.js';
-+export { default as Marquee } from './atoms/atoms.marquee.js';
-*** End Patch

@@ -9,7 +9,7 @@ import DownloadZip from "./my-dictionary.zip";
 const MyDictionaryContent = () => {
   return (
     <>
-      <Link to="/portfolio/" className="navigation navigation--back grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
+      <Link to="/portfolio/" aria-label="Back to portfolio" className="navigation navigation--back grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
           Back to portfolio
       </Link>
 

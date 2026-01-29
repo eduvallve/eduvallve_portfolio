@@ -7,32 +7,32 @@ const Tree = () => {
             <nav>
                 <ul>
                     <li>
-                        🧑🏻‍💻 Portfolio: <b><a target="_blank" rel="noreferrer" href="https://eduvallve.com">eduvallve.com</a></b>
+                        🧑🏻‍💻 Portfolio: <b><a target="_blank" rel="noreferrer" href="https://eduvallve.com" aria-label="eduvallve website">eduvallve.com</a></b>
                     </li>
                 </ul>
                 <ul className="social-tech">
                     <li>
-                        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/eduvallve/"><i className="icon social__icon social__icon-linkedin"></i> LinkedIn</a>
+                        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/eduvallve/" aria-label="LinkedIn profile"><i className="icon social__icon social__icon-linkedin"></i> LinkedIn</a>
                     </li>
                     <li>
-                        <a target="_blank" rel="noreferrer" href="https://github.com/eduvallve"><i className="icon social__icon social__icon-github"></i> Github</a>
+                        <a target="_blank" rel="noreferrer" href="https://github.com/eduvallve" aria-label="Github profile"><i className="icon social__icon social__icon-github"></i> Github</a>
                     </li>
                     <li>
-                        <a target="_blank" rel="noreferrer" href="https://codepen.io/eduvallve"><i className="icon social__icon social__icon-codepen"></i> CodePen</a>
+                        <a target="_blank" rel="noreferrer" href="https://codepen.io/eduvallve" aria-label="CodePen profile"><i className="icon social__icon social__icon-codepen"></i> CodePen</a>
                     </li>
                     <li>
-                        <a target="_blank" rel="noreferrer" href="https://www.behance.net/eduvallve"><i className="icon social__icon social__icon-behance"></i> Behance</a>
+                        <a target="_blank" rel="noreferrer" href="https://www.behance.net/eduvallve" aria-label="Behance profile"><i className="icon social__icon social__icon-behance"></i> Behance</a>
                     </li>
                     <li>
-                        <a target="_blank" rel="noreferrer" href="https://vimeo.com/eduvallve"><i className="icon social__icon social__icon-vimeo"></i> Vimeo</a>
+                        <a target="_blank" rel="noreferrer" href="https://vimeo.com/eduvallve" aria-label="Vimeo profile"><i className="icon social__icon social__icon-vimeo"></i> Vimeo</a>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        ✈️ Travel Instagram: <b><a target="_blank" rel="noreferrer" href="https://www.instagram.com/eduvallve/">@eduvallve</a></b>
+                        ✈️ Travel Instagram: <b><a target="_blank" rel="noreferrer" href="https://www.instagram.com/eduvallve/" aria-label="Instagram profile">@eduvallve</a></b>
                     </li>
                     <li>
-                        📷 Threads: <b><a target="_blank" rel="noreferrer" href="https://www.threads.com/@eduvallve">@eduvallve</a></b>
+                        📷 Threads: <b><a target="_blank" rel="noreferrer" href="https://www.threads.com/@eduvallve" aria-label="Threads profile">@eduvallve</a></b>
                     </li>
                 </ul>
             </nav>

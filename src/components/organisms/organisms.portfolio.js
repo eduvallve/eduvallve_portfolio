@@ -76,8 +76,8 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-      <div className="scroll--down" id="about">
-          <a href="#follow">
+      <div className="scroll--down" id="about" width="30" height="30">
+          <a href="#follow" aria-label="Scroll down to Follow section">
             <img src={scrollDown} alt="scroll down"></img>
           </a>
         </div>

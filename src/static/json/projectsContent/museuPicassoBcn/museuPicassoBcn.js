@@ -8,7 +8,7 @@ import Mockup02 from "./museuPicassoBcn_mockup_02.webp";
 const MuseuPicassoBcnContent = () => {
   return (
     <>
-      <Link to="/portfolio/" className="navigation navigation--back grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
+      <Link to="/portfolio/" aria-label="Back to portfolio" className="navigation navigation--back grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
           Back to portfolio
       </Link>
 

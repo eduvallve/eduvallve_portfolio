@@ -24,6 +24,7 @@ const RelatedProjects = ({ slug, tags }) => {
           to={`/portfolio/${project.slug}`}
           style={{ "--portfolio-item-thumbnail": `url(${project.thumbnail})` }}
           onClick={() => scrollUp()}
+          aria-label={`Portfolio link to ${project.title}`}
         >
           <h3 className="related-projects__item-title">{project.title}</h3>
         </Link>
