@@ -4,7 +4,7 @@ import { projects } from '../../static/json/portfolioList.js';
 import { scrollUp } from '../../utils/utils.js';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import scrollDown from '../../static/images/scroll_down-white.svg';
 
 /**
  * Portfolio builds the homepage area related to the projects
@@ -76,6 +76,11 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
+      <div className="scroll--down" id="about">
+          <a href="#follow">
+            <img src={scrollDown} alt="scroll down"></img>
+          </a>
+        </div>
     </section>
   );
 };

@@ -27,7 +27,7 @@ export const projects = [
     thumbnail: MyCarouselThumbnail,
     timestamp: 1752278400, // August 11, 2025
     content: MyCarouselContent,
-    tags: ['wordpress', 'plugin', 'php', 'javascript'],
+    tags: ['wordpress', 'plugin', 'php', 'javascript', 'figma'],
   },
   // {
   //   slug: "joaprenccatala",
@@ -53,7 +53,7 @@ export const projects = [
     thumbnail: PicassoThumbnail,
     timestamp: 1655856000, // June 22, 2022
     content: MuseuPicassoBcnContent,
-    tags: ['design', 'figma', 'uiux', 'javascript'],
+    tags: ['design', 'figma', 'uiux'],
   },
   {
     slug: "ca-les-taronges",
@@ -71,7 +71,7 @@ export const projects = [
     thumbnail: MagiPomesRifThumbnail,
     timestamp: 1525946400, // May 10, 2018
     content: MagiPomesRif,
-    tags: ['design', 'branding', 'react', 'javascript', 'figma'],
+    tags: ['design', 'branding', 'react', 'javascript', 'figma', 'css'],
   },
   {
     slug: "tecnosferanow",
@@ -81,27 +81,29 @@ export const projects = [
     timestamp: 1525946400, // May 10, 2018
     tags: ['design', 'branding'],
   },
-  {
-    slug: "blender-behance",
-    title: "Blender experiments in Behance",
-    description:
-      "Collection of my experiments with Blender for 3D modeling and animation",
-    thumbnail: "#",
-    timestamp: 1525946400, // May 10, 2018
-    tags: ['3d', 'blender', 'animation'],
-  },
-  {
-    slug: "vimeo",
-    title: "Vimeo",
-    description: "Collection of my video projects on Vimeo",
-    thumbnail: "#",
-    timestamp: 1525946400, // May 10, 2018
-  },
+  // {
+  //   slug: "blender-behance",
+  //   title: "Blender experiments in Behance",
+  //   description:
+  //     "Collection of my experiments with Blender for 3D modeling and animation",
+  //   thumbnail: "#",
+  //   timestamp: 1525946400, // May 10, 2018
+  //   tags: ['3d', 'blender', 'animation'],
+  // },
+  // {
+  //   slug: "vimeo",
+  //   title: "Vimeo",
+  //   description: "Collection of my video projects on Vimeo",
+  //   thumbnail: "#",
+  //   timestamp: 1525946400, // May 10, 2018,
+  //   tags: ['video', 'editing', 'motion graphics'],
+  // },
   {
     slug: "jewelsbarcelona",
     title: "JewelsBarcelona",
     description: "Website for an online jewelry store",
     thumbnail: "#",
     timestamp: 1525946400, // May 10, 2018
+    tags: ['design', 'bigcartel', 'css', 'ecommerce'],
   },
 ];

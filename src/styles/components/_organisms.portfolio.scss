@@ -70,4 +70,13 @@
             }
         }
     }
+
+    .scroll--down {
+        position: absolute;
+        bottom: 72px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
+        margin: 0 auto;
+    }
 }

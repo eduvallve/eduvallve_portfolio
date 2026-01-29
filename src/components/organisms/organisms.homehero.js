@@ -5,6 +5,7 @@ import graduated from '../../static/images/graduated-icon.svg';
 import Button from "../atoms/atoms.button";
 import NightSky from "../atoms/atoms.stars";
 import TextLinkWithIcon from "../atoms/atoms.textLinkWithIcon";
+import SocialIcons from "../molecules/molecules.socialIcons";
 
 const HomeHero = () => {
   const years = new Date().getFullYear() - 2016;
@@ -13,16 +14,21 @@ const HomeHero = () => {
     <section id="hello" className="home__hero">
       <div className="home__hero-content">
         <div className="home__hero-greet">
-          <span>
-            <h1>Hello, I'm Eduard Vallve</h1>,
-          </span>
-          <br />
-          <span>a frontend</span>{" "}
-          <span>
-            <Marquee texts={texts} />
-          </span>
+          <div className="home__hero-greet--wave">
+            <span>
+              <h1>Hello, I'm Eduard Vallve</h1>,
+            </span>
+            <br />
+            <span>a frontend</span>{" "}
+            <span>
+              <Marquee texts={texts} />
+            </span>
+          </div>
+          <div className="home__hero__socialicons">
+          <SocialIcons />
+          </div>
         </div>
-        <div className="home__hero-scroll" id="about">
+        <div className="home__hero-scroll scroll--down" id="about">
           <a href="#about">
             <img src={scrollDown} alt="scroll down"></img>
           </a>

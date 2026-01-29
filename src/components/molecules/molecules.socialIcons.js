@@ -11,10 +11,10 @@ const SocialIcons = () => {
         <i className="icon social__icon social__icon-codepen"></i>
       </a>
       <a target="_blank" rel="noreferrer" href="https://www.behance.net/eduvallve" >
-        <i className="icon social__icon social__icon-behance"></i>
+        <i className="icon social__icon social__icon-behance" style={{"--icon-color": "#f9861a"}}></i>
       </a>
       <a target="_blank" rel="noreferrer" href="https://vimeo.com/eduvallve">
-        <i className="icon social__icon social__icon-vimeo"></i>
+        <i className="icon social__icon social__icon-vimeo" style={{"--icon-color": "#dbdbdb"}}></i>
       </a>
     </div>
   );
