@@ -6,6 +6,7 @@ import Button from "../atoms/atoms.button";
 import NightSky from "../atoms/atoms.stars";
 import TextLinkWithIcon from "../atoms/atoms.textLinkWithIcon";
 import SocialIcons from "../molecules/molecules.socialIcons";
+import Earth from "../atoms/atoms.earth";
 
 const HomeHero = () => {
   const years = new Date().getFullYear() - 2016;
@@ -62,6 +63,7 @@ const HomeHero = () => {
       <div className="home__hero-night-box">
         <NightSky />
       </div>
+      <Earth />
     </section>
   );
 };
