@@ -1,8 +1,7 @@
 // Content for the Museu Picasso de Barcelona project page
 
 import { Link } from 'react-router-dom';
-import { Container, TextBlock, Image, Button, Separator } from '../../../../components';
-import renderHTMLContent from '../../../../utils/renderHTMLContent.js';
+import { Container, Image, Button, Separator } from '../../../../components';
 import ProjectLogo from "./Logo-Picasso-black.svg";
 import Mockup02 from "./museuPicassoBcn_mockup_02.webp";
 

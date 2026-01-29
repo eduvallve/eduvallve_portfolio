@@ -18,27 +18,6 @@ const Earth = () => {
         controls.autoRotateSpeed = -0.6; // adjust rotation speed here
     }, []);
 
-    useEffect(() => {
-        const globe = globeRef.current;
-        const camera = globe.camera();
-
-        camera.position.z = 300; // farther initial position
-
-        const onScroll = (event) => {
-            const scrollTop = window.scrollY || document.documentElement.scrollTop;
-            const newZ = 300 + scrollTop * 0.05; // adjust the multiplier to control speed
-            camera.position.z = newZ;
-        };
-
-        window.addEventListener('scroll', onScroll);
-
-        return () => {
-            window.removeEventListener('scroll', onScroll);
-        };
-
-    }, []);
-
-
     return (
         <div className="earth__container" ref={el}>
             <Globe ref={globeRef}
