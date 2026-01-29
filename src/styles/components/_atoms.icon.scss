@@ -34,13 +34,8 @@
 
         &::after {
             background-color: $dark-grey;
-            mask-size: 91%;
             mask-repeat: no-repeat;
             mask-position: center;
-        }
-
-        &:hover::after {
-            mask-size: 100%;
         }
     }
 }

@@ -853,12 +853,8 @@ a {
 }
 .home__hero__socialicons .icon::after {
   background-color: #00001f;
-  mask-size: 91%;
   mask-repeat: no-repeat;
   mask-position: center;
-}
-.home__hero__socialicons .icon:hover::after {
-  mask-size: 100%;
 }
 
 .image {
