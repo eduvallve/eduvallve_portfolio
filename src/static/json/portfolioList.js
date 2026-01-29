@@ -35,6 +35,7 @@ export const projects = [
   //   description: "Website & ecommerce for an online Catalan language school",
   //   thumbnail: "#",
   //   timestamp: 1746835200, // July 10, 2025
+  //   tags: ['design', 'wordpress', 'php', 'javascript', 'ecommerce', 'woocommerce', 'figma'],
   // },
   {
     slug: "my-dictionary",
@@ -43,7 +44,7 @@ export const projects = [
     thumbnail: MyDictionaryThumbnail,
     timestamp: 1730073600, // December 27, 2024
     content: MyDictionaryContent,
-    tags: ['wordpress', 'plugin', 'php', 'javascript'],
+    tags: ['wordpress', 'plugin', 'php', 'javascript', 'figma'],
   },
   {
     slug: "museu-picasso-bcn",
@@ -61,7 +62,7 @@ export const projects = [
     thumbnail: CaLesTarongesThumbnail,
     content: CaLesTaronges,
     timestamp: 1525946400, // May 10, 2018
-    tags: ['design', 'wordpress', 'php', 'javascript', 'video', 'after effects', 'premiere pro', 'bigcartel'],
+    tags: ['design', 'wordpress', 'php', 'javascript', 'video', 'after effects', 'premiere pro', 'bigcartel', 'ecommerce', 'figma'],
   },
   {
     slug: "magi-pomes-rif",
@@ -70,7 +71,7 @@ export const projects = [
     thumbnail: MagiPomesRifThumbnail,
     timestamp: 1525946400, // May 10, 2018
     content: MagiPomesRif,
-    tags: ['design', 'branding', 'react'],
+    tags: ['design', 'branding', 'react', 'javascript', 'figma'],
   },
   {
     slug: "tecnosferanow",

@@ -37,22 +37,22 @@ const MyCarouselContent = () => {
 
       <Container className="grid-mobile-1-2 grid-desktop-1-3">
         <h2 className="text-highlighted">💡 Purpose</h2>
-        <b>User-friendly WordPress plugin</b> for <b>responsive carousels</b>
+        <p><b>User-friendly WordPress plugin</b> for <b>responsive carousels</b></p>
       </Container>
 
       <Container className="grid-mobile-3-4 grid-desktop-4-6">
         <h2 className="text-highlighted">👨🏻‍💻 My role: full-stack</h2>
-        Back-end architecture, Front-end development & QA testing
+        <p>Back-end architecture, Front-end development & QA testing</p>
       </Container>
 
       <Container className="grid-mobile-1-2 grid-desktop-7-9">
         <h2 className="text-highlighted">💪🏼 Challenges</h2>
-        <b>WordPress integration</b>, <b>theme compatibility</b>, and <b>intuitive UI design</b>
+        <p><b>WordPress integration</b>, <b>theme compatibility</b>, and <b>intuitive UI design</b></p>
       </Container>
 
       <Container className="grid-mobile-3-4 grid-desktop-10-12">
         <h2 className="text-highlighted">☑️ Results</h2>
-        <b>Smooth animations</b>, <b>touch interactions</b>, and <b>full customization</b>
+        <p><b>Smooth animations</b>, <b>touch interactions</b>, and <b>full customization</b></p>
       </Container>
 
       <Separator />
