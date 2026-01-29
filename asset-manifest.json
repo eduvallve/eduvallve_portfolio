@@ -1,28 +1,34 @@
 {
   "files": {
     "main.css": "/eduvallve_portfolio/static/css/main.3248dcc4.css",
-    "main.js": "/eduvallve_portfolio/static/js/main.150ebf5b.js",
+    "main.js": "/eduvallve_portfolio/static/js/main.017aa15c.js",
     "static/js/453.51e48114.chunk.js": "/eduvallve_portfolio/static/js/453.51e48114.chunk.js",
     "static/media/magiPomesRif-mockup.png": "/eduvallve_portfolio/static/media/magiPomesRif-mockup.7199a72bb1ebedcb59aa.png",
     "static/media/museuPicassoBcn_mockup_02.webp": "/eduvallve_portfolio/static/media/museuPicassoBcn_mockup_02.55f5052d717a20a5c0b1.webp",
+    "static/media/calestaronges-mockup.png": "/eduvallve_portfolio/static/media/calestaronges-mockup.2035b0e924c99d6794aa.png",
+    "static/media/calestaronges-thumbnail-v2.png": "/eduvallve_portfolio/static/media/calestaronges-thumbnail-v2.99a62c889f131c285398.png",
     "static/media/myDictionary-v2-square.png": "/eduvallve_portfolio/static/media/myDictionary-v2-square.1607839d171a4beb6c9b.png",
     "static/media/my-dictionary.zip": "/eduvallve_portfolio/static/media/my-dictionary.3af048077030ff2ec44c.zip",
     "static/media/myCarousel-v2-square.png": "/eduvallve_portfolio/static/media/myCarousel-v2-square.1a672be0042a1521bc8a.png",
+    "static/media/calestaronges-ecommerce.png": "/eduvallve_portfolio/static/media/calestaronges-ecommerce.13e4fbc1fb93f1a91280.png",
     "static/media/my-carousel.zip": "/eduvallve_portfolio/static/media/my-carousel.93289cfe9c144901597c.zip",
     "static/media/magiPomesRif-thumbnail.png": "/eduvallve_portfolio/static/media/magiPomesRif-thumbnail.5f0d1d844d467e2dfff8.png",
     "static/media/profilePic.jpeg": "/eduvallve_portfolio/static/media/profilePic.2d4ec2f1f946c00950f7.jpeg",
     "static/media/Logo-Picasso-black.svg": "/eduvallve_portfolio/static/media/Logo-Picasso-black.5c4625a1f88b69b4ac289ac880700c8c.svg",
+    "static/media/calestaroges-motion-graphics.webp": "/eduvallve_portfolio/static/media/calestaroges-motion-graphics.6ce7c1914baa46dc607a.webp",
+    "static/media/calestaronges-logo.svg": "/eduvallve_portfolio/static/media/calestaronges-logo.795ad66f67e12a1ff6bad0cc68a849e3.svg",
     "static/media/arrow-handdrawn-broken-line.svg": "/eduvallve_portfolio/static/media/arrow-handdrawn-broken-line.0ce1645123cb646684a30b5b348fb574.svg",
     "static/media/scroll_down-white.svg": "/eduvallve_portfolio/static/media/scroll_down-white.fea1575b32b24c1631a3a6dd28dce259.svg",
+    "static/media/calestaronges-logo-mini.svg": "/eduvallve_portfolio/static/media/calestaronges-logo-mini.108dbdbd9436b46a12902c73d192fbb2.svg",
     "index.html": "/eduvallve_portfolio/index.html",
     "static/media/evp-logo-white.svg": "/eduvallve_portfolio/static/media/evp-logo-white.6c350dcb046dce8d216199fc7082140c.svg",
     "static/media/graduated-icon.svg": "/eduvallve_portfolio/static/media/graduated-icon.ae9d20ba42de2a501f5385cbcc49d93b.svg",
     "main.3248dcc4.css.map": "/eduvallve_portfolio/static/css/main.3248dcc4.css.map",
-    "main.150ebf5b.js.map": "/eduvallve_portfolio/static/js/main.150ebf5b.js.map",
+    "main.017aa15c.js.map": "/eduvallve_portfolio/static/js/main.017aa15c.js.map",
     "453.51e48114.chunk.js.map": "/eduvallve_portfolio/static/js/453.51e48114.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3248dcc4.css",
-    "static/js/main.150ebf5b.js"
+    "static/js/main.017aa15c.js"
   ]
 }
