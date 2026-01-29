@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-const Image = ({ className = '', src, alt = '', label = '', ...props }) => {
+const Image = ({ className = '', src, alt = '', label = '', fill = '', ...props }) => {
   const [svgContent, setSvgContent] = useState(null);
   const isSvg = src && src.includes('.svg');
 
@@ -19,6 +19,7 @@ const Image = ({ className = '', src, alt = '', label = '', ...props }) => {
         className={`image image__svg ${className}`.trim()}
         dangerouslySetInnerHTML={{ __html: svgContent }}
         data-label={label}
+        style={{"--fill": fill}}
         {...props}
       />
     ) : null; // Or a loading placeholder

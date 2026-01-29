@@ -154,7 +154,7 @@ body {
 .margin {
     @each $direction in top, bottom {
         &-#{$direction} {
-            @each $size in 16, 24 {
+            @each $size in 16, 24, 0 {
                 &--#{$size} {
                     margin-#{$direction}: #{$size}px;
                 }
@@ -177,8 +177,20 @@ body {
     }
 }
 
-.container li {
-    &:not(:first-child) {
-        margin-top: 8px;
+.container {
+    p {
+        line-height: 1.25em;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    li {
+        line-height: 1.25em;
+
+        &:not(:first-child) {
+            margin-top: 8px;
+        }
     }
 }

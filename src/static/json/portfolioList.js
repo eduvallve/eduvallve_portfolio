@@ -4,7 +4,8 @@ import MyDictionaryContent from "./projectsContent/myDictionary/myDictionary";
 import MyDictionaryThumbnail from "../json/projectsContent/myDictionary/myDictionary-v2-square.png";
 import MyCarouselContent from "./projectsContent/myCarousel/myCarousel";
 import MyCarouselThumbnail from "../json/projectsContent/myCarousel/myCarousel-v2-square.png";
-// import { caLesTaronges } from "./projectsContent/caLesTaronges/caLesTaronges";
+import CaLesTaronges from "./projectsContent/calestaronges/calestaronges";
+import CaLesTarongesThumbnail from "../json/projectsContent/calestaronges/calestaronges-thumbnail-v2.png";
 import MagiPomesRif from "./projectsContent/magiPomesRif/magiPomesRif";
 import MagiPomesRifThumbnail from "../json/projectsContent/magiPomesRif/magiPomesRif-mockup.png";
 // import { tecnoSferanow } from "./projectsContent/tecnoSferanow/tecnoSferanow";
@@ -28,13 +29,13 @@ export const projects = [
     content: MyCarouselContent,
     tags: ['wordpress', 'plugin', 'php', 'javascript'],
   },
-  {
-    slug: "joaprenccatala",
-    title: "Jo aprenc català",
-    description: "Website & ecommerce for an online Catalan language school",
-    thumbnail: "#",
-    timestamp: 1746835200, // July 10, 2025
-  },
+  // {
+  //   slug: "joaprenccatala",
+  //   title: "Jo aprenc català",
+  //   description: "Website & ecommerce for an online Catalan language school",
+  //   thumbnail: "#",
+  //   timestamp: 1746835200, // July 10, 2025
+  // },
   {
     slug: "my-dictionary",
     title: "My Dictionary",
@@ -57,8 +58,10 @@ export const projects = [
     slug: "ca-les-taronges",
     title: "Ca les taronges",
     description: "Website and video creation for a cake shop",
-    thumbnail: "#",
+    thumbnail: CaLesTarongesThumbnail,
+    content: CaLesTaronges,
     timestamp: 1525946400, // May 10, 2018
+    tags: ['design', 'wordpress', 'php', 'javascript', 'video', 'after effects', 'premiere pro', 'bigcartel'],
   },
   {
     slug: "magi-pomes-rif",

@@ -35,8 +35,12 @@
         }
 
         svg {
-            fill: inherit;
             transform: rotate(var(--rotation-angle, 0deg));
+            max-width: 100%;
+        }
+
+        path {
+            fill: var(--fill, inherit);
         }
     }
 

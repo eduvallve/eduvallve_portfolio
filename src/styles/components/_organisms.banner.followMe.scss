@@ -3,8 +3,11 @@
 .follow_me {
     background-color: $dark-blue;
     color: $light-grey;
-    padding: 80px 16px 100px;
+    padding: 80px 16px;
     box-sizing: content-box;
     max-width: calc(100vw - 32px);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }

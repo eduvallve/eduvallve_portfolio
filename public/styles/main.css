@@ -629,11 +629,17 @@ body {
 .margin-top--24 {
   margin-top: 24px;
 }
+.margin-top--0 {
+  margin-top: 0px;
+}
 .margin-bottom--16 {
   margin-bottom: 16px;
 }
 .margin-bottom--24 {
   margin-bottom: 24px;
+}
+.margin-bottom--0 {
+  margin-bottom: 0px;
 }
 
 @media screen and (max-width: 991px) {
@@ -647,6 +653,15 @@ body {
   }
 }
 
+.container p {
+  line-height: 1.25em;
+}
+.container p:first-child {
+  margin-top: 0;
+}
+.container li {
+  line-height: 1.25em;
+}
 .container li:not(:first-child) {
   margin-top: 8px;
 }
@@ -845,8 +860,11 @@ a {
   }
 }
 .image__svg svg {
-  fill: inherit;
   transform: rotate(var(--rotation-angle, 0deg));
+  max-width: 100%;
+}
+.image__svg path {
+  fill: var(--fill, inherit);
 }
 .image--aligned-centered {
   display: block;
@@ -862,6 +880,9 @@ a {
 .separator {
   grid-column: 1/-1;
   visibility: hidden;
+}
+.separator--doubled {
+  height: 32px;
 }
 
 .text-link-with-icon {
@@ -964,10 +985,13 @@ a {
 .follow_me {
   background-color: #151d3c;
   color: #eee;
-  padding: 80px 16px 100px;
+  padding: 80px 16px;
   box-sizing: content-box;
   max-width: calc(100vw - 32px);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .header {
@@ -1361,6 +1385,7 @@ body:has(main.homepage) .header {
 .footer__content {
   width: var(--content-size);
   margin: auto;
+  line-height: 2em;
 }
 .footer__link {
   color: #83c2c1;
