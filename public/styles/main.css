@@ -1550,6 +1550,27 @@ body:has(main.homepage) .header {
   width: var(--content-size);
   max-width: calc(100vw - 32px);
   margin: auto;
+  margin-bottom: 80px;
+  color: #dbdbdb;
+}
+.privacy li {
+  margin-block: 8px;
+}
+.privacy * {
+  font-weight: normal;
+  line-height: normal;
+}
+.privacy b {
+  font-weight: 500;
+}
+.privacy h1, .privacy h2 {
+  font-weight: bold;
+}
+.privacy h1 {
+  padding-top: 16px;
+}
+.privacy h2 {
+  padding-top: 80px;
 }
 
 body:has(main.tree) {

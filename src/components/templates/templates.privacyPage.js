@@ -3,24 +3,23 @@ const PrivacyPage = () => {
         <main className="privacy">
             <header>
                 <h1>Privacy Policy</h1>
-                <p><strong>Last updated:</strong> <time datetime="2025-10-13">October 13, 2025</time></p>
-                <p>This Privacy Policy explains how <strong>[Your Name]</strong> ("I", "me", "the Controller") collects, uses, discloses, and protects personal data when you visit or interact with <a href="[YOUR_WEBSITE_URL]">[your-website-url]</a> (the "Site"). It describes your rights under the EU General Data Protection Regulation (GDPR) and other applicable data protection laws.</p>
+                <p><b>Last updated:</b> <time dateTime="2026-02-02">February 2, 2026</time></p>
+                <p>This Privacy Policy explains how <b>eduvallve</b> ("I", "me", "the Controller") collects, uses, discloses, and protects personal data when you visit or interact with <a href="https://eduvallve.com">https://eduvallve.com</a> (the "Site"). It describes your rights under the EU General Data Protection Regulation (GDPR) and other applicable data protection laws.</p>
             </header>
 
             <section>
                 <h2>1. Data Controller</h2>
-                <p><strong>Controller:</strong> [Your Name]<br/>
-                <strong>Contact:</strong> <a href="mailto:[your.email@example.com]">[your.email@example.com]</a><br/>
-                <strong>Address:</strong> [Optional: street, city, country]</p>
+                <p><b>Controller:</b>eduvallve</p>
+                <p><b>Contact:</b> <a href="mailto:contact@eduvallve.com">contact@eduvallve.com</a></p>
             </section>
 
             <section>
             <h2>2. Personal data I collect</h2>
             <p>I collect only the personal data that you voluntarily provide or that is necessary for the Site to operate. Typical categories include:</p>
             <ul>
-                <li><strong>Contact data:</strong> name, email address and any message content you provide via contact forms or email.</li>
-                <li><strong>Technical &amp; usage data:</strong> IP address, browser and device information, pages visited, referring/exit pages, and timestamps (collected automatically).</li>
-                <li><strong>Cookies and tracking:</strong> small files stored on your device to support functionality and analytics (see section 6).</li>
+                <li><b>Contact data:</b> name, email address and any message content you provide via contact forms or email.</li>
+                <li><b>Technical &amp; usage data:</b> IP address, browser and device information, pages visited, referring/exit pages, and timestamps (collected automatically).</li>
+                <li><b>Cookies and tracking:</b> small files stored on your device to support functionality and analytics (see section 6).</li>
             </ul>
             </section>
 
@@ -28,10 +27,10 @@ const PrivacyPage = () => {
             <h2>3. Lawful basis for processing</h2>
             <p>Under the GDPR I rely on the following lawful bases where applicable:</p>
             <ul>
-                <li><strong>Consent</strong> — for cookies and optional newsletter/signup features when you explicitly opt-in.</li>
-                <li><strong>Contractual/Pre-contractual</strong> — if you engage me for work or services through the Site (handling contact details to discuss or perform the work).</li>
-                <li><strong>Legitimate interests</strong> — for running, securing and improving the Site (for example, analytics and fraud prevention). I balance these interests against your privacy rights.</li>
-                <li><strong>Legal obligation</strong> — if required to comply with the law (e.g., tax, reporting).</li>
+                <li><b>Consent</b> — for cookies and optional newsletter/signup features when you explicitly opt-in.</li>
+                <li><b>Contractual/Pre-contractual</b> — if you engage me for work or services through the Site (handling contact details to discuss or perform the work).</li>
+                <li><b>Legitimate interests</b> — for running, securing and improving the Site (for example, analytics and fraud prevention). I balance these interests against your privacy rights.</li>
+                <li><b>Legal obligation</b> — if required to comply with the law (e.g., tax, reporting).</li>
             </ul>
             </section>
 
@@ -42,7 +41,7 @@ const PrivacyPage = () => {
                 <li>To respond to your messages and enquiries.</li>
                 <li>To provide information about my services or to discuss project work.</li>
                 <li>To analyze and improve the Site (analytics and performance).</li>
-                <li>To protect the Site’s security and prevent abuse or fraud.</li>
+                <li>To protect the Site's security and prevent abuse or fraud.</li>
             </ul>
             </section>
 
@@ -58,8 +57,8 @@ const PrivacyPage = () => {
             <p>I will not sell your personal data to third parties.</p>
             </section>
 
-            <section id="cookies">
-            <h2>6. Cookies &amp; tracking technologies</h2>
+            <section id="cookies" className="text-highlighted">
+            <h2>6. Cookies 🍪 &amp; tracking technologies</h2>
             <p>The Site may use cookies and similar technologies for:</p>
             <ul>
                 <li>Strictly necessary functionality (cannot be opted-out without breaking the Site).</li>
@@ -78,7 +77,7 @@ const PrivacyPage = () => {
             <h2>8. Data retention</h2>
             <p>I keep personal data only as long as necessary to fulfil the purposes described above, or to comply with legal obligations. For example:</p>
             <ul>
-                <li>Contact messages: retained for up to <strong>3 years</strong> unless you request deletion earlier.</li>
+                <li>Contact messages: retained for up to <b>3 years</b> unless you request deletion earlier.</li>
                 <li>Analytics data: retained in aggregated or pseudo-anonymized form as permitted by the analytics provider’s settings.</li>
             </ul>
             <p>If you want a shorter retention period, contact me (see section 11).</p>
@@ -95,7 +94,7 @@ const PrivacyPage = () => {
                 <li>Request portability of data you have provided to me in a structured, commonly used and machine-readable format.</li>
                 <li>Lodge a complaint with a supervisory authority (see section 10).</li>
             </ul>
-            <p>To exercise these rights, contact me at <a href="mailto:[your.email@example.com]">[your.email@example.com]</a>. I may need to verify your identity before responding to requests.</p>
+            <p>To exercise these rights, contact me at <a href="mailto:contact@eduvallve.com">contact@eduvallve.com</a>. I may need to verify your identity before responding to requests.</p>
             </section>
 
             <section>
@@ -126,13 +125,12 @@ const PrivacyPage = () => {
             <section>
             <h2>14. Contact</h2>
             <p>If you have questions, requests or concerns about this Privacy Policy or my data practices, contact me at:</p>
-            <p><strong>Email:</strong> <a href="mailto:[your.email@example.com]">[your.email@example.com]</a><br/>
-            <strong>Website:</strong> <a href="[YOUR_WEBSITE_URL]">[YOUR_WEBSITE_URL]</a></p>
+            <p><b>Email:</b> <a href="mailto:contact@eduvallve.com">contact@eduvallve.com</a></p>
+            <p><b>Website:</b> <a href="https://eduvallve.com">https://eduvallve.com</a></p>
             </section>
 
             <footer>
             <p>By using this Site you acknowledge that you have read and understood this Privacy Policy.</p>
-            <p>&copy; <span id="year">2025</span> [Your Name]. All rights reserved.</p>
             </footer>
         </main>
     )
