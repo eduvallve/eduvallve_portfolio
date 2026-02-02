@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { projects } from "../../static/json/portfolioList.js";
-import { scrollUp } from "../../utils/utils.js";
+import { scrollUp } from "../../utils/utils";
 
 const RelatedProjects = ({ slug, tags }) => {
   const shuffledProjects = [...projects].sort(() => Math.random() - 0.5);

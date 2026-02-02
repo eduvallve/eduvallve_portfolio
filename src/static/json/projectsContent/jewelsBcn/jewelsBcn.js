@@ -2,7 +2,7 @@
 
 import { Link } from 'react-router-dom';
 import { Container, Image, Button, Separator } from '../../../../components';
-import ProjectLogo from "../museuPicassoBcn/Logo-Picasso-black.svg";
+import ProjectLogo from "./jewelsBcn-logo.png";
 import Mockup02 from "./jewelsBcn-mockup.png";
 
 const JewelsBcnContent = () => {
@@ -14,7 +14,7 @@ const JewelsBcnContent = () => {
 
       <Container className="grid-mobile-1-3 grid-desktop-1-9 align-vertical-center">
         <h1>Jewels Barcelona</h1>
-        <p>Redesign of an ecommerce website for an online jewelry store based in Barcelona.</p>
+        <p>Redesign of an ecommerce website for an online enamel jewelry store based in Barcelona.</p>
         <p className="text-highlighted text-small">
           Stack: BigCartel, HTML5, CSS3.
         </p>
@@ -27,7 +27,7 @@ const JewelsBcnContent = () => {
         <Image
           src={ProjectLogo}
           alt="Logo of Jewels Barcelona"
-          className="project__main-image project__main-image--bg-blue project__main-image-logo"
+          className="project__main-image project__main-image-logo"
         />
       </Container>
 

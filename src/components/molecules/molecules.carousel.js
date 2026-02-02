@@ -4,6 +4,7 @@ import { Autoplay, Pagination, Navigation, Keyboard } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+
 const Carousel = ({ children, className = '', autoplay = true, autoplayDelay = 4000, navigation = true, loop = true, ...props }) => {
     const slides = React.Children.toArray(children).filter(Boolean);
 
