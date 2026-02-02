@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/eduvallve_portfolio/static/css/main.3248dcc4.css",
-    "main.js": "/eduvallve_portfolio/static/js/main.e4c8e7fd.js",
+    "main.js": "/eduvallve_portfolio/static/js/main.770d535b.js",
     "static/js/453.51e48114.chunk.js": "/eduvallve_portfolio/static/js/453.51e48114.chunk.js",
     "static/media/magiPomesRif-mockup.png": "/eduvallve_portfolio/static/media/magiPomesRif-mockup.7199a72bb1ebedcb59aa.png",
-    "static/media/jewelsBcn-mockup.png": "/eduvallve_portfolio/static/media/jewelsBcn-mockup.d4eb78c6cf1ebe8333d1.png",
     "static/media/museuPicassoBcn_mockup_02.webp": "/eduvallve_portfolio/static/media/museuPicassoBcn_mockup_02.55f5052d717a20a5c0b1.webp",
+    "static/media/jewelsBcn-mockup.png": "/eduvallve_portfolio/static/media/jewelsBcn-mockup.0b5ab19b809788e6c571.png",
     "static/media/earth-night.jpg": "/eduvallve_portfolio/static/media/earth-night.da273783100dfbfd07c0.jpg",
     "static/media/calestaronges-mockup.png": "/eduvallve_portfolio/static/media/calestaronges-mockup.2035b0e924c99d6794aa.png",
     "static/media/calestaronges-thumbnail-v2.png": "/eduvallve_portfolio/static/media/calestaronges-thumbnail-v2.99a62c889f131c285398.png",
@@ -27,11 +27,11 @@
     "static/media/evp-logo-white.svg": "/eduvallve_portfolio/static/media/evp-logo-white.6c350dcb046dce8d216199fc7082140c.svg",
     "static/media/graduated-icon.svg": "/eduvallve_portfolio/static/media/graduated-icon.ae9d20ba42de2a501f5385cbcc49d93b.svg",
     "main.3248dcc4.css.map": "/eduvallve_portfolio/static/css/main.3248dcc4.css.map",
-    "main.e4c8e7fd.js.map": "/eduvallve_portfolio/static/js/main.e4c8e7fd.js.map",
+    "main.770d535b.js.map": "/eduvallve_portfolio/static/js/main.770d535b.js.map",
     "453.51e48114.chunk.js.map": "/eduvallve_portfolio/static/js/453.51e48114.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3248dcc4.css",
-    "static/js/main.e4c8e7fd.js"
+    "static/js/main.770d535b.js"
   ]
 }
