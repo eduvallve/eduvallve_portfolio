@@ -4,7 +4,8 @@ import { projects } from '../../static/json/portfolioList.js';
 import { scrollUp } from '../../utils/utils.js';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import scrollDown from '../../static/images/scroll_down-white.svg';
+import scroll from '../../static/images/hand.svg';
+import { Image } from "../index.js";
 
 /**
  * Portfolio builds the homepage area related to the projects
@@ -38,7 +39,7 @@ const Portfolio = () => {
         anticipatePin: 1,
         scrub: 0.1,
         start: "top",
-        end: ("top+=" + (projectsGrouped.length * 100) + "vh"),
+        end: ("top+=" + (projectsGrouped.length * 500) + "vh"),
       }
     })
   }, [projectsGrouped.length]);
@@ -76,11 +77,7 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-      <div className="scroll--down" id="about" width="30" height="30">
-          <a href="#follow" aria-label="Scroll down to Follow section">
-            <img src={scrollDown} alt="scroll down"></img>
-          </a>
-        </div>
+      <Image src={scroll} alt="scroll" className="scroll--hand" data-label="Scroll down, scroll up"></Image>
     </section>
   );
 };

@@ -20,7 +20,7 @@ const MuseuPicassoBcnContent = () => {
           Stack: FIGMA
         </p>
         <p className="text-highlighted text-small">
-          Academical project developed in 2022.
+          Academical project · Developed in <b>2022</b>
         </p>
       </Container>
 
@@ -49,7 +49,7 @@ const MuseuPicassoBcnContent = () => {
           <li><b>Evaluation phase</b> Usability testing, Cognitive walkthrough, Euristic evaluation and Feedback analysis.</li>
         </ol>
         <Button
-          type="link"
+          type="external-link"
           url="https://www.figma.com/proto/OayvxxOwv4kcHV7nRbENXw/TFM-Edu-Vallv%C3%A9---Prototip-redisseny-web-Museu-Picasso-BCN---Amb-colors-i-imatges?content-scaling=fixed&kind=proto&node-id=14-359&page-id=14%3A268&scaling=min-zoom&starting-point-node-id=14%3A359"
           className="button__secondary button--fit-content"
         >

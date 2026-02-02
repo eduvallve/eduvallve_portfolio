@@ -9,7 +9,8 @@ import CaLesTarongesThumbnail from "../json/projectsContent/calestaronges/calest
 import MagiPomesRif from "./projectsContent/magiPomesRif/magiPomesRif";
 import MagiPomesRifThumbnail from "../json/projectsContent/magiPomesRif/magiPomesRif-mockup.png";
 // import { tecnoSferanow } from "./projectsContent/tecnoSferanow/tecnoSferanow";
-// import { jewelsBarcelona } from "./projectsContent/jewelsBarcelona/jewelsBarcelona";
+import JewelsBcnContent from "./projectsContent/jewelsBcn/jewelsBcn";
+import JewelsBcnThumbnail from "./projectsContent/jewelsBcn/jewelsBcn-mockup.png";
 // import { iceStick } from "./projectsContent/iceStick/iceStick";
 
 export const projects = [
@@ -102,8 +103,9 @@ export const projects = [
     slug: "jewelsbarcelona",
     title: "JewelsBarcelona",
     description: "Website for an online jewelry store",
-    thumbnail: "#",
+    thumbnail: JewelsBcnThumbnail,
     timestamp: 1525946400, // May 10, 2018
+    content: JewelsBcnContent,
     tags: ['design', 'bigcartel', 'css', 'ecommerce'],
   },
 ];

@@ -19,7 +19,7 @@ const MyDictionaryContent = () => {
         <p>Status: <i>Minimal Viable Product</i>. Improvements will come soon.</p>
         
         <p className="text-highlighted text-small">
-          Stack: WordPress, PHP, JavaScript
+          Stack: WordPress · PHP · JavaScript
         </p>
         <p className="text-highlighted text-small">
           Developed in <b>2025</b>

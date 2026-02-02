@@ -194,3 +194,39 @@ body {
         }
     }
 }
+
+// Scroll down animation
+.scroll--down img {
+    animation: bounce ease-in-out 1.5s infinite;
+    cursor: pointer;
+}
+
+// Scroll hand animation
+.scroll--hand {
+    &,
+    svg {
+        width: 50px;
+        height: 80px;
+        
+        &.image__svg {
+            margin-inline: auto;
+        }
+    }
+
+    svg {
+        fill: $white;
+    }
+
+    #hand {
+        transform-origin: center;
+        animation: scrollHand 1.5s infinite ease-in-out;
+        animation-direction: alternate;
+        cursor: pointer;
+    }
+
+    #arrow {
+        transform-origin: center;
+        animation: scrollArrow ease-in-out 3s infinite;
+        cursor: pointer;
+    }
+}

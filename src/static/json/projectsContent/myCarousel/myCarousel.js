@@ -18,7 +18,7 @@ const MyCarouselContent = () => {
         <span>A <b>WordPress carousel plugin</b> built with <b>SwiperJS</b> for creating <b>responsive, mobile-friendly, and customizable sliders</b> with <b>fast performance</b>, smooth animations, and <b>touch interactions</b>.</span>
         Status: Completed
         <p className="text-highlighted text-small">
-          Stack: <b>WordPress, PHP, JavaScript, SwiperJS</b>
+          Stack: WordPress · PHP · JavaScript · SwiperJS
         </p>
         <p className="text-highlighted text-small">
           Developed in <b>2025</b>
