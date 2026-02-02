@@ -666,6 +666,35 @@ body {
   margin-top: 8px;
 }
 
+.scroll--down img {
+  animation: bounce ease-in-out 1.5s infinite;
+  cursor: pointer;
+}
+
+.scroll--hand,
+.scroll--hand svg {
+  width: 50px;
+  height: 80px;
+}
+.scroll--hand.image__svg,
+.scroll--hand svg.image__svg {
+  margin-inline: auto;
+}
+.scroll--hand svg {
+  fill: #dbdbdb;
+}
+.scroll--hand #hand {
+  transform-origin: center;
+  animation: scrollHand 1.5s infinite ease-in-out;
+  animation-direction: alternate;
+  cursor: pointer;
+}
+.scroll--hand #arrow {
+  transform-origin: center;
+  animation: scrollArrow ease-in-out 3s infinite;
+  cursor: pointer;
+}
+
 h1 {
   font-size: clamp(32px, 5vw, 64px);
   font-weight: 100;
@@ -772,11 +801,43 @@ a {
     transform: translateY(-10px);
   }
 }
-.scroll--down img {
-  animation: bounce ease-in-out 1.5s infinite;
-  cursor: pointer;
+@keyframes scrollHand {
+  0% {
+    transform: translateY(-20%) translateX(50px) rotateZ(15deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20%) rotateZ(-5deg);
+    opacity: 0;
+  }
 }
-
+@keyframes scrollArrow {
+  0% {
+    transform: translateY(0%) rotateX(180deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(20%) rotateX(180deg);
+    opacity: 0;
+  }
+  51% {
+    transform: translateY(20%) rotateX(0deg);
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0%) rotateX(0deg);
+    opacity: 0;
+  }
+}
 .button {
   outline: 2px solid;
   outline-color: transparent;
