@@ -1,6 +1,6 @@
 const PrivacyPage = () => {
     return (
-        <main className="privacy">
+        <main className="privacy grid-mobile grid-mobile-1-4 grid-desktop grid-desktop-1-12">
             <header>
                 <h1>Privacy Policy</h1>
                 <p><b>Last updated:</b> <time dateTime="2026-02-02">February 2, 2026</time></p>
@@ -9,7 +9,7 @@ const PrivacyPage = () => {
 
             <section>
                 <h2>1. Data Controller</h2>
-                <p><b>Controller:</b>eduvallve</p>
+                <p><b>Controller:</b> eduvallve</p>
                 <p><b>Contact:</b> <a href="mailto:contact@eduvallve.com">contact@eduvallve.com</a></p>
             </section>
 
