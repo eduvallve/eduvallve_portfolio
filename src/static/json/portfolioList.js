@@ -14,13 +14,13 @@ import JewelsBcnThumbnail from "./projectsContent/jewelsBcn/jewelsBcn-mockup.png
 // import { iceStick } from "./projectsContent/iceStick/iceStick";
 
 export const projects = [
-  {
-    slug: "icestick",
-    title: "Icestick",
-    description: "Global branding and website for an ice cream company",
-    thumbnail: "#",
-    timestamp: 1759363200, // October 1, 2025
-  },
+  // {
+  //   slug: "icestick",
+  //   title: "Icestick",
+  //   description: "Global branding and website for an ice cream company",
+  //   thumbnail: "#",
+  //   timestamp: 1759363200, // October 1, 2025
+  // },
   {
     slug: "my-carousel",
     title: "My Carousel",
@@ -74,14 +74,14 @@ export const projects = [
     content: MagiPomesRif,
     tags: ['design', 'branding', 'react', 'javascript', 'figma', 'css'],
   },
-  {
-    slug: "tecnosferanow",
-    title: "Tecnosferanow",
-    description: "To be defined",
-    thumbnail: "#",
-    timestamp: 1525946400, // May 10, 2018
-    tags: ['design', 'branding'],
-  },
+  // {
+  //   slug: "tecnosferanow",
+  //   title: "Tecnosferanow",
+  //   description: "To be defined",
+  //   thumbnail: "#",
+  //   timestamp: 1525946400, // May 10, 2018
+  //   tags: ['design', 'branding'],
+  // },
   // {
   //   slug: "blender-behance",
   //   title: "Blender experiments in Behance",

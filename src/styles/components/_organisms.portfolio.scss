@@ -23,6 +23,13 @@
         gap: 16px;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         width: 100%;
+
+        &:not(:has(>:nth-child(3))) {
+            .portfolio__list-item:nth-child(1),
+            .portfolio__list-item:nth-child(2) {
+                max-height: min(calc(50% - 8px), 33vh);
+            }
+        }
     }
 
     &__list {
@@ -37,7 +44,11 @@
             @include portfolioItemStyle();
 
             background-color: $dark-blue;
-            aspect-ratio: 3 / 4;
+            aspect-ratio: 2 / 3;
+
+            @media screen and (min-width: 440px) {
+                aspect-ratio: 3 / 4;
+            }
 
             @media screen and (min-width: 1024px) {
                 aspect-ratio: 2 / 1;
