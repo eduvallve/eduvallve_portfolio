@@ -1,0 +1,81 @@
+@use '../colorPalette' as *;
+
+.carousel {
+    &--default {
+        --swiper-navigation-color: #{$pale-green};
+        --swiper-pagination-color: #{$pale-green};
+
+        z-index: 0;
+        
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            text-align: center;
+            background-color: $dark-blue;
+            aspect-ratio: 3 / 2;
+            min-height: 200px;
+            outline: 2px solid rgba($pale-green, 0.25);
+            outline-offset: -32px;
+        }
+        
+        .slide {
+            margin: auto 16px;
+        }
+    }
+
+    &--basic {
+        --swiper-navigation-color: #{$light-grey};
+        --swiper-pagination-color: #{$light-grey};
+
+        z-index: 0;
+        
+        .swiper-slide {
+            background-color: $dark-grey;
+            aspect-ratio: 3/2;
+            min-height: 200px;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel__slide {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: flex-start;
+            text-align: center;
+            padding: 16px 16px 40px;
+            height: 100%;
+            box-sizing: border-box;
+
+            > :not(img) {
+                margin-block: 8px 0;
+            }
+
+            > :first-child {
+                margin-top: 0;
+            }
+        }
+        
+        .slide {
+            margin: auto 16px;
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            z-index: -1;
+
+            @each $prefix in ('-webkit-', '-moz-', '-o-', '') {
+                #{$prefix}mask-image: linear-gradient(black 55%, rgba(black, 0.25) 100%);
+            }
+        }
+    }
+}

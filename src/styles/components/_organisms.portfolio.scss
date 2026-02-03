@@ -1,34 +1,93 @@
 @use '../colorPalette' as *;
+@use '../mixins' as *;
 
 .portfolio {
     min-height: 100vh;
     box-sizing: border-box;
-    padding: 140px 0 180px;
+    padding: 80px 0;
     background: $dark-grey;
 
-    &__content {
-        width: var(--content-size);
-        max-width: calc(100vw - 32px);
-        margin: auto;
+    &__area {
+        overflow: hidden;
     }
 
     &__header {
+        width: var(--content-size);
+        max-width: calc(100vw - 32px);
+        margin: auto;
         color: $light-grey;
+    }
+
+    &__group {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+
+        &:not(:has(>:nth-child(3))) {
+            .portfolio__list-item:nth-child(1),
+            .portfolio__list-item:nth-child(2) {
+                max-height: min(calc(50% - 8px), 33vh);
+            }
+        }
     }
 
     &__list {
         display: flex;
-        flex-wrap: wrap;
+        padding-left: calc(50vw - var(--content-size) / 2);
+        height: 100%;
+        box-sizing: border-box;
         gap: 16px;
+        width: calc(var(--content-size) * var(--project-groups-amount) + (50vw - var(--content-size) / 2) - 32px);
 
         &-item {
-            display: block;
-            background: $dark-blue;
-            color: $light-grey;
-            padding: 16px;
-            aspect-ratio: 4 / 3;
-            width: 300px;
-            max-width: 100%;
+            @include portfolioItemStyle();
+
+            background-color: $dark-blue;
+            aspect-ratio: 2 / 3;
+
+            @media screen and (min-width: 440px) {
+                aspect-ratio: 3 / 4;
+            }
+
+            @media screen and (min-width: 1024px) {
+                aspect-ratio: 2 / 1;
+            }
+
+            &:nth-child(3),
+            &:nth-child(4) {
+                transform: translateX(16px);
+            }
+
+            &-label {
+                &-title {
+                    display: block;
+                    font-weight: 600;
+
+                    @media screen and (min-width: 768px) {
+                        font-size: 1.5em;
+                    }
+                }
+
+                &-description {
+                    color: $pale-green;
+                    margin-top: 0.5em;
+                    display: none;
+
+                    @media screen and (min-width: 768px) {
+                        display: block;
+                    }
+                }
+            }
         }
+    }
+
+    .scroll--down {
+        position: absolute;
+        bottom: 72px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
+        margin: 0 auto;
     }
 }

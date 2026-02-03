@@ -7,17 +7,23 @@
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "gsap": "^3.14.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-globe.gl": "^2.37.0",
     "react-router-dom": "^7.9.1",
     "react-scripts": "5.0.1",
+    "swiper": "^12.0.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "sitemap": "node scripts/generate-sitemap.js"
   },
   "eslintConfig": {
     "extends": [
@@ -36,5 +42,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "baseline-browser-mapping": "^2.9.19",
+    "gh-pages": "^6.3.0",
+    "sass": "^1.97.3"
+  },
+  "homepage": "https://eduvallve.github.io/eduvallve_portfolio/"
 }

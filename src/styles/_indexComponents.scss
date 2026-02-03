@@ -1,10 +1,14 @@
 // Atoms
 @use 'components/atoms.button' as *;
+@use 'components/atoms.earth' as *;
 @use 'components/atoms.icon' as *;
+@use 'components/atoms.image' as *;
 @use 'components/atoms.marquee' as *;
+@use 'components/atoms.separator' as *;
 @use 'components/atoms.textLinkWithIcon' as *;
 
 // Molecules
+@use 'components/molecules.carousel' as *;
 @use 'components/molecules.socialIcons' as *;
 
 // Organisms
@@ -12,7 +16,11 @@
 @use 'components/organisms.header' as *;
 @use 'components/organisms.homehero' as *;
 @use 'components/organisms.portfolio' as *;
+@use 'components/organisms.relatedProjects' as *;
 @use 'components/organisms.footer' as *;
 
 // Templates
 @use 'components/templates.homepage' as *;
+@use 'components/templates.projectpage' as *;
+@use 'components/templates.privacypage' as *;
+@use 'components/templates.tree' as *;

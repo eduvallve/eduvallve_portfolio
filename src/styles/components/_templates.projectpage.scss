@@ -1,0 +1,37 @@
+@use '../colorPalette' as *;
+
+.project {
+    &-page {
+        color: $white;
+        width: var(--content-size);
+        max-width: calc(100vw - 32px);
+        margin: auto;
+    }
+
+    &__main-image {
+        max-width: 100%;
+        border-radius: 4px;
+        max-height: 25vw;
+        object-fit: contain;
+        background: transparent;
+
+        @media screen and (min-width: 1024px) {
+            object-fit: cover;
+
+            &--bg-blue {
+                background-color: $dark-blue;
+            }
+        }
+
+        &-logo {
+            width: 300px;
+            max-width: 100%;
+            margin: auto;
+            display: block;
+        }
+    }
+
+    &__image {
+        max-width: 100%;
+    }
+}

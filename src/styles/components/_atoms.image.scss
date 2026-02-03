@@ -1,0 +1,53 @@
+.image {
+    max-width: 100%;
+
+    &--boxed {
+        max-width: 100%;
+        height: auto;
+    }
+
+    &--size {
+        &-small {
+            width: 150px;
+        }
+    }
+
+    &__svg {
+        margin-inline: initial;
+        
+        &--show-alt {
+            position: relative;
+            
+            &::after {
+                content: attr(data-label);
+                position: absolute;
+                top: 50%;
+                width: var(--content-size);
+                margin-left: 16px;
+                color: inherit;
+                max-width: calc(var(--content-size) - 80px);
+                transform: translateY(-50%);
+
+                @media screen and (min-width: 992px) {
+                    max-width: calc(var(--content-size) * 0.5);
+                }
+            }
+        }
+
+        svg {
+            transform: rotate(var(--rotation-angle, 0deg));
+            max-width: 100%;
+        }
+
+        path {
+            fill: var(--fill, inherit);
+        }
+    }
+
+    &--aligned {
+        &-centered {
+            display: block;
+            margin-inline: auto;
+        }
+    }
+}

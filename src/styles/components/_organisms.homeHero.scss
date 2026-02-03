@@ -5,7 +5,7 @@
 
     &-content {
         display: grid;
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: .9fr repeat(4, 1fr);
         height: calc(100vh / 3 * 5);
         padding: 16px;
         box-sizing: content-box;
@@ -97,11 +97,6 @@
             width: fit-content;
             margin: 0 auto;
         }
-
-        img {
-            animation: bounce ease-in-out 1.5s infinite;
-            cursor: pointer;
-        }
     }
 
     &-brief {
@@ -130,6 +125,11 @@
             width: 85px;
             height: 85px;
             border-radius: 100%;
+            display: none;
+
+            @media screen and (min-width: 768px) {
+                display: unset;
+            }
         }
 
         &--title {
@@ -185,17 +185,6 @@
 
 
 /* Animations */
-@keyframes bounce {
-  from {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  to {
-    transform: translateY(-10px);
-  }
-}
 
 @keyframes circle {
     from {

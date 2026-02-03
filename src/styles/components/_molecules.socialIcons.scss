@@ -7,12 +7,18 @@ $homeURL: '/eduvallve_portfolio';
         display: flex;
         justify-content: center;
         gap: 16px;
+
+        .home__hero__socialicons & {
+            justify-content: flex-start;
+            margin-top: 24px;
+            zoom: 0.85;
+        }
     }
 
     &__icon {
         --icon-color: #{$pale-green};
 
-        @each $network in 'linkedin', 'github', 'behance', 'vimeo' {
+        @each $network in 'linkedin', 'github', 'codepen', 'behance', 'vimeo' {
             &-#{$network}:after {
                 mask-image: var(--icon-#{$network}-path);
             }

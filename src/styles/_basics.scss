@@ -1,3 +1,6 @@
+@use './colorPalette' as *;
+@use './mixins' as *;
+
 // Mobile & tablet
 :root {
     --content-size: calc(100vw - 32px);
@@ -21,8 +24,10 @@ body {
     font-family: 'figtree';
     font-size: 16px;
     font-weight: 100;
+    background-color: $dark-grey;
 }
 
+// Flexbox styles
 .flex-direction {
     display: flex;
     gap: 16px;
@@ -52,41 +57,176 @@ body {
     }
 }
 
+// Grid styles
 .grid {
+    @media screen and (max-width: 991px) {
+        &-mobile {
+            display: grid;
+            gap: 16px;
+
+            @each $i in 2, 4 {
+                &-#{$i}-cols {
+                    grid-template-columns: repeat($i, minmax(0, 1fr));
+                }
+            }
+
+            @include grid-positioning(1, 4);
+        }
+    }
+
     @media screen and (min-width: 992px) {
         &-desktop {
             display: grid;
             gap: 16px;
 
-            &-6-cols {
-                grid-template-columns: repeat(6, 1fr);
+            @for $cols from 2 through 12 {
+                &-#{$cols}-cols {
+                    grid-template-columns: repeat($cols, minmax(0, 1fr));
+                }
             }
 
-            /**
-            We create the grid classes to allocate content within the 12 column grid in desktop
-            */
-            @for $i from 1 through 12 {
-                @for $j from 1 through 12 {
-                    &-#{$i}-#{$j} {
-                        grid-column: #{$i} / #{$j + 1};
-                    }
+            @include grid-positioning();
+        }
+    }
+}
+
+// Container styles
+.container {
+    margin-top: 16px;
+
+    @media screen and (min-width: 992px) {
+        margin-top: 0;
+    }
+
+    &--no-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .project-page:has(> &) {
+            min-height: 100vh;
+        }
+    }
+
+    &.area-fullwidth {
+        width: 100vw;
+        margin-left: calc(-1 * (100vw - var(--content-size)) / 2);
+        margin-right: calc(-1 * (100vw - var(--content-size)) / 2);
+        background-color: $pale-green;
+        min-height: 300px;
+        padding: 0;
+        aspect-ratio: 21 / 9;
+
+        .project__mockup-image-fullwidth {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+// Alignment utilities
+.align {
+    &-vertical-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+
+        > * {
+            margin: 0;
+        }
+    }
+
+    &-horizontal-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+
+        > * {
+            margin: 0;
+        }
+    }
+}
+
+// Margin utilities
+.margin {
+    @each $direction in top, bottom {
+        &-#{$direction} {
+            @each $size in 16, 24, 0 {
+                &--#{$size} {
+                    margin-#{$direction}: #{$size}px;
                 }
             }
         }
     }
 }
 
-@mixin ctaHover() {
-    outline: 2px solid;
-    outline-color: transparent;
-    outline-offset: 0;
-    transition: all .05s ease-in-out;
-    cursor: pointer;
+.hidden {
+    &--mobile {
+        @media screen and (max-width: 991px) {
+            display: none;
+        }
+    }
 
-    &:hover,
-    &:focus,
-    &:active {
-        outline-color: var(--icon-color);
-        outline-offset: 3px;
+    &--desktop {
+        @media screen and (min-width: 992px) {
+            display: none;
+        }
+    }
+}
+
+.container {
+    p {
+        line-height: 1.25em;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    li {
+        line-height: 1.25em;
+
+        &:not(:first-child) {
+            margin-top: 8px;
+        }
+    }
+}
+
+// Scroll down animation
+.scroll--down img {
+    animation: bounce ease-in-out 1.5s infinite;
+    cursor: pointer;
+}
+
+// Scroll hand animation
+.scroll--hand {
+    &,
+    svg {
+        width: 50px;
+        height: 80px;
+        
+        &.image__svg {
+            margin-inline: auto;
+        }
+    }
+
+    svg {
+        fill: $white;
+    }
+
+    #hand {
+        transform-origin: center;
+        animation: scrollHand 1.5s infinite ease-in-out;
+        animation-direction: alternate;
+        cursor: pointer;
+    }
+
+    #arrow {
+        transform-origin: center;
+        animation: scrollArrow ease-in-out 3s infinite;
+        cursor: pointer;
     }
 }

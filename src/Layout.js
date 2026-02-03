@@ -1,10 +1,21 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { scrollTo } from "./utils/utils.js";
 import PortfolioList from "./components/organisms/organisms.portfolioList";
 import HomePage from "./components/templates/templates.homepage";
 import Header from "./components/organisms/organisms.header";
 import Footer from "./components/organisms/organisms.footer";
+import PrivacyPage from "./components/templates/templates.privacyPage";
+import Tree from "./components/templates/templates.tree";
 
 function Layout({basename}) {
+  const location = useLocation(); // Get current location in the app
+
+  // When Location changes, check for hash and scroll to the corresponding element if it exists
+  useEffect(() => {
+    scrollTo(location.hash.replace("#", ""));
+  }, [location]);
+
   return (
     <>
       <Header basename={basename} />
@@ -19,10 +30,12 @@ function Layout({basename}) {
           path={`portfolio/`}
           element={<Navigate to={`/#portfolio`} replace />}
         />
+        <Route path="privacy" element={<PrivacyPage />}></Route>
+        <Route path="tree" element={<Tree />}></Route>
         {/* For any other URL reached in the site, if no corresponding content exists, it redirects the user to a 404 error message */}
         <Route path={`*`} element={<>404: not found</>}></Route>
       </Routes>
-      <Footer />
+      <Footer basename={basename} />
     </>
   );
 }

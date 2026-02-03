@@ -1,0 +1,39 @@
+@use './colorPalette' as *;
+@use './mixins' as *;
+
+.navigation {
+    position: relative;
+    color: $pale-green;
+    border-color: $pale-green;
+
+    &::before {
+        border-color: inherit;
+    }
+
+    &:hover {
+        color: $white;
+        border-color: $white;
+    }
+
+    &--back {
+        padding-inline-start: 1.25em;
+
+        &::before {
+            @include arrow();
+            transform: rotate(-45deg) translate(0, 0.4em);
+            left: 0;
+            right: auto;
+        }
+    }
+
+    &--forward {
+        padding-inline-end: 1.25em;
+
+        &::before {
+            @include arrow();
+            transform: rotate(135deg) translate(0.4em, 0);
+            right: 0;
+            left: auto;
+        }
+    }
+}

@@ -1,4 +1,7 @@
 @use './basics' as *;
 @use './fonts' as *;
 @use './colorPalette' as *;
+@use './mixins' as *;
+@use './navigation' as *;
+@use './animations' as *;
 @use './indexComponents' as *;

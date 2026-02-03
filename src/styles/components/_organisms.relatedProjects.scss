@@ -1,0 +1,28 @@
+@use '../colorPalette' as *;
+@use '../mixins' as *;
+
+.related-projects {
+    width: var(--content-size);
+    margin-inline: calc(-1 * (100vw - var(--content-size)) / 2);
+    padding: 24px calc((100vw - var(--content-size)) / 2) 48px;
+    background-color: $dark-blue;
+    z-index: 0;
+
+    &__item {
+        @include portfolioItemStyle();
+
+        aspect-ratio: 5 / 4;
+        border-radius: 8px;
+        background-color: $dark-grey;
+        transition: background-color 0.25s ease-in-out;
+
+        &:hover {
+            background-color: rgba($pale-green, 0.1);
+        }
+
+        &-title {
+            margin-block: 0;
+            z-index: 1;
+        }
+    }
+}

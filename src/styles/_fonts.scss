@@ -1,13 +1,40 @@
+@use './colorPalette' as *;
+
 h1 {
-    font-size: 64px;
+    font-size: clamp(32px, 5vw, 64px);
     font-weight: 100;
+    margin: 0;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: clamp(18px, 3vw, 20px);
     font-weight: 700;
+    margin: 0;
 }
 
 .font-size-14 {
     font-size: 14px;
+}
+
+.text {
+    &-highlighted {
+        color: $pale-green;
+    }
+
+    &-small {
+        font-size: 0.875rem;
+    }
+
+    &-italic {
+        font-style: italic;
+    }
+
+    &--aligned-centered {
+        text-align: center;
+    }
+}
+
+a {
+    color: $pale-green;
+    text-decoration: none;
 }
