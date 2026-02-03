@@ -4,12 +4,12 @@ import Layout from './Layout';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const basename = "eduvallve_portfolio/";
+const basename = "";
 root.render(
   // <React.StrictMode>
-    <BrowserRouter basename={`/${basename}`} >
-      <Layout basename={`/${basename}`} />
-    </BrowserRouter>
+  <BrowserRouter basename={`/${basename}`} >
+    <Layout basename={`/${basename}`} />
+  </BrowserRouter>
   // </React.StrictMode>
 );
 
