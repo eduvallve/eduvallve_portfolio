@@ -1,7 +1,7 @@
 // Content for the My Dictionary project page
 
 import { Link } from 'react-router-dom';
-import { Container, Button, Image, Carousel, Slide, Separator } from '../../../../components';
+import { Container, Button, Image, /* Carousel, Slide,*/ Separator } from '../../../../components';
 import AppIcon from "./myDictionary-v2-square.png";
 import HandDrawnArrowBrokenLine from "../../../images/arrow-handdrawn-broken-line.svg";
 import DownloadZip from "./my-dictionary.zip";
