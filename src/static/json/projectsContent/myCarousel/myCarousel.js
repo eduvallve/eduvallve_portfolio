@@ -101,11 +101,11 @@ const MyCarouselContent = () => {
 
       <Separator className="hidden--desktop" />
 
-      <Image
+      {/* <Image
         src="https://picsum.photos/900/600?random=2"
         alt="Random image representing the back-office of My Carousel plugin"
         className="grid-mobile-1-4 grid-desktop-7-12"
-      />
+      /> */}
 
       <Separator />
 

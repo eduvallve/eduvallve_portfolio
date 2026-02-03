@@ -10,14 +10,14 @@ const MyDictionaryContent = () => {
   return (
     <>
       <Link to="/portfolio/" aria-label="Back to portfolio" className="navigation navigation--back grid-mobile-1-4 grid-desktop-1-12 margin-top--24">
-          Back to portfolio
+        Back to portfolio
       </Link>
 
       <Container className="grid-mobile-1-3 grid-desktop-1-9 align-vertical-center">
         <h1>My Dictionary</h1>
         <p>My Dictionary is a compact <b>WordPress plugin</b> designed to simplify multilingual content publishing. It provides editors with an intuitive translation workflow, while offering developers lightweight integration options via shortcodes.</p>
         <p>Status: <i>Minimal Viable Product</i>. Improvements will come soon.</p>
-        
+
         <p className="text-highlighted text-small">
           Stack: WordPress · PHP · JavaScript
         </p>
@@ -31,7 +31,7 @@ const MyDictionaryContent = () => {
           src={AppIcon}
           alt="My Dictionary plugin logo"
           className="project__main-image project__main-image-logo"
-          />
+        />
       </Container>
 
       <Separator />
@@ -58,7 +58,7 @@ const MyDictionaryContent = () => {
 
       <Separator />
 
-      <Carousel className="grid-mobile-1-4 grid-desktop-1-6 carousel--basic" autoplay={false} autoplayDelay={5000}>
+      {/* <Carousel className="grid-mobile-1-4 grid-desktop-1-6 carousel--basic" autoplay={false} autoplayDelay={5000}>
         <Slide>
           <h3>Overview — lightweight plugin and goals</h3>
           <Image
@@ -94,7 +94,7 @@ const MyDictionaryContent = () => {
             Final slide with a mock CTA and brief summary.
           </p>
         </Slide>
-      </Carousel>
+      </Carousel> */}
 
       <Container className='grid-mobile-1-4 grid-desktop-7-12 align-vertical-center'>
         <h2>Key Features</h2>
