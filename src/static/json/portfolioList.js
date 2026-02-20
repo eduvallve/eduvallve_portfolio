@@ -11,6 +11,8 @@ import MagiPomesRifThumbnail from "../json/projectsContent/magiPomesRif/magiPome
 // import { tecnoSferanow } from "./projectsContent/tecnoSferanow/tecnoSferanow";
 import JewelsBcnContent from "./projectsContent/jewelsBcn/jewelsBcn";
 import JewelsBcnThumbnail from "./projectsContent/jewelsBcn/jewelsBcn-mockup.png";
+import EdURLContent from "./projectsContent/edurl/edurl";
+import EdURLThumbnail from "./projectsContent/edurl/edurl-mockup-1024.webp";
 // import { iceStick } from "./projectsContent/iceStick/iceStick";
 
 export const projects = [
@@ -21,6 +23,15 @@ export const projects = [
   //   thumbnail: "#",
   //   timestamp: 1759363200, // October 1, 2025
   // },
+  {
+    slug: "edurl",
+    title: "EdURL",
+    description: "Easy URL shortener",
+    thumbnail: EdURLThumbnail,
+    timestamp: 1754524800, // February 6, 2026
+    content: EdURLContent,
+    tags: ['nextjs', 'javascript', 'css', 'AI', 'express', 'sqlite', 'vercel', 'github', 'umami'],
+  },
   {
     slug: "my-carousel",
     title: "My Carousel",

@@ -54,6 +54,11 @@ ${allRoutes.map(url => `  <url>
     <changefreq>weekly</changefreq>
     <priority>${url === "/" ? "1.0" : "0.8"}</priority>
   </url>`).join("\n")}
+  <url>
+    <loc>https://edurl.vercel.app</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>`;
 
     fs.writeFileSync(OUTPUT_FILE, sitemapIndex);

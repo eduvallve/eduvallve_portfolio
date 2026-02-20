@@ -16,6 +16,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://eduvallve.com/portfolio/edurl</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://eduvallve.com/portfolio/my-carousel</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -42,6 +47,11 @@
   </url>
   <url>
     <loc>https://eduvallve.com/portfolio/jewelsbarcelona</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://edurl.vercel.app</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
