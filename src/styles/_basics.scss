@@ -133,7 +133,7 @@ body {
         justify-content: center;
         gap: 16px;
 
-        > * {
+        >* {
             margin: 0;
         }
     }
@@ -144,7 +144,7 @@ body {
         justify-content: center;
         gap: 16px;
 
-        > * {
+        >* {
             margin: 0;
         }
     }
@@ -203,11 +203,12 @@ body {
 
 // Scroll hand animation
 .scroll--hand {
+
     &,
     svg {
         width: 50px;
         height: 80px;
-        
+
         &.image__svg {
             margin-inline: auto;
         }

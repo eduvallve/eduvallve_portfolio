@@ -1542,6 +1542,11 @@ body:has(main.homepage) .header {
   margin: auto;
   display: block;
 }
+.project__main-image-logo:has(svg) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .project__image {
   max-width: 100%;
 }

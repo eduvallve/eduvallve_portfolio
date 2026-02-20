@@ -28,6 +28,12 @@
             max-width: 100%;
             margin: auto;
             display: block;
+
+            &:has(svg) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
 
