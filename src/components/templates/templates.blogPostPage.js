@@ -101,6 +101,20 @@ const BlogPostPage = () => {
             start: 'top 85%',
           }
         })
+
+        // Parallax effect for hero background
+        if (post.mainImage) {
+          gsap.to('.blog-post__hero-bg img', {
+            y: '20%',
+            ease: 'none',
+            scrollTrigger: {
+              trigger: heroRef.current,
+              start: 'top top',
+              end: 'bottom top',
+              scrub: true
+            }
+          })
+        }
       })
       return () => ctx.revert()
     }
@@ -134,7 +148,7 @@ const BlogPostPage = () => {
   return (
     <article className="blog-post" lang="ca">
       {/* Progress Bar with ARIA attributes */}
-      <div 
+      <div
         className="blog-progress-container"
         role="progressbar"
         aria-label="Progrés de lectura de l'article"
@@ -164,8 +178,8 @@ const BlogPostPage = () => {
         )}
 
         <div className="container blog-post__hero-content">
-          <Link 
-            to="/blog" 
+          <Link
+            to="/blog"
             className="blog-post__back"
             aria-label="Tornar al llistat d'articles del blog"
           >
