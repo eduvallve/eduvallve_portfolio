@@ -56,7 +56,7 @@ const BlogListPage = () => {
                   )}
                 </div>
                 <div className="blog-card__content">
-                  <span className="blog-card__date">
+                  <span className="blog-card__date" aria-label={`Publicat el ${new Date(post.publishedAt).toLocaleDateString('ca-ES')}`}>
                     {new Date(post.publishedAt).toLocaleDateString('ca-ES', {
                       year: 'numeric',
                       month: 'long',
