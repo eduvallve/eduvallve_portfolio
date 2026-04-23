@@ -22,7 +22,7 @@ const BlogPostPage = () => {
       .fetch(
         `*[_type == "post" && slug.current == $slug][0]{
           title,
-          "mainImage": mainImage{
+          "heroImage": heroImage{
             ...,
             "alt": asset->altText // Fetch alt text if it exists in assets
           },
@@ -103,7 +103,7 @@ const BlogPostPage = () => {
         })
 
         // Parallax effect for hero background
-        if (post.mainImage) {
+        if (post.heroImage?.asset) {
           gsap.to('.blog-post__hero-bg img', {
             y: '20%',
             ease: 'none',
@@ -125,24 +125,42 @@ const BlogPostPage = () => {
 
   const components = {
     types: {
-      image: ({ value }) => (
-        <figure className="blog-post__figure">
-          <div className="blog-post__figure-container">
-            <img
-              src={urlFor(value).width(1200).url()}
-              alt={value.alt || `Imatge descriptiva de l'article: ${post.title}`}
-              className="blog-post__image"
-            />
-          </div>
-          {value.caption && <figcaption>{value.caption}</figcaption>}
-        </figure>
-      ),
+      image: ({ value }) => {
+        if (!value?.asset) return null;
+        return (
+          <figure className="blog-post__figure">
+            <div className="blog-post__figure-container">
+              <img
+                src={urlFor(value).width(1200).url()}
+                alt={value.alt || `Imatge descriptiva de l'article: ${post.title}`}
+                className="blog-post__image"
+              />
+            </div>
+            {value.caption && <figcaption>{value.caption}</figcaption>}
+          </figure>
+        )
+      },
     },
     block: {
       h2: ({ children }) => <h2 className="blog-post__h2">{children}</h2>,
       h3: ({ children }) => <h3 className="blog-post__h3">{children}</h3>,
       blockquote: ({ children }) => <blockquote className="blog-post__quote">{children}</blockquote>,
-    }
+    },
+    marks: {
+      link: ({ children, value }) => {
+        const { href, blank } = value
+        return (
+          <a
+            href={href}
+            target={blank ? '_blank' : '_self'}
+            rel={blank ? 'noreferrer noopener' : undefined}
+            className="blog-post__link"
+          >
+            {children}
+          </a>
+        )
+      },
+    },
   }
 
   return (
@@ -163,15 +181,15 @@ const BlogPostPage = () => {
       </div>
 
       <header
-        className={`blog-post__hero ${post.mainImage ? 'has-image' : ''}`}
+        className={`blog-post__hero ${post.heroImage?.asset ? 'has-image' : ''}`}
         ref={heroRef}
       >
-        {post.mainImage && (
+        {post.heroImage?.asset && (
           <div className="blog-post__hero-bg">
             <img
-              src={urlFor(post.mainImage).width(1920).url()}
-              alt={post.mainImage.alt || ""}
-              aria-hidden={!post.mainImage.alt}
+              src={urlFor(post.heroImage).width(1920).url()}
+              alt={post.heroImage.alt || ""}
+              aria-hidden={!post.heroImage.alt}
             />
             <div className="blog-post__hero-overlay" aria-hidden="true" />
           </div>
@@ -190,9 +208,9 @@ const BlogPostPage = () => {
 
           <div className="blog-post__meta">
             <div className="blog-post__meta-item">
-              <span className="label">Publicat el</span>
+              <span className="label">Published on</span>
               <time dateTime={post.publishedAt}>
-                {new Date(post.publishedAt).toLocaleDateString('ca-ES', {
+                {new Date(post.publishedAt).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric',
@@ -202,8 +220,8 @@ const BlogPostPage = () => {
 
             {post.tags && post.tags.length > 0 && (
               <div className="blog-post__meta-item">
-                <span className="label">Etiquetes</span>
-                <div className="blog-post__tags" aria-label="Llista d'etiquetes">
+                <span className="label">Tags</span>
+                <div className="blog-post__tags" aria-label="List of tags">
                   {post.tags.map((tag) => (
                     <span key={tag} className="tag">#{tag}</span>
                   ))}

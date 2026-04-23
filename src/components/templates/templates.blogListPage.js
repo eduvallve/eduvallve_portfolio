@@ -15,7 +15,8 @@ const BlogListPage = () => {
           slug,
           publishedAt,
           excerpt,
-          mainImage,
+          heroImage,
+          thumbnailImage,
           "tags": tags[]
         }`
       )
@@ -48,16 +49,21 @@ const BlogListPage = () => {
                 onClick={() => scrollUp()}
               >
                 <div className="blog-card__image">
-                  {post.mainImage && (
+                  {post.thumbnailImage?.asset ? (
                     <img
-                      src={urlFor(post.mainImage).width(600).url()}
+                      src={urlFor(post.thumbnailImage).width(600).url()}
                       alt={post.title}
                     />
-                  )}
+                  ) : post.heroImage?.asset ? (
+                    <img
+                      src={urlFor(post.heroImage).width(600).url()}
+                      alt={post.title}
+                    />
+                  ) : null}
                 </div>
                 <div className="blog-card__content">
-                  <span className="blog-card__date" aria-label={`Publicat el ${new Date(post.publishedAt).toLocaleDateString('ca-ES')}`}>
-                    {new Date(post.publishedAt).toLocaleDateString('ca-ES', {
+                  <span className="blog-card__date" aria-label={`Published on ${new Date(post.publishedAt).toLocaleDateString('en-US')}`}>
+                    {new Date(post.publishedAt).toLocaleDateString('en-US', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric',

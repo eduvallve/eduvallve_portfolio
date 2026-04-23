@@ -20,9 +20,28 @@ export const post = {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
+      name: 'heroImage',
+      title: 'Hero image',
       type: 'image',
+      description: 'The large image used in the article head.',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative Text',
+          description: 'Important for SEO and accessibility.',
+          validation: (Rule) => Rule.required(),
+        }
+      ]
+    },
+    {
+      name: 'thumbnailImage',
+      title: 'Thumbnail image',
+      type: 'image',
+      description: 'The image used in the blog list cards.',
       options: {
         hotspot: true,
       },
@@ -54,8 +73,32 @@ export const post = {
       title: 'Body',
       type: 'array',
       of: [
-        { type: 'block' },
-        { 
+        {
+          type: 'block',
+          marks: {
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'External link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'URL',
+                  },
+                  {
+                    title: 'Open in new tab?',
+                    name: 'blank',
+                    type: 'boolean',
+                    initialValue: true,
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        {
           type: 'image',
           fields: [
             {
@@ -86,7 +129,7 @@ export const post = {
   preview: {
     select: {
       title: 'title',
-      media: 'mainImage',
+      media: 'thumbnailImage',
     },
   },
 }

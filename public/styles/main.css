@@ -1768,12 +1768,16 @@ body:has(main.tree) .footer {
 }
 .blog-post__hero {
   position: relative;
-  padding: 160px 0 80px;
-  min-height: 60vh;
+  padding: 120px 0 60px;
+  min-height: auto;
   display: flex;
   align-items: center;
   overflow: hidden;
   justify-content: center;
+}
+.blog-post__hero.has-image {
+  padding: 160px 0 80px;
+  min-height: 60vh;
 }
 .blog-post__hero.has-image .blog-post__hero-content {
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
