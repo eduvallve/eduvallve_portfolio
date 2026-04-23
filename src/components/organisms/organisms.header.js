@@ -1,4 +1,5 @@
 import logo from "../../static/images/evp-logo-white.svg";
+import { NavLink } from "react-router-dom";
 
 const Header = ({basename}) => {
   return (
@@ -17,6 +18,9 @@ const Header = ({basename}) => {
             </li>
             <li className="header__navigation-item">
               <a href={`${basename}#portfolio`} aria-label="Link to Portfolio section">Portfolio</a>
+            </li>
+            <li className="header__navigation-item">
+              <NavLink to="/blog" aria-label="Link to Blog">Blog</NavLink>
             </li>
             <li className="header__navigation-item">
               <a href={`${basename}#follow`} aria-label="Link to Follow section">Follow</a>

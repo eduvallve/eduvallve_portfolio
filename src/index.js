@@ -3,12 +3,13 @@ import { BrowserRouter } from 'react-router-dom';
 import Layout from './Layout';
 import reportWebVitals from './reportWebVitals';
 
+import { BASE_PATH } from './config';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const basename = "eduvallve_portfolio/";
 root.render(
   // <React.StrictMode>
-    <BrowserRouter basename={`/${basename}`} >
-      <Layout basename={`/${basename}`} />
+    <BrowserRouter basename={BASE_PATH} >
+      <Layout basename={BASE_PATH} />
     </BrowserRouter>
   // </React.StrictMode>
 );

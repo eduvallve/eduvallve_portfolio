@@ -7,6 +7,9 @@ import Header from "./components/organisms/organisms.header";
 import Footer from "./components/organisms/organisms.footer";
 import PrivacyPage from "./components/templates/templates.privacyPage";
 import Tree from "./components/templates/templates.tree";
+import BlogListPage from "./components/templates/templates.blogListPage";
+import BlogPostPage from "./components/templates/templates.blogPostPage";
+import AdminPage from "./components/templates/templates.adminPage";
 
 function Layout({basename}) {
   const location = useLocation(); // Get current location in the app
@@ -16,9 +19,11 @@ function Layout({basename}) {
     scrollTo(location.hash.replace("#", ""));
   }, [location]);
 
+  const isAdmin = location.pathname.startsWith("/admin");
+
   return (
     <>
-      <Header basename={basename} />
+      {!isAdmin && <Header basename={basename} />}
       <Routes>
         {/* "/" route means the homepage route */}
         <Route index element={<HomePage basename={basename} />}></Route>
@@ -32,10 +37,13 @@ function Layout({basename}) {
         />
         <Route path="privacy" element={<PrivacyPage />}></Route>
         <Route path="tree" element={<Tree />}></Route>
+        <Route path="blog" element={<BlogListPage />}></Route>
+        <Route path="blog/:slug" element={<BlogPostPage />}></Route>
+        <Route path="admin/*" element={<AdminPage />}></Route>
         {/* For any other URL reached in the site, if no corresponding content exists, it redirects the user to a 404 error message */}
         <Route path={`*`} element={<>404: not found</>}></Route>
       </Routes>
-      <Footer basename={basename} />
+      {!isAdmin && <Footer basename={basename} />}
     </>
   );
 }
