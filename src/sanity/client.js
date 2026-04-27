@@ -1,12 +1,23 @@
 import { createClient } from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
 
+const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+
 export const client = createClient({
   projectId: 'ekv3t3dq',
   dataset: 'production',
-  useCdn: true, // `false` if you want to ensure fresh data
+  useCdn: isLocalhost ? false : true,
   apiVersion: '2024-03-24',
+  token: isLocalhost ? process.env.REACT_APP_SANITY_TOKEN : undefined,
+  perspective: isLocalhost ? 'previewDrafts' : 'published',
 })
+
+if (isLocalhost) {
+  console.log("Sanity Client: Preview mode check...", {
+    hasToken: !!process.env.REACT_APP_SANITY_TOKEN,
+    perspective: client.config().perspective
+  })
+}
 
 const builder = imageUrlBuilder(client)
 

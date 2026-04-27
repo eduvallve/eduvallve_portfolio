@@ -231,3 +231,16 @@ body {
         cursor: pointer;
     }
 }
+
+strong {
+    font-weight: 700;
+}
+
+code {
+    padding: 2px 4px;
+    background: #141a35;
+    border-radius: 2px;
+    border: 1px solid #83c3c1;
+    font-size: 0.875em;
+    margin-inline: 4px;
+}

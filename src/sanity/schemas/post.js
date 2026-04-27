@@ -71,50 +71,8 @@ export const post = {
     {
       name: 'body',
       title: 'Body',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-          marks: {
-            annotations: [
-              {
-                name: 'link',
-                type: 'object',
-                title: 'External link',
-                fields: [
-                  {
-                    name: 'href',
-                    type: 'url',
-                    title: 'URL',
-                  },
-                  {
-                    title: 'Open in new tab?',
-                    name: 'blank',
-                    type: 'boolean',
-                    initialValue: true,
-                  },
-                ],
-              },
-            ],
-          },
-        },
-        {
-          type: 'image',
-          fields: [
-            {
-              name: 'alt',
-              type: 'string',
-              title: 'Alternative Text',
-              validation: (Rule) => Rule.required(),
-            },
-            {
-              name: 'caption',
-              type: 'string',
-              title: 'Caption',
-            }
-          ]
-        },
-      ],
+      type: 'text',
+      description: 'The article content in Markdown format.',
     },
     {
       name: 'tags',
@@ -124,6 +82,19 @@ export const post = {
       options: {
         layout: 'tags',
       },
+    },
+    {
+      name: 'sources',
+      title: 'Sources',
+      type: 'array',
+      of: [{ type: 'string' }],
+      description: 'Links or references used for research.',
+    },
+    {
+      name: 'imagePrompt',
+      title: 'Image Prompt',
+      type: 'text',
+      description: 'Suggested AI prompt for generating hero/thumbnail images.',
     },
   ],
   preview: {

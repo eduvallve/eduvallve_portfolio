@@ -1,0 +1,13 @@
+{
+    "task": "Write a 300-word blog article",
+    "instructions": [
+        "Choose a topic from the following list of 35 topics related to web development and accessibility.",
+        "Once the topic is chosen, research and write an original 300-word article on that topic.",
+        "Ensure the article is in English.",
+        "Cite all sources you use, clearly specifying website links or references.",
+        "Make the tone informative, professional, and aimed at a web development audience.",
+        "Include practical examples if possible, and ensure the content is verifiable.",
+        "After finishing the article, provide a list of sources used."
+    ],
+    "topics": "Available in blogCreationTopics.json"
+}

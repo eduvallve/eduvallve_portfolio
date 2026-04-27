@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { client, urlFor } from '../../sanity/client'
+import ReactMarkdown from 'react-markdown'
 import { PortableText } from '@portabletext/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -21,19 +22,15 @@ const BlogPostPage = () => {
     client
       .fetch(
         `*[_type == "post" && slug.current == $slug][0]{
+          _id,
+          "isDraft": _id in path("drafts.**"),
           title,
           "heroImage": heroImage{
             ...,
-            "alt": asset->altText // Fetch alt text if it exists in assets
+            "alt": asset->altText
           },
           publishedAt,
-          body[]{
-            ...,
-            _type == "image" => {
-              ...,
-              "alt": asset->altText
-            }
-          },
+          body,
           "tags": tags[]
         }`,
         { slug }
@@ -45,7 +42,6 @@ const BlogPostPage = () => {
       .catch(console.error)
   }, [slug])
 
-  // Reading progress logic
   useEffect(() => {
     const updateProgress = () => {
       const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
@@ -57,14 +53,12 @@ const BlogPostPage = () => {
     return () => window.removeEventListener('scroll', updateProgress)
   }, [])
 
-  // GSAP Animations with Reduced Motion check
   useEffect(() => {
     if (!loading && post) {
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       const ctx = gsap.context(() => {
         if (prefersReducedMotion) {
-          // Subtle fade-in only for accessibility
           gsap.from([titleRef.current, contentRef.current], {
             opacity: 0,
             duration: 0.5,
@@ -73,7 +67,6 @@ const BlogPostPage = () => {
           return;
         }
 
-        // Standard animations
         gsap.from(titleRef.current, {
           y: 60,
           opacity: 0,
@@ -102,7 +95,6 @@ const BlogPostPage = () => {
           }
         })
 
-        // Parallax effect for hero background
         if (post.heroImage?.asset) {
           gsap.to('.blog-post__hero-bg img', {
             y: '20%',
@@ -123,7 +115,8 @@ const BlogPostPage = () => {
   if (loading) return <div className="blog-loading" aria-live="polite">Loading...</div>
   if (!post) return <div className="blog-error" role="alert">Post not found</div>
 
-  const components = {
+  // Old PortableText components for backward compatibility
+  const portableTextComponents = {
     types: {
       image: ({ value }) => {
         if (!value?.asset) return null;
@@ -146,26 +139,10 @@ const BlogPostPage = () => {
       h3: ({ children }) => <h3 className="blog-post__h3">{children}</h3>,
       blockquote: ({ children }) => <blockquote className="blog-post__quote">{children}</blockquote>,
     },
-    marks: {
-      link: ({ children, value }) => {
-        const { href, blank } = value
-        return (
-          <a
-            href={href}
-            target={blank ? '_blank' : '_self'}
-            rel={blank ? 'noreferrer noopener' : undefined}
-            className="blog-post__link"
-          >
-            {children}
-          </a>
-        )
-      },
-    },
   }
 
   return (
     <article className="blog-post" lang="ca">
-      {/* Progress Bar with ARIA attributes */}
       <div
         className="blog-progress-container"
         role="progressbar"
@@ -189,7 +166,6 @@ const BlogPostPage = () => {
             <img
               src={urlFor(post.heroImage).width(1920).url()}
               alt={post.heroImage.alt || ""}
-              aria-hidden={!post.heroImage.alt}
             />
             <div className="blog-post__hero-overlay" aria-hidden="true" />
           </div>
@@ -199,9 +175,8 @@ const BlogPostPage = () => {
           <Link
             to="/blog"
             className="blog-post__back"
-            aria-label="Tornar al llistat d'articles del blog"
           >
-            <span className="icon-back" aria-hidden="true">←</span> Tornar al blog
+            ← Tornar al blog
           </Link>
 
           <h1 ref={titleRef}>{post.title}</h1>
@@ -209,19 +184,24 @@ const BlogPostPage = () => {
           <div className="blog-post__meta">
             <div className="blog-post__meta-item">
               <span className="label">Published on</span>
-              <time dateTime={post.publishedAt}>
-                {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </time>
+              <div className="blog-post__date-container">
+                {post.isDraft && (
+                  <span className="badge badge--draft">DRAFT</span>
+                )}
+                <time dateTime={post.publishedAt}>
+                  {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </time>
+              </div>
             </div>
 
             {post.tags && post.tags.length > 0 && (
               <div className="blog-post__meta-item">
                 <span className="label">Tags</span>
-                <div className="blog-post__tags" aria-label="List of tags">
+                <div className="blog-post__tags">
                   {post.tags.map((tag) => (
                     <span key={tag} className="tag">#{tag}</span>
                   ))}
@@ -236,7 +216,20 @@ const BlogPostPage = () => {
         <div className="grid-desktop grid-desktop-12-cols">
           <div className="grid-desktop-x-center grid-desktop-3-10 grid-mobile-1-4">
             <div className="blog-post__body">
-              <PortableText value={post.body} components={components} />
+              {typeof post.body === 'string' ? (
+                <ReactMarkdown
+                  components={{
+                    h2: ({ children }) => <h2 className="blog-post__h2">{children}</h2>,
+                    h3: ({ children }) => <h3 className="blog-post__h3">{children}</h3>,
+                    blockquote: ({ children }) => <blockquote className="blog-post__quote">{children}</blockquote>,
+                    a: ({ children, href }) => <a href={href} target="_blank" rel="noreferrer noopener" className="blog-post__link">{children}</a>
+                  }}
+                >
+                  {post.body}
+                </ReactMarkdown>
+              ) : (
+                <PortableText value={post.body} components={portableTextComponents} />
+              )}
             </div>
           </div>
         </div>
