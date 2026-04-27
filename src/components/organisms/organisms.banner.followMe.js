@@ -1,9 +1,13 @@
 import SocialIcons from "../molecules/molecules.socialIcons";
 
-const FollowMe = () => {
+const FollowMe = ({ data }) => {
+    const {
+        followMeTitle = "Follow me",
+    } = (data || {});
+
     return(
         <section className="follow_me" id="follow">
-            <h2>Follow me</h2>
+            <h2>{followMeTitle}</h2>
             <SocialIcons />
         </section>
     );

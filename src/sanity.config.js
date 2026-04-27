@@ -1,6 +1,8 @@
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
+import { documentInternationalization } from '@sanity/document-internationalization'
 import { post } from './sanity/schemas/post'
+import siteSettings from './sanity/schemas/siteSettings';
 import { ADMIN_BASE_PATH } from './config'
 
 export default defineConfig({
@@ -11,9 +13,18 @@ export default defineConfig({
   dataset: 'production',
   basePath: ADMIN_BASE_PATH,
 
-  plugins: [structureTool()],
+  plugins: [
+    structureTool(),
+    documentInternationalization({
+      supportedLanguages: [
+        { id: 'en', title: 'English' },
+        { id: 'ca', title: 'Catalan' },
+      ],
+      schemaTypes: ['post', 'siteSettings'],
+    }),
+  ],
 
   schema: {
-    types: [post],
+    types: [post, siteSettings],
   },
 })

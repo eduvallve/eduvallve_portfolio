@@ -1,58 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://eduvallve.com/</loc>
+    <loc>https://eduvallve.com/en</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca"/>
   </url>
   <url>
-    <loc>https://eduvallve.com/privacy</loc>
+    <loc>https://eduvallve.com/ca</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca"/>
   </url>
   <url>
-    <loc>https://eduvallve.com/tree</loc>
+    <loc>https://eduvallve.com/en/privacy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/privacy"/>
   </url>
   <url>
-    <loc>https://eduvallve.com/portfolio/edurl</loc>
+    <loc>https://eduvallve.com/ca/privacy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/privacy"/>
   </url>
   <url>
-    <loc>https://eduvallve.com/portfolio/my-carousel</loc>
+    <loc>https://eduvallve.com/en/tree</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/tree"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/tree"/>
   </url>
   <url>
-    <loc>https://eduvallve.com/portfolio/my-dictionary</loc>
+    <loc>https://eduvallve.com/ca/tree</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/tree"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/tree"/>
   </url>
   <url>
-    <loc>https://eduvallve.com/portfolio/museu-picasso-bcn</loc>
+    <loc>https://eduvallve.com/en/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/blog"/>
   </url>
   <url>
-    <loc>https://eduvallve.com/portfolio/ca-les-taronges</loc>
+    <loc>https://eduvallve.com/ca/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/blog"/>
   </url>
   <url>
-    <loc>https://eduvallve.com/portfolio/magi-pomes-rif</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://eduvallve.com/portfolio/jewelsbarcelona</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://edurl.vercel.app</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://eduvallve.com/null/blog/hello-world</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="null" href="https://eduvallve.com/null/blog/hello-world"/>
   </url>
 </urlset>

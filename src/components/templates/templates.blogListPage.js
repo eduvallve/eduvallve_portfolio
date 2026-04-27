@@ -1,41 +1,64 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { client, urlFor } from '../../sanity/client'
 import { scrollUp } from '../../utils/utils.js'
 
 const BlogListPage = () => {
   const [posts, setPosts] = useState([])
+  const [settings, setSettings] = useState(null)
   const [loading, setLoading] = useState(true)
 
+  const { lang } = useParams();
+
   useEffect(() => {
-    client
-      .fetch(
-        `*[_type == "post"] | order(publishedAt desc) {
-          _id,
-          title,
-          slug,
-          publishedAt,
-          excerpt,
-          heroImage,
-          thumbnailImage,
-          "tags": tags[]
-        }`
-      )
-      .then((data) => {
-        setPosts(data)
-        setLoading(false)
-      })
-      .catch(console.error)
-  }, [])
+    // Fetch both posts and site settings for the blog header
+    const fetchData = async () => {
+      try {
+        const [postsData, settingsData] = await Promise.all([
+          client.fetch(
+            `*[_type == "post" && language == $lang] | order(publishedAt desc) {
+              _id,
+              title,
+              slug,
+              publishedAt,
+              excerpt,
+              heroImage,
+              thumbnailImage,
+              "tags": tags[]
+            }`,
+            { lang: lang || 'en' }
+          ),
+          client.fetch(
+            `*[_type == "siteSettings" && language == $lang][0]`,
+            { lang: lang || 'en' }
+          )
+        ]);
+        
+        setPosts(postsData);
+        setSettings(settingsData);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [lang])
 
   if (loading) return <div className="blog-loading">Loading...</div>
+
+  const { 
+    blogTitle = "Blog", 
+    blogSubtitle = "Thoughts, tutorials and news about web development and design." 
+  } = (settings || {});
 
   return (
     <main className="blog-list-page grid-mobile grid-mobile-4-cols grid-desktop grid-desktop-12-cols">
       <section className="blog-hero">
         <div className="container">
-          <h1>Blog</h1>
-          <p>Thoughts, tutorials and news about web development and design.</p>
+          <h1>{blogTitle}</h1>
+          <p>{blogSubtitle}</p>
         </div>
       </section>
 
@@ -45,14 +68,14 @@ const BlogListPage = () => {
             {posts.map((post) => (
               <Link
                 key={post.slug.current}
-                to={`/blog/${post.slug.current}`}
+                to={`/${lang}/blog/${post.slug.current}`}
                 className="blog-card"
                 onClick={() => scrollUp()}
               >
                 <div className="blog-card__image">
                   {post.isDraft && (
                     <div className="blog-card__draft-overlay">
-                      <span className="badge badge--draft">ESBORRANY (DRAFT)</span>
+                      <span className="badge badge--draft">DRAFT</span>
                     </div>
                   )}
                   {post.thumbnailImage?.asset ? (
@@ -69,8 +92,8 @@ const BlogListPage = () => {
                 </div>
                 <div className="blog-card__content">
                   <div className="blog-card__meta-info">
-                    <span className="blog-card__date" aria-label={`Published on ${new Date(post.publishedAt).toLocaleDateString('en-US')}`}>
-                      {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                    <span className="blog-card__date">
+                      {new Date(post.publishedAt).toLocaleDateString(lang === 'ca' ? 'ca-ES' : 'en-US', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric',
@@ -91,7 +114,7 @@ const BlogListPage = () => {
             ))}
           </div>
         ) : (
-          <p className="no-posts">No posts found yet. Check back soon!</p>
+          <p className="no-posts">{lang === 'ca' ? "No s'han trobat articles." : "No posts found yet. Check back soon!"}</p>
         )}
       </section>
     </main>

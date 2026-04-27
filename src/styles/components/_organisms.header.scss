@@ -40,6 +40,40 @@
                 text-decoration: none;
                 color: $light-grey;
                 text-transform: capitalize;
+                transition: color 0.3s ease;
+
+                &:hover, &.active {
+                    color: $pale-green;
+                }
+            }
+        }
+
+        &__language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 12px;
+            padding-left: 12px;
+            border-left: 1px solid rgba($white, 0.2);
+
+            button {
+                background: none;
+                border: none;
+                color: $light-grey;
+                cursor: pointer;
+                font-size: 0.8rem;
+                font-weight: 700;
+                padding: 4px;
+                transition: color 0.3s ease;
+
+                &:hover, &.active {
+                    color: $pale-green;
+                }
+            }
+
+            .separator {
+                color: rgba($white, 0.2);
+                font-size: 0.8rem;
             }
         }
     }

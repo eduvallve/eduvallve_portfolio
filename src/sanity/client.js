@@ -12,12 +12,6 @@ export const client = createClient({
   perspective: isLocalhost ? 'previewDrafts' : 'published',
 })
 
-if (isLocalhost) {
-  console.log("Sanity Client: Preview mode check...", {
-    hasToken: !!process.env.REACT_APP_SANITY_TOKEN,
-    perspective: client.config().perspective
-  })
-}
 
 const builder = imageUrlBuilder(client)
 
