@@ -3,7 +3,10 @@
 .header {
     width: 100vw;
     z-index: 2;
-    background-color: $dark-blue;
+    // background-color: $dark-blue;
+    background: rgba($white, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($white, 0.05);
     color: $white;
     position: sticky;
     top: 0;
@@ -35,6 +38,11 @@
 
         &-item {
             list-style: none;
+            position: relative;
+
+            &:has(.header__language-switcher) {
+                width: 100px;
+            }
 
             a {
                 text-decoration: none;
@@ -42,7 +50,8 @@
                 text-transform: capitalize;
                 transition: color 0.3s ease;
 
-                &:hover, &.active {
+                &:hover,
+                &.active {
                     color: $pale-green;
                 }
             }
@@ -66,7 +75,8 @@
                 padding: 4px;
                 transition: color 0.3s ease;
 
-                &:hover, &.active {
+                &:hover,
+                &.active {
                     color: $pale-green;
                 }
             }
@@ -74,6 +84,92 @@
             .separator {
                 color: rgba($white, 0.2);
                 font-size: 0.8rem;
+            }
+        }
+    }
+
+    &__language-switcher {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.25s;
+        outline-color: transparent;
+        height: auto;
+        width: 100%;
+        min-height: calc(1rem + 32px);
+        margin-top: -15px;
+
+        &::after {
+            content: "";
+            background-color: $dark-blue;
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            position: inherit;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .header__language-btn {
+            background: transparent;
+            border: none;
+            color: $light-grey;
+            font-size: 1rem;
+            transition: all .25s ease-in-out;
+            cursor: pointer;
+            padding: 16px 24px;
+
+            &:first-child {
+                padding-bottom: 8px;
+            }
+
+            &:last-child {
+                margin-bottom: -2px;
+            }
+
+            &.active {
+                color: $pale-green;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                background-color: transparent;
+                border-radius: 16px;
+                transition: background-color 0.25s ease-in-out;
+            }
+
+            &:hover,
+            &:focus-visible {
+                position: relative;
+
+                &::after {
+                    background-color: rgba(147, 210, 209, 0.2);
+                    width: calc(100% - 16px);
+                    height: calc(1rem + 16px);
+                    left: 8px;
+                    top: 8px;
+                }
+            }
+        }
+
+        .header__language-btn:not(.active) {
+            opacity: 0;
+            max-height: 0;
+            position: absolute;
+            width: 100%;
+        }
+
+        &:hover,
+        &:focus-visible {
+            outline: 1px solid rgba($white, 0.05);
+
+            .header__language-btn:not(.active) {
+                opacity: 1;
+                max-height: unset;
+                position: relative;
             }
         }
     }

@@ -13,7 +13,7 @@ const HomeHero = ({ data }) => {
   const { t } = useTranslation();
   const years = new Date().getFullYear() - 2016;
   const texts = ["developer", "engineer", "creative", "explorer"];
-  
+
   // Destructure data from Sanity but provide defaults just in case
   const {
     homeHeroTitle = "Hello, I'm Eduard Vallve",
@@ -54,8 +54,8 @@ const HomeHero = ({ data }) => {
             <div className="flex-direction flex-direction-mobile-vertical grid-desktop-2-6">
               <div className="flex-direction flex-direction-mobile-vertical">
                 <div className="flex-direction flex-direction-mobile-horizontal align-center justify-between">
-                   <h2 className="home__hero-brief--title">{homeHeroBriefTitle}</h2>
-                   <Button className="button__secondary" type="link" url="https://www.linkedin.com/in/eduvallve/">linkedin</Button>
+                  <h2 className="home__hero-brief--title">{homeHeroBriefTitle}</h2>
+                  <Button className="button__secondary" type="external-link" url="https://www.linkedin.com/in/eduvallve/">linkedin</Button>
                 </div>
               </div>
               <p>{homeHeroSubtitle}</p>

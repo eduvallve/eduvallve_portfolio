@@ -1,4 +1,4 @@
-export default {
+const siteSettings = {
   name: 'siteSettings',
   title: 'Site Settings & translations',
   type: 'document',
@@ -52,22 +52,22 @@ export default {
       description: "Full list of technologies."
     },
     {
-        name: 'portfolioTitle',
-        title: 'Portfolio Section Title',
-        type: 'string',
-        description: "Example: Latest Projects"
+      name: 'portfolioTitle',
+      title: 'Portfolio Section Title',
+      type: 'string',
+      description: "Example: Latest Projects"
     },
     {
-        name: 'blogTitle',
-        title: 'Blog Page Title',
-        type: 'string',
-        description: "Example: Blog"
+      name: 'blogTitle',
+      title: 'Blog Page Title',
+      type: 'string',
+      description: "Example: Blog"
     },
     {
-        name: 'blogSubtitle',
-        title: 'Blog Page Subtitle',
-        type: 'string',
-        description: "Thoughts, tutorials and news about web development and design."
+      name: 'blogSubtitle',
+      title: 'Blog Page Subtitle',
+      type: 'string',
+      description: "Thoughts, tutorials and news about web development and design."
     },
     {
       name: 'followMeTitle',
@@ -98,3 +98,5 @@ export default {
     }
   }
 }
+
+export default siteSettings;

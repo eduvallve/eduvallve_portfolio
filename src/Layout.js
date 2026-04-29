@@ -1,5 +1,5 @@
 import { Route, Routes, Navigate, useLocation, useParams, Outlet } from "react-router-dom";
-import { useEffect, useState, createContext, useContext } from "react";
+import { useEffect, useState, createContext } from "react";
 import { useTranslation } from "react-i18next";
 import { scrollTo } from "./utils/utils.js";
 import PortfolioList from "./components/organisms/organisms.portfolioList";
@@ -49,7 +49,7 @@ function Layout() {
 
         <Route path=":lang" element={<LanguageWrapper />}>
           <Route index element={<HomePage />}></Route>
-          <Route path="portfolio/*" element={<PortfolioList/>}></Route>
+          <Route path="portfolio/*" element={<PortfolioList />}></Route>
           <Route
             path="portfolio/"
             element={<Navigate to={`/#portfolio`} replace />}

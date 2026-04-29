@@ -48,24 +48,25 @@ const Header = () => {
             <li className="header__navigation-item">
               <NavLink to={`/${currentLang}#follow`} aria-label="Link to Follow section">{t('nav.follow')}</NavLink>
             </li>
-            
+
             {/* Language Switcher */}
-            <li className="header__navigation-item header__language-switcher">
-              <button 
-                onClick={() => changeLanguage('en')} 
-                className={currentLang === 'en' ? 'active' : ''}
-                aria-label="Change to English"
-              >
-                EN
-              </button>
-              <span className="separator">|</span>
-              <button 
-                onClick={() => changeLanguage('ca')} 
-                className={currentLang === 'ca' ? 'active' : ''}
-                aria-label="Canviar a Català"
-              >
-                CA
-              </button>
+            <li className="header__navigation-item">
+              <div className="header__language-switcher">
+                <button
+                  onClick={() => changeLanguage('en')}
+                  className={`header__language-btn ${currentLang === 'en' ? 'active' : ''}`}
+                  aria-label="Change to English"
+                >
+                  EN
+                </button>
+                <button
+                  onClick={() => changeLanguage('ca')}
+                  className={`header__language-btn ${currentLang === 'ca' ? 'active' : ''}`}
+                  aria-label="Canviar a Català"
+                >
+                  CA
+                </button>
+              </div>
             </li>
           </ul>
         </nav>

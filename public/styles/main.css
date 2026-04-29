@@ -1134,7 +1134,9 @@ a {
 .header {
   width: 100vw;
   z-index: 2;
-  background-color: #151d3c;
+  background: rgba(219, 219, 219, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(219, 219, 219, 0.05);
   color: #dbdbdb;
   position: sticky;
   top: 0;
@@ -1162,6 +1164,10 @@ body:has(main.homepage) .header {
 }
 .header__navigation-item {
   list-style: none;
+  position: relative;
+}
+.header__navigation-item:has(.header__language-switcher) {
+  width: 100px;
 }
 .header__navigation-item a {
   text-decoration: none;
@@ -1196,6 +1202,78 @@ body:has(main.homepage) .header {
 .header__navigation__language-switcher .separator {
   color: rgba(219, 219, 219, 0.2);
   font-size: 0.8rem;
+}
+.header__language-switcher {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s;
+  outline-color: transparent;
+  height: auto;
+  width: 100%;
+  min-height: calc(1rem + 32px);
+  margin-top: -15px;
+}
+.header__language-switcher::after {
+  content: "";
+  background-color: #151d3c;
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  position: inherit;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.header__language-switcher .header__language-btn {
+  background: transparent;
+  border: none;
+  color: #eee;
+  font-size: 1rem;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  padding: 16px 24px;
+}
+.header__language-switcher .header__language-btn:first-child {
+  padding-bottom: 8px;
+}
+.header__language-switcher .header__language-btn:last-child {
+  margin-bottom: -2px;
+}
+.header__language-switcher .header__language-btn.active {
+  color: #93d2d1;
+}
+.header__language-switcher .header__language-btn::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  border-radius: 16px;
+  transition: background-color 0.25s ease-in-out;
+}
+.header__language-switcher .header__language-btn:hover, .header__language-switcher .header__language-btn:focus-visible {
+  position: relative;
+}
+.header__language-switcher .header__language-btn:hover::after, .header__language-switcher .header__language-btn:focus-visible::after {
+  background-color: rgba(147, 210, 209, 0.2);
+  width: calc(100% - 16px);
+  height: calc(1rem + 16px);
+  left: 8px;
+  top: 8px;
+}
+.header__language-switcher .header__language-btn:not(.active) {
+  opacity: 0;
+  max-height: 0;
+  position: absolute;
+  width: 100%;
+}
+.header__language-switcher:hover, .header__language-switcher:focus-visible {
+  outline: 1px solid rgba(219, 219, 219, 0.05);
+}
+.header__language-switcher:hover .header__language-btn:not(.active), .header__language-switcher:focus-visible .header__language-btn:not(.active) {
+  opacity: 1;
+  max-height: unset;
+  position: relative;
 }
 
 .home__hero {
