@@ -3,7 +3,6 @@
 .header {
     width: 100vw;
     z-index: 2;
-    // background-color: $dark-blue;
     background: rgba($white, 0.03);
     backdrop-filter: blur(10px);
     border: 1px solid rgba($white, 0.05);
@@ -121,14 +120,6 @@
             cursor: pointer;
             padding: 16px 24px;
 
-            &:first-child {
-                padding-bottom: 8px;
-            }
-
-            &:last-child {
-                margin-bottom: -2px;
-            }
-
             &.active {
                 color: $pale-green;
             }
@@ -144,14 +135,14 @@
             &:hover,
             &:focus-visible {
                 position: relative;
+            }
 
-                &::after {
-                    background-color: rgba(147, 210, 209, 0.2);
-                    width: calc(100% - 16px);
-                    height: calc(1rem + 16px);
-                    left: 8px;
-                    top: 8px;
-                }
+            &:hover::after {
+                background-color: rgba(147, 210, 209, 0.2);
+                width: calc(100% - 16px);
+                height: calc(1rem + 16px);
+                left: 8px;
+                top: 8px;
             }
         }
 
@@ -162,8 +153,8 @@
             width: 100%;
         }
 
-        &:hover,
-        &:focus-visible {
+        &:has(.header__language-btn:hover),
+        &:has(.header__language-btn:focus-visible) {
             outline: 1px solid rgba($white, 0.05);
 
             .header__language-btn:not(.active) {
