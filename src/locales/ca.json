@@ -1,0 +1,36 @@
+{
+  "translation": {
+    "nav": {
+      "home": "Inici",
+      "about": "Sobre mi",
+      "projects": "Projectes",
+      "blog": "Blog",
+      "follow": "Segueix-me",
+      "privacy": "Politica de privacitat",
+      "cookies": "Politica de cookies"
+    },
+    "home": {
+      "briefTitle": "Sobre mi (breument)",
+      "stack": "Stack tecnològic",
+      "degree1": "Grau en Multimèdia, UPC",
+      "degree2": "Màster en Disseny d'Interacció i Experiència d'Usuari (UX), UOC"
+    },
+    "blog": {
+      "back": "Tornar al blog",
+      "readMore": "Llegir més",
+      "noPosts": "Encara no s'ha trobat cap article."
+    },
+    "a11y": {
+        "externalSite": "Enllaça una pàgina externa",
+        "linkTo": "Enllaça a "
+    },
+    "demo": {
+        "slide": "Slide",
+        "contentSlide": "Content for slide"
+    },
+    "copyright": {
+      "designedBy": "Dissenyat i construït per",
+      "rights": "Tots els drets reservats."
+    }
+  }
+}

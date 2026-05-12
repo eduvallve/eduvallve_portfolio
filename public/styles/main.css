@@ -902,19 +902,32 @@ a {
 .home__hero .earth__container {
   position: absolute;
   bottom: 0;
-  overflow: hidden;
+  overflow: visible;
   z-index: -1;
+  width: var(--content-size);
+  max-width: calc(100vw - 32px);
+  margin: auto;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .home__hero .earth__container > div {
   position: absolute;
   z-index: -2;
   pointer-events: none;
-  bottom: -75%;
+  bottom: -60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 991px) and (orientation: landscape) {
+  .home__hero .earth__container > div {
+    bottom: -75vw;
+    transform: translate(-50%, -50%);
+  }
 }
 @media screen and (min-width: 992px) {
   .home__hero .earth__container > div {
     bottom: -50%;
-    left: -30%;
+    left: 15%;
   }
 }
 

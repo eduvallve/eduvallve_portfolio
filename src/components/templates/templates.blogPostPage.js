@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TranslationContext } from '../../Layout'
+import i18n from '../../i18n'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -165,7 +166,7 @@ const BlogPostPage = () => {
             to={`/${lang}/blog`}
             className="blog-post__back"
           >
-            ← {lang === 'ca' ? 'Tornar al blog' : 'Back to blog'}
+            ← {i18n.t('blog.back')}
           </Link>
 
           <h1 ref={titleRef}>{post.title}</h1>

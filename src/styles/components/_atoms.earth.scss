@@ -7,18 +7,30 @@
         .home__hero & {
             position: absolute;
             bottom: 0;
-            overflow: hidden;
+            overflow: visible;
             z-index: -1;
+            width: var(--content-size);
+            max-width: calc(100vw - 32px);
+            margin: auto;
+            left: 50%;
+            transform: translateX(-50%);
             
             & > div {
                 position: absolute;
                 z-index: -2;
                 pointer-events: none;
-                bottom: -75%;
+                bottom: -60%;
+                left: 50%;
+                transform: translateX(-50%);
+
+                @media screen and (max-width: 991px) and (orientation: landscape) {
+                    bottom: -75vw;
+                    transform: translate(-50%, -50%);
+                }
                 
                 @media screen and (min-width: 992px) {
                     bottom: -50%;
-                    left: -30%;
+                    left: 15%;
                 }
             }
         }

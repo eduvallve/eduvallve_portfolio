@@ -1,0 +1,36 @@
+{
+  "translation": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "blog": "Blog",
+      "follow": "Follow me",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy"
+    },
+    "home": {
+      "briefTitle": "Briefly about me",
+      "stack": "Stack",
+      "degree1": "Bachelor's degree in Multimedia, UPC",
+      "degree2": "Master's Degree in Interaction Design and User Experience (UX), UOC"
+    },
+    "blog": {
+      "back": "Back to blog",
+      "readMore": "Read more",
+      "noPosts": "No posts found yet."
+    },
+    "a11y": {
+        "externalSite": "Link to external site",
+        "linkTo": "Link to "
+    },
+    "demo": {
+        "slide": "Slide",
+        "contentSlide": "Content for slide"
+    },
+    "copyright": {
+      "designedBy": "Designed and developed by",
+      "rights": "All rights reserved."
+    }
+  }
+}

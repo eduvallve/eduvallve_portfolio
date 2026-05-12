@@ -28,25 +28,25 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__content">
-        <NavLink to={`/${currentLang}`} className="header__logo" aria-label="Link to homepage">
+        <NavLink to={`/${currentLang}`} className="header__logo" aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.home')}>
           <img src={logo} alt="eduvallve logo" width={30} height={30}></img>
         </NavLink>
         <nav className="header__navigation">
           <ul className="header__navigation-list">
             <li className="header__navigation-item">
-              <NavLink to={`/${currentLang}#hello`} aria-label="Link to Hello section">{t('nav.home')}</NavLink>
+              <NavLink to={`/${currentLang}#hello`} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.home')}>{t('nav.home')}</NavLink>
             </li>
             <li className="header__navigation-item">
-              <NavLink to={`/${currentLang}#about`} aria-label="Link to About section">{t('nav.about')}</NavLink>
+              <NavLink to={`/${currentLang}#about`} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.about')}>{t('nav.about')}</NavLink>
             </li>
             <li className="header__navigation-item">
-              <NavLink to={`/${currentLang}#portfolio`} aria-label="Link to Portfolio section">{t('nav.projects')}</NavLink>
+              <NavLink to={`/${currentLang}#portfolio`} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.projects')}>{t('nav.projects')}</NavLink>
             </li>
             <li className="header__navigation-item">
-              <NavLink to={`/${currentLang}/blog`} aria-label="Link to Blog">{t('nav.blog')}</NavLink>
+              <NavLink to={`/${currentLang}/blog`} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.blog')}>{t('nav.blog')}</NavLink>
             </li>
             <li className="header__navigation-item">
-              <NavLink to={`/${currentLang}#follow`} aria-label="Link to Follow section">{t('nav.follow')}</NavLink>
+              <NavLink to={`/${currentLang}#follow`} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.follow')}>{t('nav.follow')}</NavLink>
             </li>
 
             {/* Language Switcher */}

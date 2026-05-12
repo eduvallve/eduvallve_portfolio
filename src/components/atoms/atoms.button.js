@@ -1,3 +1,5 @@
+import i18n from '../../i18n'
+
 function Button({ children, className, type, url }) {
   if (type === "external-link") {
     return (
@@ -6,7 +8,7 @@ function Button({ children, className, type, url }) {
         href={url}
         target="_blank"
         rel="noreferrer"
-        aria-label={`Link to external site: ${url}`}
+        aria-label={`${i18n.t('a11y.externalSite')}: ${url}`}
       >
         {children}
       </a>

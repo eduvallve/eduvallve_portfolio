@@ -4,6 +4,7 @@ import { Autoplay, Pagination, Navigation, Keyboard } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import i18n from '../../i18n';
 
 const Carousel = ({ children, className = '', autoplay = true, autoplayDelay = 4000, navigation = true, loop = true, ...props }) => {
     const slides = React.Children.toArray(children).filter(Boolean);
@@ -19,8 +20,8 @@ const Carousel = ({ children, className = '', autoplay = true, autoplayDelay = 4
         return [1, 2, 3].map((n) => (
             <SwiperSlide key={`default-${n}`}>
                 <div className="slide">
-                    <h3>{`Slide ${n}`}</h3>
-                    <p>{`Content for slide ${n}.`}</p>
+                    <h3>{`${i18n.t('demo.slide')} ${n}`}</h3>
+                    <p>{`${i18n.t('demo.contentSlide')} ${n}.`}</p>
                 </div>
             </SwiperSlide>
         ));
