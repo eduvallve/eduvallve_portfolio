@@ -1,11 +1,12 @@
 import { Card, Text, Flex, Button, Box } from '@sanity/ui'
 import { LaunchIcon } from '@sanity/icons'
 import { useFormValue } from 'sanity'
+import { BASE_PATH } from '../../config'
 
 const ExternalLink = (props) => {
   const slug = useFormValue(['slug'])
   const language = useFormValue(['language'])
-  
+
   if (!slug?.current) {
     return (
       <Card padding={3} tone="caution">
@@ -14,9 +15,7 @@ const ExternalLink = (props) => {
     )
   }
 
-  const baseUrl = 'https://eduvallve.com'
-  const path = language === 'ca' ? `/ca/blog/${slug.current}` : `/blog/${slug.current}`
-  const fullUrl = `${baseUrl}${path}`
+  const fullUrl = `${window.location.origin}${BASE_PATH}/${language}/blog/${slug.current}`
 
   return (
     <Card padding={3} border borderStyle="dashed" tone="transparent">

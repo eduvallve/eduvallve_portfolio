@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { client, urlFor } from '../../sanity/client'
 import ReactMarkdown from 'react-markdown'
+import rehypeSlug from 'rehype-slug'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TranslationContext } from '../../Layout'
@@ -34,7 +35,7 @@ const BlogPostPage = () => {
           publishedAt,
           body,
           "tags": tags[],
-          "translations": *[_type == "translation.metadata" && references(^._id)][0].translations[].value->{
+          "translations": *[_type == "post" && _id match "*" + string::split(^._id, "-")[1]]{
             language,
             "slug": slug.current
           }
@@ -207,12 +208,13 @@ const BlogPostPage = () => {
           <div className="grid-desktop-x-center grid-desktop-3-10 grid-mobile-1-4">
             <div className="blog-post__body">
               {typeof post.body === 'string' ? (
-                <ReactMarkdown 
+                <ReactMarkdown
+                  rehypePlugins={[rehypeSlug]}
                   components={{
-                    h2: ({children}) => <h2 className="blog-post__h2">{children}</h2>,
-                    h3: ({children}) => <h3 className="blog-post__h3">{children}</h3>,
-                    blockquote: ({children}) => <blockquote className="blog-post__quote">{children}</blockquote>,
-                    a: ({children, href}) => <a href={href} target="_blank" rel="noreferrer noopener" className="blog-post__link">{children}</a>
+                    h2: ({ children }) => <h2 className="blog-post__h2">{children}</h2>,
+                    h3: ({ children }) => <h3 className="blog-post__h3">{children}</h3>,
+                    blockquote: ({ children }) => <blockquote className="blog-post__quote">{children}</blockquote>,
+                    a: ({ children, href }) => <a href={href} target="_blank" rel="noreferrer noopener" className="blog-post__link">{children}</a>
                   }}
                 >
                   {post.body}

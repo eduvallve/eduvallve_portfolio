@@ -26,6 +26,7 @@
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.9.1",
     "react-scripts": "5.0.1",
+    "rehype-slug": "^6.0.0",
     "sanity": "^5.21.0",
     "sanity-plugin-internationalized-array": "^5.1.0",
     "sanity-plugin-utils": "^1.8.0",

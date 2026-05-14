@@ -6,13 +6,13 @@
 const SOCIAL_CONFIG = {
   twitterSnippet: {
     name: 'Twitter/X',
-    instructions: 'Informal, catchy tweet (max 280 chars) with emojis and mandatory link placeholder.',
-    requirements: 'Must generate curiosity and include the link.'
+    instructions: 'Informal, catchy tweet (max 240 chars for the text). Use emojis and the placeholder {{URL}}.',
+    requirements: 'Must generate curiosity. Keep the text brief (max 240 chars) to leave room for the link.'
   },
   linkedinPost: {
     name: 'LinkedIn',
-    instructions: 'Professional summary for LinkedIn highlighting a key insight or learning.',
-    requirements: 'Reflection-oriented, professional tone, include link at the end.'
+    instructions: 'Professional summary for LinkedIn highlighting a key insight. End with a call to action and the link.',
+    requirements: 'Reflection-oriented, professional tone. YOU MUST include the placeholder {{URL}} at the end of the post.'
   },
   facebookPost: {
     name: 'Facebook',
@@ -57,11 +57,12 @@ const getBulkSocialInstructions = (langName = 'English') => {
     For the social media fields, follow these specific instructions in ${langName}:
     ${details}
     
-    Ensure all fields include a link placeholder and appropriate emojis.
+    IMPORTANT: Use the placeholder {{URL}} exactly where the link should go.
+    Ensure all fields include appropriate emojis.
   `.trim();
 };
 
-module.exports = { 
-  getSocialPrompt, 
-  getBulkSocialInstructions 
+module.exports = {
+  getSocialPrompt,
+  getBulkSocialInstructions
 };

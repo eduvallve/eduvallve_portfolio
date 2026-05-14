@@ -5,7 +5,7 @@ import { set, useFormValue } from 'sanity'
 import { getSocialPrompt } from '../../utils/socialPrompts'
 
 const AIInput = (props) => {
-  const { onChange, schemaType, value } = props
+  const { onChange, value } = props
   const [loading, setLoading] = useState(false)
   const [copied, setCopied] = useState(false)
   const toast = useToast()
@@ -24,7 +24,7 @@ const AIInput = (props) => {
     setLoading(true)
     const apiKey = process.env.REACT_APP_OPENROUTER_API_KEY
     const fieldName = props.path[props.path.length - 1]
-    const postUrl = `https://eduvallve.com/blog/${slug?.current || ''}`
+    const postUrl = `https://eduvallve.com/${language}/blog/${slug?.current || ''}`
 
     // Mapegem l'idioma per la IA
     const langName = language === 'en' ? 'English' : 'Catalan'
@@ -54,8 +54,12 @@ const AIInput = (props) => {
       const aiText = data.choices[0]?.message?.content?.trim()
 
       if (aiText) {
-        // Netegem possibles cometes extres que a vegades posa la IA
-        const cleanText = aiText.replace(/^["']|["']$/g, '')
+        // Netegem possibles cometes extres
+        let cleanText = aiText.replace(/^["']|["']$/g, '')
+
+        // Substituïm el placeholder {{URL}} per la URL real de l'article
+        cleanText = cleanText.replace(/\{\{URL\}\}|\[link\]|\[enllaç\]/gi, postUrl)
+
         onChange(set(cleanText))
       }
     } catch (error) {
@@ -64,7 +68,7 @@ const AIInput = (props) => {
     } finally {
       setLoading(false)
     }
-  }, [body, title, schemaType.name, onChange, props.path])
+  }, [body, title, onChange, props.path, language, slug])
 
   const handleCopy = useCallback(() => {
     if (!value) return
