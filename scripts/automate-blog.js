@@ -6,6 +6,7 @@ require('dotenv').config();
 // Configuration from environment variables
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const SANITY_AUTH_TOKEN = process.env.SANITY_AUTH_TOKEN;
+
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 const SANITY_PROJECT_ID = 'ekv3t3dq';

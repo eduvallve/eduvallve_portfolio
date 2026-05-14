@@ -5,6 +5,8 @@ import { post } from './sanity/schemas/post'
 import siteSettings from './sanity/schemas/siteSettings';
 import { ADMIN_BASE_PATH } from './config'
 
+import SocialPreview from './sanity/components/SocialPreview'
+
 export default defineConfig({
   name: 'default',
   title: 'eduvallve Portfolio Blog',
@@ -14,7 +16,33 @@ export default defineConfig({
   basePath: ADMIN_BASE_PATH,
 
   plugins: [
-    structureTool(),
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title('Content')
+          .items([
+            // Custom view for Posts
+            S.listItem()
+              .title('Blog Posts')
+              .child(
+                S.documentTypeList('post')
+                  .title('Blog Posts')
+                  .child((documentId) =>
+                    S.document()
+                      .documentId(documentId)
+                      .schemaType('post')
+                      .views([
+                        S.view.form(),
+                        S.view.component(SocialPreview).title('Social Preview'),
+                      ])
+                  )
+              ),
+            // Filter out 'post' from the default list to avoid duplication
+            ...S.documentTypeListItems().filter(
+              (listItem) => !['post'].includes(listItem.getId())
+            ),
+          ]),
+    }),
     documentInternationalization({
       supportedLanguages: [
         { id: 'en', title: 'English' },
