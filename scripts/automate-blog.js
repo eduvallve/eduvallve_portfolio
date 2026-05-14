@@ -1,10 +1,11 @@
 const { createClient } = require('@sanity/client');
 const fs = require('fs');
 const path = require('path');
-require('dotenv').config();
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
+const { getBulkSocialInstructions } = require('../src/utils/socialPrompts');
 
 // Configuration from environment variables
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+const OPENROUTER_API_KEY = process.env.REACT_APP_OPENROUTER_API_KEY || process.env.OPENROUTER_API_KEY;
 const SANITY_AUTH_TOKEN = process.env.SANITY_AUTH_TOKEN;
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
@@ -22,9 +23,20 @@ const sanityClient = createClient({
 
 const TOPICS_PATH = path.join(__dirname, '../src/static/json/blog/blogCreationTopics.json');
 
+// Test connection
+async function testSanity() {
+  try {
+    const projects = await sanityClient.fetch('*[_type == "post"][0...1]');
+    console.log("✅ Connexió amb Sanity OK. Hem llegit", projects.length, "posts.");
+  } catch (err) {
+    console.error("❌ ERROR de connexió amb Sanity:", err.message);
+    process.exit(1);
+  }
+}
+
 async function callOpenRouter(prompt, retryCount = 0) {
   const url = `https://openrouter.ai/api/v1/chat/completions`;
-  const model = 'google/gemma-3-27b-it:free';
+  const model = 'openrouter/auto';
 
   try {
     const response = await fetch(url, {
@@ -64,7 +76,14 @@ async function generateArticle(topic, language = 'en') {
   const randomWordAmount = Math.floor(Math.random() * 100) + 350; // between 350 and 450 words
   const prompt = `
     Write a ${randomWordAmount}-word blog article in ${langName} about: "${topic}".
-    Format the output as a JSON object with: "title", "excerpt", "body", "sources", "imagePrompt".
+    Format the output as a JSON object with: 
+    "title", "slug", "excerpt", "body", "sources", "imagePrompt", 
+    "socialSummary", "twitterSnippet", "linkedinPost", "facebookPost".
+    
+    IMPORTANT SOCIAL MEDIA GUIDELINES:
+    ${getBulkSocialInstructions(langName)}
+    
+    IMPORTANT: The "slug" should be short, SEO-friendly, and contain only the main keywords (max 4-5 words).
     IMPORTANT: The "body" must be in raw Markdown.
     Return ONLY the JSON string.
   `;
@@ -90,13 +109,16 @@ async function translateArticle(article, toLanguage = 'ca') {
 
 function generateSlug(title) {
   return title.toLowerCase()
-    .replace(/[^\w\s-]/g, '')
+    .normalize('NFD') // Descompon caràcters (p. ex: ü -> u + ¨)
+    .replace(/[\u0300-\u036f]/g, '') // Elimina els diacrítics
+    .replace(/[^\w\s-]/g, '') // Elimina la resta de caràcters no-ASCII
     .replace(/\s+/g, '-')
     .slice(0, 96);
 }
 
 async function run() {
   try {
+    await testSanity();
     console.log("Reading topics...");
     const fileContent = fs.readFileSync(TOPICS_PATH, 'utf-8');
     const { topics } = JSON.parse(fileContent);
@@ -120,12 +142,17 @@ async function run() {
       _id: enId,
       title: enArticle.title,
       language: 'en',
-      slug: { _type: 'slug', current: generateSlug(enArticle.title) },
+      slug: { _type: 'slug', current: generateSlug(enArticle.slug || enArticle.title) },
       publishedAt: new Date().toISOString(),
-      excerpt: enArticle.excerpt,
+      excerpt: enArticle.excerpt?.substring(0, 195),
       body: enArticle.body,
       tags: [topic],
-      imagePrompt: enArticle.imagePrompt
+      imagePrompt: enArticle.imagePrompt,
+      // Social fields
+      socialSummary: enArticle.socialSummary,
+      twitterSnippet: enArticle.twitterSnippet,
+      linkedinPost: enArticle.linkedinPost,
+      facebookPost: enArticle.facebookPost
     };
 
     const caDoc = {
@@ -133,12 +160,17 @@ async function run() {
       _id: caId,
       title: caArticle.title,
       language: 'ca',
-      slug: { _type: 'slug', current: generateSlug(caArticle.title) },
+      slug: { _type: 'slug', current: generateSlug(caArticle.slug || caArticle.title) },
       publishedAt: new Date().toISOString(),
-      excerpt: caArticle.excerpt,
+      excerpt: caArticle.excerpt?.substring(0, 195),
       body: caArticle.body,
       tags: [topic],
-      imagePrompt: enArticle.imagePrompt // Use same prompt
+      imagePrompt: enArticle.imagePrompt,
+      // Social fields
+      socialSummary: caArticle.socialSummary,
+      twitterSnippet: caArticle.twitterSnippet,
+      linkedinPost: caArticle.linkedinPost,
+      facebookPost: caArticle.facebookPost
     };
 
     const createdEn = await sanityClient.createOrReplace(enDoc);
@@ -150,8 +182,8 @@ async function run() {
       _type: 'translation.metadata',
       _id: metadataId,
       translations: [
-        { _key: 'en', value: { _type: 'reference', _ref: createdEn._id.replace('drafts.', '') } },
-        { _key: 'ca', value: { _type: 'reference', _ref: createdCa._id.replace('drafts.', '') } }
+        { _key: 'en', value: { _type: 'reference', _ref: createdEn._id.replace('drafts.', ''), _weak: true } },
+        { _key: 'ca', value: { _type: 'reference', _ref: createdCa._id.replace('drafts.', ''), _weak: true } }
       ]
     };
     await sanityClient.createOrReplace(metadataDoc);

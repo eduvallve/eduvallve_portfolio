@@ -1,4 +1,5 @@
 import AIInput from '../components/AIInput'
+import ExternalLink from '../components/ExternalLink'
 
 export const post = {
   name: 'post',
@@ -17,6 +18,13 @@ export const post = {
   ],
   fields: [
     {
+      name: 'previewLink',
+      title: 'Quick Links',
+      type: 'string',
+      group: 'content',
+      components: { input: ExternalLink },
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string',
@@ -31,6 +39,14 @@ export const post = {
       options: {
         source: 'title',
         maxLength: 96,
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .slice(0, 96),
       },
       validation: (Rule) => Rule.required(),
     },

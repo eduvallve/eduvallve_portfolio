@@ -1,10 +1,14 @@
 import { useState, useCallback } from 'react'
-import { Stack, Button, Box } from '@sanity/ui'
+import { Stack, Button, Box, Flex, useToast } from '@sanity/ui'
+import { CopyIcon, CheckmarkIcon } from '@sanity/icons'
 import { set, useFormValue } from 'sanity'
+import { getSocialPrompt } from '../../utils/socialPrompts'
 
 const AIInput = (props) => {
-  const { onChange, schemaType } = props
+  const { onChange, schemaType, value } = props
   const [loading, setLoading] = useState(false)
+  const [copied, setCopied] = useState(false)
+  const toast = useToast()
 
   // Obtenim títol, cos, slug i idioma
   const body = useFormValue(['body'])
@@ -18,24 +22,19 @@ const AIInput = (props) => {
     }
 
     setLoading(true)
-    const apiKey = process.env.OPENROUTER_API_KEY
+    const apiKey = process.env.REACT_APP_OPENROUTER_API_KEY
     const fieldName = props.path[props.path.length - 1]
     const postUrl = `https://eduvallve.com/blog/${slug?.current || ''}`
 
     // Mapegem l'idioma per la IA
     const langName = language === 'en' ? 'English' : 'Catalan'
 
-    let prompt = `Ets un expert en social media i Copywriting. Escriu en ${langName}. L'objectiu és crear un "reclam" (teaser) que convidi a llegir l'article sencer al blog. `
-
-    if (fieldName === 'twitterSnippet') {
-      prompt += `Fes un tweet (màxim 280 caràcters) informal i molt cridaner sobre l'article "${title}". Ha de generar curiositat. INCLOU obligatòriament l'enllaç: ${postUrl}. Usa algun emoji. Contingut: ${body.substring(0, 1200)}`
-    } else if (fieldName === 'linkedinPost') {
-      prompt += `Fes un post professional per a LinkedIn destacant un aprenentatge clau de l'article "${title}". Ha de convidar a la reflexió i a la lectura completa. INCLOU l'enllaç al final: ${postUrl}. Contingut: ${body.substring(0, 1200)}`
-    } else if (fieldName === 'facebookPost') {
-      prompt += `Fes un post per a Facebook més humà i proper sobre "${title}". Explica per què és interessant i convida a visitar el blog: ${postUrl}. Contingut: ${body.substring(0, 1200)}`
-    } else {
-      prompt += `Fes un reclam breu i directe per a xarxes socials de l'article "${title}". Inclou l'enllaç: ${postUrl}. Contingut: ${body.substring(0, 1200)}`
-    }
+    const prompt = getSocialPrompt(fieldName, {
+      title,
+      postUrl,
+      body,
+      langName
+    })
 
     try {
       const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
@@ -67,21 +66,45 @@ const AIInput = (props) => {
     }
   }, [body, title, schemaType.name, onChange, props.path])
 
+  const handleCopy = useCallback(() => {
+    if (!value) return
+    navigator.clipboard.writeText(value)
+    setCopied(true)
+    toast.push({
+      title: 'Copiat al porta-retalls!',
+      status: 'success',
+      duration: 2000
+    })
+    setTimeout(() => setCopied(false), 2000)
+  }, [value, toast])
+
   return (
     <Stack space={3}>
       {/* Input original de Sanity */}
       {props.renderDefault(props)}
 
       <Box>
-        <Button
-          fontSize={1}
-          padding={2}
-          text={loading ? 'Generant proposta...' : 'Generar suggeriment amb IA ✨'}
-          tone="primary"
-          mode="ghost"
-          onClick={generateAI}
-          disabled={loading}
-        />
+        <Flex gap={2}>
+          <Button
+            fontSize={1}
+            padding={3}
+            text={loading ? 'Generant...' : 'Generar amb IA ✨'}
+            tone="primary"
+            mode="ghost"
+            onClick={generateAI}
+            disabled={loading}
+            style={{ width: '100%' }}
+          />
+          <Button
+            fontSize={1}
+            padding={3}
+            mode="bleed"
+            icon={copied ? CheckmarkIcon : CopyIcon}
+            onClick={handleCopy}
+            disabled={!value}
+            title="Copiar text"
+          />
+        </Flex>
       </Box>
     </Stack>
   )
