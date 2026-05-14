@@ -135,13 +135,25 @@ function generateSlug(title) {
 
 async function run() {
   try {
-    await testSanity();
+    const existingPosts = await sanityClient.fetch(`*[_type == "post"]{ "slug": slug.current }`);
+    const existingSlugs = new Set(existingPosts.map(p => p.slug));
+
+    console.log(`✅ Connexió amb Sanity OK. Hem llegit ${existingPosts.length} posts existents.`);
+    
     console.log("Reading topics...");
     const fileContent = fs.readFileSync(TOPICS_PATH, 'utf-8');
     const { topics } = JSON.parse(fileContent);
-    const topic = topics[Math.floor(Math.random() * topics.length)];
 
-    console.log(`Step 1: Generating English article for topic: ${topic}`);
+    // Filtrem els temes que ja tenen un slug equivalent a Sanity
+    const availableTopics = topics.filter(t => !existingSlugs.has(generateSlug(t)));
+
+    if (availableTopics.length === 0) {
+      console.log("❌ No queden temes nous per publicar al fitxer JSON!");
+      return;
+    }
+
+    const topic = availableTopics[Math.floor(Math.random() * availableTopics.length)];
+    console.log(`Step 1: Generating English article for topic: ${topic} (${availableTopics.length} topics left)`);
     const enArticle = await generateArticle(topic, 'en');
 
     console.log("Step 2: Translating to Catalan...");
