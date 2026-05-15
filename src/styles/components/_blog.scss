@@ -308,6 +308,16 @@
         color: $white;
       }
 
+      .blog-post__reading-time {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: $white;
+
+        &::before {
+          content: '⏱ ';
+        }
+      }
+
       .blog-post__date-container {
         display: flex;
         align-items: center;

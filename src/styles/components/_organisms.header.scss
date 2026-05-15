@@ -164,6 +164,8 @@
             align-items: center;
             justify-content: center;
             z-index: 999;
+            width: 0vw;
+            overflow: hidden;
 
             // L'estat tancat no té transform
             transform: translateX(0);
@@ -171,14 +173,17 @@
 
             // La transició només s'aplicarà al transform
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 0.4s step-end;
+                visibility 0.4s step-end,
+                width 0.4s step-end;
 
             &--open {
                 visibility: visible;
                 // En obrir, el movem cap a l'esquerra el 100% de la seva amplada
                 transform: translateX(-100%);
                 transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                    visibility 0s step-start;
+                    visibility 0s step-start,
+                    width 0s step-start;
+                width: 100vw;
             }
 
             &-list {

@@ -12,6 +12,20 @@ import SEO from '../atoms/atoms.seo'
 
 gsap.registerPlugin(ScrollTrigger);
 
+/** Calculates an estimated reading time from a markdown string. */
+const readingTime = (text) => {
+  if (!text || typeof text !== 'string') return null;
+  // Strip markdown syntax before counting
+  const plainText = text
+    .replace(/```[\s\S]*?```/g, '')   // remove code blocks
+    .replace(/`[^`]*`/g, '')          // remove inline code
+    .replace(/#+\s/g, '')             // remove headings
+    .replace(/[*_~>\[\]()]/g, '');    // remove formatting chars
+  const words = plainText.trim().split(/\s+/).length;
+  const minutes = Math.ceil(words / 200);
+  return minutes;
+};
+
 /**
  * CodeBlock: Wraps fenced code blocks with a language badge and a copy-to-clipboard button.
  */
@@ -250,6 +264,15 @@ const BlogPostPage = () => {
                   </time>
                 </div>
               </div>
+
+              {readingTime(post.body) && (
+                <div className="blog-post__meta-item">
+                  <span className="label">{lang === 'ca' ? 'Temps de lectura' : 'Reading time'}</span>
+                  <span className="blog-post__reading-time">
+                    {readingTime(post.body)} {lang === 'ca' ? 'min de lectura' : 'min read'}
+                  </span>
+                </div>
+              )}
 
               {post.tags && post.tags.length > 0 && (
                 <div className="blog-post__meta-item">
