@@ -20,7 +20,7 @@ const readingTime = (text) => {
     .replace(/```[\s\S]*?```/g, '')   // remove code blocks
     .replace(/`[^`]*`/g, '')          // remove inline code
     .replace(/#+\s/g, '')             // remove headings
-    .replace(/[*_~>\[\]()]/g, '');    // remove formatting chars
+    .replace(/[*_~>[]()]/g, '');    // remove formatting chars
   const words = plainText.trim().split(/\s+/).length;
   const minutes = Math.ceil(words / 200);
   return minutes;
