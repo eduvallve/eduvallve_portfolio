@@ -2,7 +2,7 @@ const { createClient } = require('@sanity/client');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '../.env') });
-const { getBulkSocialInstructions } = require('../src/utils/dynamicPrompts');
+const { getBulkSocialInstructions, slugSpecification } = require('../src/utils/dynamicPrompts');
 
 // Configuration from environment variables
 const OPENROUTER_API_KEY = process.env.REACT_APP_OPENROUTER_API_KEY || process.env.OPENROUTER_API_KEY;
@@ -105,7 +105,13 @@ async function generateArticle(topic, language = 'en') {
 
   const result = await callOpenRouter(prompt);
   const cleanResult = result.replace(/```json|```/g, '').trim();
-  return JSON.parse(cleanResult);
+  try {
+    return JSON.parse(cleanResult);
+  } catch (e) {
+    console.error("❌ Failed to parse AI JSON response:");
+    console.log(cleanResult);
+    throw new Error(`AI returned invalid JSON: ${e.message}`);
+  }
 }
 
 async function translateArticle(article, toLanguage = 'ca') {
@@ -121,7 +127,13 @@ async function translateArticle(article, toLanguage = 'ca') {
 
   const result = await callOpenRouter(prompt);
   const cleanResult = result.replace(/```json|```/g, '').trim();
-  return JSON.parse(cleanResult);
+  try {
+    return JSON.parse(cleanResult);
+  } catch (e) {
+    console.error("❌ Failed to parse Translation AI JSON response:");
+    console.log(cleanResult);
+    throw new Error(`Translation AI returned invalid JSON: ${e.message}`);
+  }
 }
 
 function generateSlug(title) {
@@ -249,8 +261,40 @@ async function run() {
 
     console.log(`Success! Drafts created: ${enId} and ${caId}`);
 
+    // Notify via Telegram
+    const notifyMsg = `🚀 *Nou Blog Draft Creat!*\n\n*Tema:* ${topic}\n\n🇬🇧 *EN:* ${enArticle.title}\nCatalà *CA:* ${caArticle.title}\n\nEnllaços de producció (quan publiquis):\n🔗 ${enUrl}\n🔗 ${caUrl}`;
+    await sendTelegramNotification(notifyMsg);
+
   } catch (error) {
     console.error("Automation failed:", error);
+    await sendTelegramNotification(`❌ *Blog Automation Failed*\nError: ${error.message}`);
+  }
+}
+
+async function sendTelegramNotification(message) {
+  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+    console.log("⚠️ Telegram notification skipped: missing token or chat ID.");
+    return;
+  }
+
+  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: TELEGRAM_CHAT_ID,
+        text: message,
+        parse_mode: 'Markdown'
+      })
+    });
+    const data = await response.json();
+    if (!data.ok) {
+      throw new Error(data.description || "Unknown Telegram error");
+    }
+    console.log("📡 Telegram notification sent!");
+  } catch (err) {
+    console.error("❌ Failed to send Telegram notification:", err.message);
   }
 }
 
