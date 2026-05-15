@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react'
 import { Stack, Button, Box, Flex, useToast } from '@sanity/ui'
 import { CopyIcon, CheckmarkIcon } from '@sanity/icons'
 import { set, useFormValue } from 'sanity'
-import { getSocialPrompt } from '../../utils/socialPrompts'
+import { getSocialPrompt, slugSpecification } from '../../utils/dynamicPrompts'
 
 const AIInput = (props) => {
   const { onChange, value } = props
@@ -17,24 +17,42 @@ const AIInput = (props) => {
   const language = useFormValue(['language'])
 
   const generateAI = useCallback(async () => {
-    if (!body) {
+    const fieldName = props.path[props.path.length - 1]
+    const isSlug = fieldName === 'slug'
+
+    if (!body && !isSlug) {
       return alert('Escriu primer el contingut (Body) de l\'article per poder generar un resum!')
+    }
+
+    if (!title && isSlug) {
+      return alert('Escriu primer el títol de l\'article per poder generar un slug!')
     }
 
     setLoading(true)
     const apiKey = process.env.REACT_APP_OPENROUTER_API_KEY
-    const fieldName = props.path[props.path.length - 1]
     const postUrl = `https://eduvallve.com/${language}/blog/${slug?.current || ''}`
 
     // Mapegem l'idioma per la IA
     const langName = language === 'en' ? 'English' : 'Catalan'
 
-    const prompt = getSocialPrompt(fieldName, {
-      title,
-      postUrl,
-      body,
-      langName
-    })
+    // 2. Lògica de prompt dinàmica
+    let prompt = '';
+    if (isSlug) {
+      prompt = `
+        Genera un slug per a un article de blog amb el títol: "${title}".
+        REQUISITS: ${slugSpecification}
+        Retorna NOMÉS el text del slug, sense cometes ni explicacions.
+      `.trim()
+    } else {
+      prompt = getSocialPrompt(fieldName, {
+        title,
+        postUrl,
+        body,
+        langName
+      })
+    }
+
+    console.log('Prompt:', prompt);
 
     try {
       const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
@@ -57,10 +75,17 @@ const AIInput = (props) => {
         // Netegem possibles cometes extres
         let cleanText = aiText.replace(/^["']|["']$/g, '')
 
-        // Substituïm el placeholder {{URL}} per la URL real de l'article
-        cleanText = cleanText.replace(/\{\{URL\}\}|\[link\]|\[enllaç\]/gi, postUrl)
+        if (!isSlug) {
+          // Substituïm el placeholder {{URL}} per la URL real de l'article
+          cleanText = cleanText.replace(/\{\{URL\}\}|\[link\]|\[enllaç\]/gi, postUrl)
+        }
 
-        onChange(set(cleanText))
+        // Set value depending on field type
+        if (isSlug) {
+          onChange(set({ _type: 'slug', current: cleanText }))
+        } else {
+          onChange(set(cleanText))
+        }
       }
     } catch (error) {
       console.error('AI Error:', error)

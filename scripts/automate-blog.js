@@ -2,7 +2,7 @@ const { createClient } = require('@sanity/client');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '../.env') });
-const { getBulkSocialInstructions } = require('../src/utils/socialPrompts');
+const { getBulkSocialInstructions } = require('../src/utils/dynamicPrompts');
 
 // Configuration from environment variables
 const OPENROUTER_API_KEY = process.env.REACT_APP_OPENROUTER_API_KEY || process.env.OPENROUTER_API_KEY;
@@ -95,7 +95,7 @@ async function generateArticle(topic, language = 'en') {
     ${getBulkSocialInstructions(langName)}
     
     IMPORTANT: The "tags" should be an array of 3-5 individual words (no phrases) related to the topic.
-    IMPORTANT: The "slug" should be short, SEO-friendly, and contain only the main keywords (max 4-5 words).
+    ${slugSpecification}
     IMPORTANT: The "body" must be in raw Markdown. It must start with a "Table of Contents" section (max 5 items) linked to headers.
     IMPORTANT: Any code snippet or programming fragment MUST be wrapped in Markdown code blocks with the language name (e.g., \`\`\`php, \`\`\`javascript).
     IMPORTANT: Prioritize storytelling and deep explanations. Avoid articles that are just a collection of lists.
@@ -139,7 +139,7 @@ async function run() {
     const existingSlugs = new Set(existingPosts.map(p => p.slug));
 
     console.log(`✅ Connexió amb Sanity OK. Hem llegit ${existingPosts.length} posts existents.`);
-    
+
     console.log("Reading topics...");
     const fileContent = fs.readFileSync(TOPICS_PATH, 'utf-8');
     const { topics } = JSON.parse(fileContent);

@@ -35,10 +35,16 @@ const BlogPostPage = () => {
           publishedAt,
           body,
           "tags": tags[],
-          "translations": *[_type == "post" && _id match "*" + string::split(^._id, "-")[1]]{
-            language,
-            "slug": slug.current
-          }
+          "translations": coalesce(
+            *[_type == "translation.metadata" && references(^._id)][0].translations[].value->{
+              language,
+              "slug": slug.current
+            },
+            *[_type == "post" && _id match "*" + string::split(^._id, "-")[1] && _id != ^._id]{
+              language,
+              "slug": slug.current
+            }
+          )
         }`,
         { slug, lang: lang || 'en' }
       )

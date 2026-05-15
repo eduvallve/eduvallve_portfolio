@@ -1,4 +1,17 @@
 /**
+ * Dynamic Prompts for AI blog post generation and social media content creation
+ */
+
+/**
+ * Specification for the slugs
+ */
+
+const slugSpecification = `
+  Slug: IMPORTANT: Must be UNIQUE, short, SEO-friendly, contains only main keywords (max 4-5 words), hyphenated, lowercase.
+  Example: "how-to-learn-react-fast"
+`;
+
+/**
  * Social Media Prompt Configurations
  * Centralized source of truth for social media AI voice.
  */
@@ -64,5 +77,6 @@ const getBulkSocialInstructions = (langName = 'English') => {
 
 module.exports = {
   getSocialPrompt,
-  getBulkSocialInstructions
+  getBulkSocialInstructions,
+  slugSpecification
 };

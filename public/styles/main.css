@@ -1916,6 +1916,7 @@ body:has(main.tree) .footer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .blog-post {
