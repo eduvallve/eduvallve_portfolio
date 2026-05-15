@@ -36,8 +36,12 @@ function Layout() {
   useEffect(() => {
     if (location.hash) {
       scrollTo(location.hash.replace("#", ""));
+    } else if (location.state?.fromLanguageSwitcher) {
+      // Don't scroll to top on language change
+    } else {
+      window.scrollTo(0, 0);
     }
-  }, [location, location.hash]); // Listen to any location change, specifically hashes
+  }, [location.pathname, location.hash, location.state]); // Listen to any location change, specifically hashes
 
   const isAdmin = location.pathname.startsWith("/admin");
 
