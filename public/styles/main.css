@@ -704,15 +704,6 @@ strong {
   font-weight: 700;
 }
 
-code {
-  padding: 2px 4px;
-  background: #141a35;
-  border-radius: 2px;
-  border: 1px solid #83c3c1;
-  font-size: 0.875em;
-  margin-inline: 4px;
-}
-
 h1 {
   font-size: clamp(32px, 5vw, 64px);
   font-weight: 100;
@@ -2121,7 +2112,6 @@ body:has(main.tree) .footer {
   margin: auto;
 }
 .blog-post__content .blog-post__body {
-  font-size: 1.25rem;
   line-height: 1.7;
   color: rgba(219, 219, 219, 0.9);
 }
@@ -2193,12 +2183,6 @@ body:has(main.tree) .footer {
   background: #00001f;
 }
 
-@media screen and (min-width: 992px) {
-  .grid-desktop-x-center {
-    justify-self: center;
-  }
-}
-
 .blog-related {
   border-top: 1px solid rgba(219, 219, 219, 0.05);
   padding-top: 80px;
@@ -2267,6 +2251,84 @@ body:has(main.tree) .footer {
 .icon-back {
   font-size: 1.5rem;
   line-height: 1;
+}
+
+.code-block {
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(219, 219, 219, 0.08);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+.code-block__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(219, 219, 219, 0.05);
+  border-bottom: 1px solid rgba(219, 219, 219, 0.06);
+  min-height: 40px;
+}
+.code-block__lang {
+  font-size: 0.75rem;
+  font-family: "Fira Code", "Courier New", monospace;
+  color: #93d2d1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.code-block__copy-btn {
+  font-size: 0.75rem;
+  font-family: inherit;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(219, 219, 219, 0.15);
+  background: rgba(219, 219, 219, 0.05);
+  color: rgba(219, 219, 219, 0.6);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.02em;
+}
+.code-block__copy-btn:hover {
+  background: rgba(219, 219, 219, 0.1);
+  color: #dbdbdb;
+  border-color: rgba(219, 219, 219, 0.3);
+}
+.code-block__copy-btn.copied {
+  background: rgba(147, 210, 209, 0.15);
+  color: #93d2d1;
+  border-color: rgba(147, 210, 209, 0.4);
+}
+.code-block pre {
+  margin: 0;
+  padding: 20px;
+  overflow-x: auto;
+}
+.code-block pre code {
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: rgba(219, 219, 219, 0.85);
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.blog-post__inline-code {
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.85em;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: rgba(219, 219, 219, 0.08);
+  border: 1px solid rgba(219, 219, 219, 0.1);
+  color: #93d2d1;
+  margin-inline: 2px;
+  vertical-align: text-top;
+}
+
+*:has(> .blog-post__inline-code) {
+  line-height: 1.5 !important;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -350,7 +350,6 @@
     margin: auto;
 
     .blog-post__body {
-      font-size: 1.25rem;
       line-height: 1.7;
       color: rgba($white, 0.9);
 
@@ -435,16 +434,7 @@
   background: $dark-grey;
 }
 
-// Utilities for blog
-.grid-desktop-x-center {
-  @media screen and (min-width: 992px) {
-    justify-self: center;
-  }
-}
-
 .blog-related {
-  // margin-top: 80px;
-  // padding-bottom: 120px;
   border-top: 1px solid rgba($white, 0.05);
   padding-top: 80px;
   width: var(--content-size);
@@ -522,4 +512,91 @@
 .icon-back {
   font-size: 1.5rem;
   line-height: 1;
+}
+
+// Code Block with copy button
+.code-block {
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba($white, 0.08);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: rgba($white, 0.05);
+    border-bottom: 1px solid rgba($white, 0.06);
+    min-height: 40px;
+  }
+
+  &__lang {
+    font-size: 0.75rem;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    color: $pale-green;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+
+  &__copy-btn {
+    font-size: 0.75rem;
+    font-family: inherit;
+    padding: 4px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba($white, 0.15);
+    background: rgba($white, 0.05);
+    color: rgba($white, 0.6);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.02em;
+
+    &:hover {
+      background: rgba($white, 0.1);
+      color: $white;
+      border-color: rgba($white, 0.3);
+    }
+
+    &.copied {
+      background: rgba($pale-green, 0.15);
+      color: $pale-green;
+      border-color: rgba($pale-green, 0.4);
+    }
+  }
+
+  pre {
+    margin: 0;
+    padding: 20px;
+    overflow-x: auto;
+
+    code {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: rgba($white, 0.85);
+      background: none;
+      padding: 0;
+      border-radius: 0;
+    }
+  }
+}
+
+// Inline code (within paragraphs)
+.blog-post__inline-code {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.85em;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: rgba($white, 0.08);
+  border: 1px solid rgba($white, 0.1);
+  color: $pale-green;
+  margin-inline: 2px;
+  vertical-align: text-top;
+}
+
+*:has(>.blog-post__inline-code) {
+  line-height: 1.5 !important;
 }
