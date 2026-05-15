@@ -1,7 +1,7 @@
 import logo from "../../static/images/evp-logo-white.svg";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { TranslationContext } from "../../Layout";
 
 const Header = () => {
@@ -11,8 +11,14 @@ const Header = () => {
   const { translations } = useContext(TranslationContext);
   const currentLang = i18n.language || 'en';
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+
   const changeLanguage = (newLang) => {
     if (newLang === currentLang) return;
+    closeMenu();
 
     if (translations[newLang]) {
       if (location.pathname.includes('/blog/')) {
@@ -26,31 +32,43 @@ const Header = () => {
   };
 
   return (
-    <header className="header">
+    <header className={`header ${isMenuOpen ? 'header--menu-open' : ''}`}>
       <div className="header__content">
-        <NavLink to={`/${currentLang}`} className="header__logo" aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.home')}>
+        <NavLink to={`/${currentLang}`} className="header__logo" onClick={closeMenu} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.home')}>
           <img src={logo} alt="eduvallve logo" width={30} height={30}></img>
         </NavLink>
-        <nav className="header__navigation">
+
+        <button
+          className={`header__hamburger ${isMenuOpen ? 'is-active' : ''}`}
+          onClick={toggleMenu}
+          aria-label={isMenuOpen ? 'Tancar menú' : 'Obrir menú'}
+          aria-expanded={isMenuOpen}
+        >
+          <span className="hamburger-box">
+            <span className="hamburger-inner"></span>
+          </span>
+        </button>
+
+        <nav className={`header__navigation ${isMenuOpen ? 'header__navigation--open' : ''}`}>
           <ul className="header__navigation-list">
             <li className="header__navigation-item">
-              <NavLink to={`/${currentLang}#hello`} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.home')}>{t('nav.home')}</NavLink>
+              <NavLink to={`/${currentLang}#hello`} onClick={closeMenu} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.home')}>{t('nav.home')}</NavLink>
             </li>
             <li className="header__navigation-item">
-              <NavLink to={`/${currentLang}#about`} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.about')}>{t('nav.about')}</NavLink>
+              <NavLink to={`/${currentLang}#about`} onClick={closeMenu} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.about')}>{t('nav.about')}</NavLink>
             </li>
             <li className="header__navigation-item">
-              <NavLink to={`/${currentLang}#portfolio`} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.projects')}>{t('nav.projects')}</NavLink>
+              <NavLink to={`/${currentLang}#portfolio`} onClick={closeMenu} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.projects')}>{t('nav.projects')}</NavLink>
             </li>
             <li className="header__navigation-item">
-              <NavLink to={`/${currentLang}/blog`} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.blog')}>{t('nav.blog')}</NavLink>
+              <NavLink to={`/${currentLang}/blog`} onClick={closeMenu} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.blog')}>{t('nav.blog')}</NavLink>
             </li>
             <li className="header__navigation-item">
-              <NavLink to={`/${currentLang}#follow`} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.follow')}>{t('nav.follow')}</NavLink>
+              <NavLink to={`/${currentLang}#follow`} onClick={closeMenu} aria-label={i18n.t('a11y.linkTo') + i18n.t('nav.follow')}>{t('nav.follow')}</NavLink>
             </li>
 
             {/* Language Switcher */}
-            <li className="header__navigation-item">
+            <li className="header__navigation-item header__navigation-item--language">
               <div className="header__language-switcher">
                 <button
                   onClick={() => changeLanguage('en')}

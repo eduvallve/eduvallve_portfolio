@@ -443,10 +443,13 @@
 }
 
 .blog-related {
-  margin-top: 80px;
-  padding-bottom: 120px;
+  // margin-top: 80px;
+  // padding-bottom: 120px;
   border-top: 1px solid rgba($white, 0.05);
   padding-top: 80px;
+  width: var(--content-size);
+  max-width: calc(100vw - 32px);
+  margin: 80px auto 120px auto;
 
   &__title {
     font-size: 2rem;
@@ -461,7 +464,7 @@
   }
 
   &__card {
-    background: rgba($white, 0.02);
+    background: rgba($white, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     border: 1px solid rgba($white, 0.05);
