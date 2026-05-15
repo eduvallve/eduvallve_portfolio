@@ -44,7 +44,16 @@ const BlogPostPage = () => {
               language,
               "slug": slug.current
             }
-          )
+          ),
+          "relatedPosts": *[_type == "post" && language == $lang && slug.current != $slug] | order(count(tags[@ in ^.tags]) desc, publishedAt desc) [0...3] {
+            title,
+            "slug": slug.current,
+            publishedAt,
+            "thumbnailImage": thumbnailImage{
+              ...,
+              "alt": asset->altText
+            }
+          }
         }`,
         { slug, lang: lang || 'en' }
       )
@@ -232,6 +241,40 @@ const BlogPostPage = () => {
           </div>
         </div>
       </section>
+
+      {post.relatedPosts && post.relatedPosts.length > 0 && (
+        <section className="blog-related container">
+          <h2 className="blog-related__title">{lang === 'ca' ? 'Articles relacionats' : 'Related posts'}</h2>
+          <div className="blog-related__grid">
+            {post.relatedPosts.map((related) => (
+              <Link
+                key={related.slug}
+                to={`/${lang}/blog/${related.slug}`}
+                className="blog-related__card"
+              >
+                {related.thumbnailImage?.asset && (
+                  <div className="blog-related__card-image">
+                    <img
+                      src={urlFor(related.thumbnailImage).width(400).url()}
+                      alt={related.thumbnailImage.alt || ""}
+                    />
+                  </div>
+                )}
+                <div className="blog-related__card-content">
+                  <time dateTime={related.publishedAt}>
+                    {new Date(related.publishedAt).toLocaleDateString(lang === 'ca' ? 'ca-ES' : 'en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric'
+                    })}
+                  </time>
+                  <h3>{related.title}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </article>
   )
 }

@@ -49,18 +49,6 @@ export const post = {
       title: 'Slug',
       type: 'slug',
       group: 'content',
-      // options: {
-      //   source: 'title',
-      //   maxLength: 96,
-      //   slugify: (input) =>
-      //     input
-      //       .toLowerCase()
-      //       .normalize('NFD')
-      //       .replace(/[\u0300-\u036f]/g, '')
-      //       .replace(/[^\w\s-]/g, '')
-      //       .replace(/\s+/g, '-')
-      //       .slice(0, 96),
-      // },
       validation: (Rule) => Rule.required(),
       components: { input: AIInput },
     },
