@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { client, urlFor } from '../../sanity/client'
-import { scrollUp } from '../../utils/utils.js'
 
 const BlogListPage = () => {
   const [posts, setPosts] = useState([])
@@ -70,7 +69,6 @@ const BlogListPage = () => {
                 key={post.slug.current}
                 to={`/${lang}/blog/${post.slug.current}`}
                 className="blog-card"
-                onClick={() => scrollUp()}
               >
                 <div className="blog-card__image">
                   {post.isDraft && (

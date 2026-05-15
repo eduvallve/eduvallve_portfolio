@@ -22,13 +22,13 @@ const Header = () => {
 
     if (translations[newLang]) {
       if (location.pathname.includes('/blog/')) {
-        navigate(`/${newLang}/blog/${translations[newLang]}`);
+        navigate(`/${newLang}/blog/${translations[newLang]}`, { state: { fromLanguageSwitcher: true } });
         return;
       }
     }
 
     const newPath = location.pathname.replace(/^\/(en|ca)/, `/${newLang}`);
-    navigate(newPath);
+    navigate(newPath, { state: { fromLanguageSwitcher: true } });
   };
 
   return (

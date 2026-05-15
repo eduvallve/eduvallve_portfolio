@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { projects } from '../../static/json/portfolioList.js';
-import { scrollUp } from '../../utils/utils.js';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import scroll from '../../static/images/hand.svg';
@@ -69,7 +68,6 @@ const Portfolio = ({ lang = 'en', data }) => {
                     className="portfolio__list-item" 
                     to={`/${lang}/portfolio/${slug}`} 
                     style={{'--portfolio-item-thumbnail': `url(${thumbnail})`}}
-                    onClick={() => scrollUp()}
                   >
                     <span className="portfolio__list-item-label">
                       <span className="portfolio__list-item-label-title">{title}</span>
