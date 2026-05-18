@@ -14,7 +14,7 @@ const Marquee = ({ texts }) => {
     }, 3500);
 
     return () => clearInterval(intervalo);
-  }, []);
+  }, [texts.length]);
 
   return texts.map((text, i) => {
     return (

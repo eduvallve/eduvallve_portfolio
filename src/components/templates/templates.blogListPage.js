@@ -34,7 +34,7 @@ const BlogListPage = () => {
             { lang: lang || 'en' }
           )
         ]);
-        
+
         setPosts(postsData);
         setSettings(settingsData);
         setLoading(false);
@@ -49,9 +49,9 @@ const BlogListPage = () => {
 
   if (loading) return <div className="blog-loading">{t('common.loading')}</div>
 
-  const { 
-    blogTitle = "Blog", 
-    blogSubtitle = "Thoughts, tutorials and news about web development and design." 
+  const {
+    blogTitle = "Blog",
+    blogSubtitle = "Thoughts, tutorials and news about web development and design."
   } = (settings || {});
 
   return (
@@ -73,11 +73,6 @@ const BlogListPage = () => {
                 className="blog-card"
               >
                 <div className="blog-card__image">
-                  {post.isDraft && (
-                    <div className="blog-card__draft-overlay">
-                      <span className="badge badge--draft">DRAFT</span>
-                    </div>
-                  )}
                   {post.thumbnailImage?.asset ? (
                     <img
                       src={urlFor(post.thumbnailImage).width(600).url()}
