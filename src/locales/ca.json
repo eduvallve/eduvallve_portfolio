@@ -1,0 +1,60 @@
+{
+  "translation": {
+    "nav": {
+      "home": "Inici",
+      "about": "Sobre mi",
+      "projects": "Projectes",
+      "blog": "Blog",
+      "follow": "Segueix-me",
+      "privacy": "Politica de privacitat",
+      "cookies": "Politica de cookies"
+    },
+    "home": {
+      "briefTitle": "Sobre mi (breument)",
+      "stack": "Stack tecnològic",
+      "degree1": "Grau en Multimèdia, UPC",
+      "degree2": "Màster en Disseny d'Interacció i Experiència d'Usuari (UX), UOC",
+      "role1": "desenvolupador",
+      "role2": "enginyer",
+      "role3": "creatiu",
+      "role4": "🚀 explorador"
+    },
+    "blog": {
+      "back": "Tornar al blog",
+      "readMore": "Llegir més",
+      "noPosts": "Encara no s'ha trobat cap article.",
+      "publishedOn": "Publicat el",
+      "draft": "ESBORRANY",
+      "tags": "Etiquetes",
+      "readingTimeLabel": "Temps de lectura",
+      "minRead": "min de lectura",
+      "relatedPosts": "Articles relacionats",
+      "postNotFound": "Article no trobat",
+      "copyCode": "Copiar codi",
+      "copied": "Copiat!",
+      "unsupportedFormat": "Format de contingut antic no suportat. Actualitza'l a Sanity."
+    },
+    "common": {
+      "loading": "Carregant..."
+    },
+    "project": {
+      "prefix": "Projecte",
+      "noContent": "Encara no hi ha contingut per a aquest projecte.",
+      "notFound": "Projecte no trobat"
+    },
+    "a11y": {
+      "externalSite": "Enllaça una pàgina externa",
+      "linkTo": "Enllaça a ",
+      "scrollDown": "Desplaça't cap avall a la secció Sobre mi",
+      "readingProgress": "Progrés de lectura"
+    },
+    "demo": {
+      "slide": "Slide",
+      "contentSlide": "Content for slide"
+    },
+    "copyright": {
+      "designedBy": "Dissenyat i construït per",
+      "rights": "Tots els drets reservats."
+    }
+  }
+}

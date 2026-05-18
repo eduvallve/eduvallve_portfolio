@@ -1,9 +1,10 @@
+import i18n from "../../i18n";
 import SocialIcons from "../molecules/molecules.socialIcons";
 
-const FollowMe = () => {
+const FollowMe = ({ data }) => {
     return(
         <section className="follow_me" id="follow">
-            <h2>Follow me</h2>
+            <h2>{i18n.t('nav.follow')}</h2>
             <SocialIcons />
         </section>
     );

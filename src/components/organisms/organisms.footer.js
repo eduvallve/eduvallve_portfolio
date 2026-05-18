@@ -1,11 +1,37 @@
-const Footer = ({basename}) => {
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+const Footer = () => {
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language || "en";
+
   return (
     <footer className="footer">
       <div className="footer__content font-size-14">
-        <a href={`${basename}privacy`} className="footer__link" aria-label="Link to Priivacy Policy page">Privacy Policy</a>
-        <a href={`${basename}privacy#cookies`} className="footer__link" aria-label="Link to Cookie Policy page">Cookie Policy</a>
-        Designed and built by © Eduard Vallvé,
-        {` ${new Date().getFullYear()}`}. All rights reserved
+        <NavLink
+          to={`/${currentLang}/privacy`}
+          className="footer__link"
+          aria-label={i18n.t("a11y.linkTo") + i18n.t("nav.privacy")}
+        >
+          {i18n.t("nav.privacy")}
+        </NavLink>
+        <NavLink
+          to={`/${currentLang}/privacy#cookies`}
+          className="footer__link"
+          aria-label={i18n.t("a11y.linkTo") + i18n.t("nav.cookies")}
+        >
+          {i18n.t("nav.cookies")}
+        </NavLink>
+        {i18n.t("copyright.designedBy")}
+        <a
+          href="https://www.linkedin.com/in/eduardvallve/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{color:'inherit'}}
+        >
+          {' '}Eduard Vallvé ©
+        </a>
+        , {new Date().getFullYear()}. {i18n.t("copyright.rights")}
       </div>
     </footer>
   );

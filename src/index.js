@@ -1,14 +1,16 @@
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import './i18n';
 import Layout from './Layout';
 import reportWebVitals from './reportWebVitals';
 
+import { BASE_PATH } from './config';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const basename = "";
 root.render(
   // <React.StrictMode>
-  <BrowserRouter basename={`/${basename}`} >
-    <Layout basename={`/${basename}`} />
+  <BrowserRouter basename={BASE_PATH} >
+    <Layout />
   </BrowserRouter>
   // </React.StrictMode>
 );

@@ -19,10 +19,16 @@ html {
     /* This makes all links scroll smoothly */
 }
 
+// Accessibility: Global focus ring for keyboard navigation
+:focus-visible {
+    outline: 2px solid $pale-green;
+    outline-offset: 4px;
+}
+
 body {
     margin: 0;
     font-family: 'figtree';
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 100;
     background-color: $dark-grey;
 }
@@ -230,4 +236,8 @@ body {
         animation: scrollArrow ease-in-out 3s infinite;
         cursor: pointer;
     }
+}
+
+strong {
+    font-weight: 700;
 }

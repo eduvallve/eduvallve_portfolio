@@ -1,0 +1,60 @@
+{
+  "translation": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "blog": "Blog",
+      "follow": "Follow me",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy"
+    },
+    "home": {
+      "briefTitle": "Briefly about me",
+      "stack": "Stack",
+      "degree1": "Bachelor's degree in Multimedia, UPC",
+      "degree2": "Master's Degree in Interaction Design and User Experience (UX), UOC",
+      "role1": "developer",
+      "role2": "engineer",
+      "role3": "creative",
+      "role4": "explorer 🚀"
+    },
+    "blog": {
+      "back": "Back to blog",
+      "readMore": "Read more",
+      "noPosts": "No posts found yet. Check back soon!",
+      "publishedOn": "Published on",
+      "draft": "DRAFT",
+      "tags": "Tags",
+      "readingTimeLabel": "Reading time",
+      "minRead": "min read",
+      "relatedPosts": "Related posts",
+      "postNotFound": "Post not found",
+      "copyCode": "Copy code",
+      "copied": "Copied!",
+      "unsupportedFormat": "Old content format not supported anymore. Please update in Sanity."
+    },
+    "common": {
+      "loading": "Loading..."
+    },
+    "project": {
+      "prefix": "Project",
+      "noContent": "No content available for this project yet.",
+      "notFound": "Project not found"
+    },
+    "a11y": {
+      "externalSite": "Link to external site",
+      "linkTo": "Link to ",
+      "scrollDown": "Scroll down to About section",
+      "readingProgress": "Reading progress"
+    },
+    "demo": {
+      "slide": "Slide",
+      "contentSlide": "Content for slide"
+    },
+    "copyright": {
+      "designedBy": "Designed and developed by",
+      "rights": "All rights reserved."
+    }
+  }
+}
