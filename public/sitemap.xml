@@ -56,10 +56,4 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/blog"/>
     <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/blog"/>
   </url>
-  <url>
-    <loc>https://eduvallve.com/null/blog/hello-world</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="null" href="https://eduvallve.com/null/blog/hello-world"/>
-  </url>
 </urlset>

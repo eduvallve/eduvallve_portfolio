@@ -4,8 +4,8 @@
  * or at the root domain (like Vercel Production).
  */
 
-const isSubdirectoryPath = 
-  window.location.hostname === 'localhost' || 
+const isSubdirectoryPath =
+  window.location.hostname === 'localhost' ||
   window.location.hostname.includes('github.io');
 
 export const BASE_PATH = isSubdirectoryPath ? '/eduvallve_portfolio' : '';

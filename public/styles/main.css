@@ -909,6 +909,13 @@ a {
   position: absolute;
   transform: translateX(-50%);
 }
+@media screen and (min-width: 992px) {
+  .home__hero .earth__container > div {
+    bottom: -50%;
+    left: 0;
+    transform: translateX(0);
+  }
+}
 @media screen and (orientation: landscape) {
   .home__hero .earth__container > div {
     left: 0;
