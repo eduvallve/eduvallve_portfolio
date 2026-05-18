@@ -11,6 +11,7 @@ import Tree from "./components/templates/templates.tree";
 import BlogListPage from "./components/templates/templates.blogListPage";
 import BlogPostPage from "./components/templates/templates.blogPostPage";
 import AdminPage from "./components/templates/templates.adminPage";
+import { Analytics } from '@vercel/analytics/react';
 
 // Context to share translation slugs between pages and the header
 export const TranslationContext = createContext();
@@ -72,6 +73,7 @@ function Layout() {
         <Route index element={<Navigate to={`/en`} replace />} />
         <Route path="*" element={<Navigate to={`/en`} replace />}></Route>
       </Routes>
+      <Analytics />
       {!isAdmin && <Footer />}
     </TranslationContext.Provider>
   );
