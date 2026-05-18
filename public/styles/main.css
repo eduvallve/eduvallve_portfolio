@@ -1006,7 +1006,46 @@ a {
   flex-direction: column;
   width: fit-content;
 }
+.marquee__item {
+  font-family: "figtree-italic";
+  font-weight: 600;
+  color: #93d2d1;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid #fff;
+  width: 0;
+  max-width: fit-content;
+  line-height: 1.2;
+  animation: typing 1s 0.5s steps(var(--steps), end) forwards, unwrite 1s 2.5s steps(var(--steps), end) forwards, blink 0.75s step-end infinite;
+}
+.marquee__item:not(.active) {
+  display: none;
+}
 
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes unwrite {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+}
 .separator {
   grid-column: 1/-1;
   visibility: hidden;
@@ -1353,40 +1392,40 @@ body:has(main.homepage) .header {
 }
 .home__hero-greet-role-container {
   display: flex;
-  gap: 8px;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: start;
   flex-wrap: wrap;
 }
 [lang=ca] .home__hero-greet-role-container {
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
+}
+@media screen and (width > 768px) {
+  .home__hero-greet-role-container {
+    gap: 8px;
+    flex-direction: row;
+  }
+  [lang=ca] .home__hero-greet-role-container {
+    flex-direction: row-reverse;
+  }
 }
 .home__hero-greet h1 {
   margin: 0;
   display: inline;
   font-size: inherit;
 }
-.home__hero-greet span {
+.home__hero-greet-text {
   display: contents;
 }
-.home__hero-greet span:last-child {
+.home__hero-greet-text:last-child {
   display: inline-block;
 }
-.home__hero-greet span::after {
+.home__hero-greet-text::after {
   content: " ";
 }
 @media screen and (width < 768px) {
   .home__hero-greet br {
     display: none;
   }
-}
-.home__hero-greet .marquee__item {
-  font-family: "figtree-italic";
-  font-weight: 600;
-  color: #93d2d1;
-}
-.home__hero-greet .marquee__item:not(:first-child) {
-  display: none;
 }
 .home__hero-scroll {
   text-align: center;

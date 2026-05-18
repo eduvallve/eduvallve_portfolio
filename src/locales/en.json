@@ -13,7 +13,11 @@
       "briefTitle": "Briefly about me",
       "stack": "Stack",
       "degree1": "Bachelor's degree in Multimedia, UPC",
-      "degree2": "Master's Degree in Interaction Design and User Experience (UX), UOC"
+      "degree2": "Master's Degree in Interaction Design and User Experience (UX), UOC",
+      "role1": "developer",
+      "role2": "engineer",
+      "role3": "creative",
+      "role4": "explorer 🚀"
     },
     "blog": {
       "back": "Back to blog",
@@ -39,14 +43,14 @@
       "notFound": "Project not found"
     },
     "a11y": {
-        "externalSite": "Link to external site",
-        "linkTo": "Link to ",
-        "scrollDown": "Scroll down to About section",
-        "readingProgress": "Reading progress"
+      "externalSite": "Link to external site",
+      "linkTo": "Link to ",
+      "scrollDown": "Scroll down to About section",
+      "readingProgress": "Reading progress"
     },
     "demo": {
-        "slide": "Slide",
-        "contentSlide": "Content for slide"
+      "slide": "Slide",
+      "contentSlide": "Content for slide"
     },
     "copyright": {
       "designedBy": "Designed and developed by",

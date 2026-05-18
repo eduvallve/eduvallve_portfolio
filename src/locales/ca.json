@@ -13,7 +13,11 @@
       "briefTitle": "Sobre mi (breument)",
       "stack": "Stack tecnològic",
       "degree1": "Grau en Multimèdia, UPC",
-      "degree2": "Màster en Disseny d'Interacció i Experiència d'Usuari (UX), UOC"
+      "degree2": "Màster en Disseny d'Interacció i Experiència d'Usuari (UX), UOC",
+      "role1": "desenvolupador",
+      "role2": "enginyer",
+      "role3": "creatiu",
+      "role4": "🚀 explorador"
     },
     "blog": {
       "back": "Tornar al blog",
@@ -39,14 +43,14 @@
       "notFound": "Projecte no trobat"
     },
     "a11y": {
-        "externalSite": "Enllaça una pàgina externa",
-        "linkTo": "Enllaça a ",
-        "scrollDown": "Desplaça't cap avall a la secció Sobre mi",
-        "readingProgress": "Progrés de lectura"
+      "externalSite": "Enllaça una pàgina externa",
+      "linkTo": "Enllaça a ",
+      "scrollDown": "Desplaça't cap avall a la secció Sobre mi",
+      "readingProgress": "Progrés de lectura"
     },
     "demo": {
-        "slide": "Slide",
-        "contentSlide": "Content for slide"
+      "slide": "Slide",
+      "contentSlide": "Content for slide"
     },
     "copyright": {
       "designedBy": "Dissenyat i construït per",

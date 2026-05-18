@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 const HomeHero = ({ data }) => {
   const { t } = useTranslation();
   const years = new Date().getFullYear() - 2016;
-  const texts = ["developer", "engineer", "creative", "explorer"];
+  const texts = [t('home.role1'), t('home.role2'), t('home.role3'), t('home.role4')];
 
   // Destructure data from Sanity but provide defaults just in case
   const {
@@ -30,15 +30,15 @@ const HomeHero = ({ data }) => {
       <div className="home__hero-content">
         <div className="home__hero-greet">
           <div className="home__hero-greet--wave">
-            <span>
+            <span className="home__hero-greet--text">
               <h1>{homeHeroTitle}</h1>
             </span>
             <br />
             <div className="home__hero-greet-role-container">
-              <span>{homeHeroRole}</span>{" "}
-              <span>
-                <Marquee texts={texts} />
-              </span>
+              <span className="home__hero-greet--text">{homeHeroRole}</span>{" "}
+              {/* <span> */}
+              <Marquee texts={texts} />
+              {/* </span> */}
             </div>
           </div>
           <div className="home__hero__socialicons">

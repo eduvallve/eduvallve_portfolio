@@ -42,13 +42,21 @@
 
         &-role-container {
             display: flex;
-            gap: 8px;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: start;
             flex-wrap: wrap;
 
             [lang="ca"] & {
-                flex-direction: row-reverse;
+                flex-direction: column-reverse;
+            }
+
+            @media screen and (width > 768px) {
+                gap: 8px;
+                flex-direction: row;
+
+                [lang="ca"] & {
+                    flex-direction: row-reverse;
+                }
             }
         }
 
@@ -58,7 +66,7 @@
             font-size: inherit;
         }
 
-        span {
+        &-text {
             display: contents;
 
             &:last-child {
@@ -72,16 +80,6 @@
 
         @media screen and (width < 768px) {
             br {
-                display: none;
-            }
-        }
-
-        .marquee__item {
-            font-family: 'figtree-italic';
-            font-weight: 600;
-            color: $pale-green;
-
-            &:not(:first-child) {
                 display: none;
             }
         }
