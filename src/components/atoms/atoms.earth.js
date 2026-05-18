@@ -1,5 +1,4 @@
 import Globe from "react-globe.gl";
-import React from 'react';
 import { useRef, useEffect } from "react";
 import EarthTexture from '../../static/images/earth-night.jpg';
 
@@ -21,6 +20,8 @@ const Earth = () => {
     return (
         <div className="earth__container" ref={el}>
             <Globe ref={globeRef}
+                width={1024}
+                height={1024}
                 globeImageUrl={EarthTexture}
                 htmlElementsData={gData}
                 htmlElement={d => {
@@ -37,7 +38,7 @@ const Earth = () => {
                 }}
                 animateIn={false}
                 backgroundColor="rgba(0,0,0,0)"
-                               
+
             />
         </div>
     );
