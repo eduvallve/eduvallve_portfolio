@@ -20,7 +20,7 @@ const readingTime = (text) => {
     .replace(/```[\s\S]*?```/g, '')   // remove code blocks
     .replace(/`[^`]*`/g, '')          // remove inline code
     .replace(/#+\s/g, '')             // remove headings
-    .replace(/[*_~>[]()]/g, '');    // remove formatting chars
+    .replace(/[*_~>[\]()]/g, '');    // remove formatting chars
   const words = plainText.trim().split(/\s+/).length;
   const minutes = Math.ceil(words / 200);
   return minutes;
@@ -48,9 +48,9 @@ const CodeBlock = ({ children, className }) => {
         <button
           className={`code-block__copy-btn ${copied ? 'copied' : ''}`}
           onClick={handleCopy}
-          aria-label={copied ? 'Copied!' : 'Copy code'}
+          aria-label={copied ? i18n.t('blog.copied') : i18n.t('blog.copyCode')}
         >
-          {copied ? '✓ Copied!' : 'Copy'}
+          {copied ? `✓ ${i18n.t('blog.copied')}` : i18n.t('blog.copyCode')}
         </button>
       </div>
       <pre><code className={className}>{code}</code></pre>
@@ -193,11 +193,12 @@ const BlogPostPage = () => {
     }
   }, [loading, post])
 
-  if (loading) return <div className="blog-loading" aria-live="polite">Loading...</div>
-  if (!post) return <div className="blog-error" role="alert">Post not found</div>
+  if (loading) return <div className="blog-loading" aria-live="polite">{i18n.t('common.loading')}</div>
+  if (!post) return <div className="blog-error" role="alert">{i18n.t('blog.postNotFound')}</div>
 
   const ogImageUrl = post.heroImage?.asset ? urlFor(post.heroImage).width(1200).height(630).url() : '';
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const locale = lang === 'ca' ? 'ca-ES' : 'en-US';
 
   return (
     <>
@@ -213,7 +214,7 @@ const BlogPostPage = () => {
         <div
           className="blog-progress-container"
           role="progressbar"
-          aria-label="Progrés de lectura"
+          aria-label={i18n.t('a11y.readingProgress', { defaultValue: 'Reading progress' })}
           aria-valuemin="0"
           aria-valuemax="100"
           aria-valuenow={Math.round(progress)}
@@ -250,13 +251,13 @@ const BlogPostPage = () => {
 
             <div className="blog-post__meta">
               <div className="blog-post__meta-item">
-                <span className="label">Published on</span>
+                <span className="label">{i18n.t('blog.publishedOn')}</span>
                 <div className="blog-post__date-container">
                   {post.isDraft && (
-                    <span className="badge badge--draft">DRAFT</span>
+                    <span className="badge badge--draft">{i18n.t('blog.draft')}</span>
                   )}
                   <time dateTime={post.publishedAt}>
-                    {new Date(post.publishedAt).toLocaleDateString(lang === 'ca' ? 'ca-ES' : 'en-US', {
+                    {new Date(post.publishedAt).toLocaleDateString(locale, {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric',
@@ -267,16 +268,16 @@ const BlogPostPage = () => {
 
               {readingTime(post.body) && (
                 <div className="blog-post__meta-item">
-                  <span className="label">{lang === 'ca' ? 'Temps de lectura' : 'Reading time'}</span>
+                  <span className="label">{i18n.t('blog.readingTimeLabel')}</span>
                   <span className="blog-post__reading-time">
-                    {readingTime(post.body)} {lang === 'ca' ? 'min de lectura' : 'min read'}
+                    {readingTime(post.body)} {i18n.t('blog.minRead')}
                   </span>
                 </div>
               )}
 
               {post.tags && post.tags.length > 0 && (
                 <div className="blog-post__meta-item">
-                  <span className="label">Tags</span>
+                  <span className="label">{i18n.t('blog.tags')}</span>
                   <div className="blog-post__tags">
                     {post.tags.map((tag) => (
                       <span key={tag} className="tag">#{tag}</span>
@@ -312,7 +313,7 @@ const BlogPostPage = () => {
                     {post.body}
                   </ReactMarkdown>
                 ) : (
-                  <p>Old content format not supported anymore. Please update in Sanity.</p>
+                  <p>{i18n.t('blog.unsupportedFormat')}</p>
                 )}
               </div>
             </div>
@@ -321,7 +322,7 @@ const BlogPostPage = () => {
 
         {post.relatedPosts && post.relatedPosts.length > 0 && (
           <section className="blog-related container">
-            <h2 className="blog-related__title">{lang === 'ca' ? 'Articles relacionats' : 'Related posts'}</h2>
+            <h2 className="blog-related__title">{i18n.t('blog.relatedPosts')}</h2>
             <div className="blog-related__grid">
               {post.relatedPosts.map((related) => (
                 <Link
@@ -339,7 +340,7 @@ const BlogPostPage = () => {
                   )}
                   <div className="blog-related__card-content">
                     <time dateTime={related.publishedAt}>
-                      {new Date(related.publishedAt).toLocaleDateString(lang === 'ca' ? 'ca-ES' : 'en-US', {
+                      {new Date(related.publishedAt).toLocaleDateString(locale, {
                         month: 'short',
                         day: 'numeric',
                         year: 'numeric'

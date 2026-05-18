@@ -40,12 +40,6 @@ const siteSettings = {
       description: "The main bio text in the hero section."
     },
     {
-      name: 'stackLabel',
-      title: 'Stack Label',
-      type: 'string',
-      description: "Example: Stack:"
-    },
-    {
       name: 'stackList',
       title: 'Stack List',
       type: 'string',
@@ -56,6 +50,12 @@ const siteSettings = {
       title: 'Portfolio Section Title',
       type: 'string',
       description: "Example: Latest Projects"
+    },
+    {
+      name: 'portfolioSubtitle',
+      title: 'Portfolio Section Subtitle',
+      type: 'string',
+      description: "Example: years of experience and passionate about creating clear, useful and attractive interfaces."
     },
     {
       name: 'blogTitle',

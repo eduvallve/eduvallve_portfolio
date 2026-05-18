@@ -18,11 +18,31 @@
     "blog": {
       "back": "Tornar al blog",
       "readMore": "Llegir més",
-      "noPosts": "Encara no s'ha trobat cap article."
+      "noPosts": "Encara no s'ha trobat cap article.",
+      "publishedOn": "Publicat el",
+      "draft": "ESBORRANY",
+      "tags": "Etiquetes",
+      "readingTimeLabel": "Temps de lectura",
+      "minRead": "min de lectura",
+      "relatedPosts": "Articles relacionats",
+      "postNotFound": "Article no trobat",
+      "copyCode": "Copiar codi",
+      "copied": "Copiat!",
+      "unsupportedFormat": "Format de contingut antic no suportat. Actualitza'l a Sanity."
+    },
+    "common": {
+      "loading": "Carregant..."
+    },
+    "project": {
+      "prefix": "Projecte",
+      "noContent": "Encara no hi ha contingut per a aquest projecte.",
+      "notFound": "Projecte no trobat"
     },
     "a11y": {
         "externalSite": "Enllaça una pàgina externa",
-        "linkTo": "Enllaça a "
+        "linkTo": "Enllaça a ",
+        "scrollDown": "Desplaça't cap avall a la secció Sobre mi",
+        "readingProgress": "Progrés de lectura"
     },
     "demo": {
         "slide": "Slide",

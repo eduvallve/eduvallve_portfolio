@@ -40,6 +40,18 @@
             align-self: center;
         }
 
+        &-role-container {
+            display: flex;
+            gap: 8px;
+            flex-direction: row;
+            justify-content: start;
+            flex-wrap: wrap;
+
+            [lang="ca"] & {
+                flex-direction: row-reverse;
+            }
+        }
+
         h1 {
             margin: 0;
             display: inline;

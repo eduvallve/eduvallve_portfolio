@@ -47,8 +47,8 @@ const Portfolio = ({ lang = 'en', data }) => {
   }, [projectsGrouped.length]);
 
   const {
-      portfolioTitle = "See my projects",
-      homeHeroSubtitle = `${years} years of experience and passionate about creating clear, useful and attractive interfaces.`
+    portfolioTitle = "See my projects",
+    portfolioSubtitle = "years of experience and passionate about creating clear, useful and attractive interfaces."
   } = (data || {});
 
   return (
@@ -57,22 +57,22 @@ const Portfolio = ({ lang = 'en', data }) => {
         <div className="portfolio__content">
           <div className="portfolio__header">
             <h2>{portfolioTitle}</h2>
-            <p>{homeHeroSubtitle}</p>
+            <p>{years} {portfolioSubtitle}</p>
           </div>
-          <div className="portfolio__list" style={{'--project-groups-amount': projectsGrouped.length}}>
+          <div className="portfolio__list" style={{ '--project-groups-amount': projectsGrouped.length }}>
             {projectsGrouped.map((projectGroup, groupIndex) => (
               <div key={groupIndex} className="portfolio__group" ref={(ref) => projectRef.current[groupIndex] = ref}>
-                {projectGroup.map(({slug, title, description, thumbnail}, projectIndex) => (
-                  <NavLink 
-                    key={`${groupIndex}-${projectIndex}`} 
-                    className="portfolio__list-item" 
-                    to={`/${lang}/portfolio/${slug}`} 
-                    style={{'--portfolio-item-thumbnail': `url(${thumbnail})`}}
+                {projectGroup.map(({ slug, title, description, thumbnail }, projectIndex) => (
+                  <NavLink
+                    key={`${groupIndex}-${projectIndex}`}
+                    className="portfolio__list-item"
+                    to={`/${lang}/portfolio/${slug}`}
+                    style={{ '--portfolio-item-thumbnail': `url(${thumbnail})` }}
                   >
                     <span className="portfolio__list-item-label">
                       <span className="portfolio__list-item-label-title">{title}</span>
                       <span className="portfolio__list-item-label-description">{description}</span>
-                      </span>
+                    </span>
                   </NavLink>
                 ))}
               </div>

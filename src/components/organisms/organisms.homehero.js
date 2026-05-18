@@ -20,7 +20,7 @@ const HomeHero = ({ data }) => {
     homeHeroRole = "a frontend",
     homeHeroBriefTitle = t('home.briefTitle'),
     homeHeroSubtitle = "Front-end first, but with a full-stack view.",
-    aboutMe = `${years} years of experience and passionate about creating clear, useful and attractive interfaces.`,
+    aboutMe = "years of experience and passionate about creating clear, useful and attractive interfaces.",
     stackLabel = t('home.stack'),
     stackList = "HTML5, CSS3, JavaScript (ES6+), React.js, Sass, npm, NodeJS, Git, Adobe Experience Manager, PHP, SQL, MariaDB, and many more!"
   } = (data || {});
@@ -34,18 +34,20 @@ const HomeHero = ({ data }) => {
               <h1>{homeHeroTitle}</h1>
             </span>
             <br />
-            <span>{homeHeroRole}</span>{" "}
-            <span>
-              <Marquee texts={texts} />
-            </span>
+            <div className="home__hero-greet-role-container">
+              <span>{homeHeroRole}</span>{" "}
+              <span>
+                <Marquee texts={texts} />
+              </span>
+            </div>
           </div>
           <div className="home__hero__socialicons">
             <SocialIcons />
           </div>
         </div>
         <div className="home__hero-scroll scroll--down" id="about">
-          <a href="#about" aria-label="Scroll down to About section">
-            <img src={scrollDown} alt="scroll down" width="30" height="30"></img>
+          <a href="#about" aria-label={t('a11y.scrollDown')}>
+            <img src={scrollDown} alt={t('a11y.scrollDown')} width="30" height="30"></img>
           </a>
         </div>
         <div className="home__hero-brief flex-direction flex-direction-mobile-vertical">
@@ -59,7 +61,7 @@ const HomeHero = ({ data }) => {
                 </div>
               </div>
               <p>{homeHeroSubtitle}</p>
-              <p>{aboutMe}</p>
+              <p>{years} {aboutMe}</p>
             </div>
           </div>
           <div className="flex-direction flex-direction-mobile-vertical grid-desktop grid-desktop-6-cols">
@@ -68,7 +70,7 @@ const HomeHero = ({ data }) => {
               <TextLinkWithIcon iconUrl={graduated} alt={t('home.degree2')} label={t('home.degree2')} />
             </div>
             <div className="grid-desktop-4-6 font-size-14">
-              <b>{stackLabel}</b> {stackList}
+              <b>{stackLabel}:</b> {stackList}
             </div>
           </div>
         </div>

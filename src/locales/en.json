@@ -18,11 +18,31 @@
     "blog": {
       "back": "Back to blog",
       "readMore": "Read more",
-      "noPosts": "No posts found yet."
+      "noPosts": "No posts found yet. Check back soon!",
+      "publishedOn": "Published on",
+      "draft": "DRAFT",
+      "tags": "Tags",
+      "readingTimeLabel": "Reading time",
+      "minRead": "min read",
+      "relatedPosts": "Related posts",
+      "postNotFound": "Post not found",
+      "copyCode": "Copy code",
+      "copied": "Copied!",
+      "unsupportedFormat": "Old content format not supported anymore. Please update in Sanity."
+    },
+    "common": {
+      "loading": "Loading..."
+    },
+    "project": {
+      "prefix": "Project",
+      "noContent": "No content available for this project yet.",
+      "notFound": "Project not found"
     },
     "a11y": {
         "externalSite": "Link to external site",
-        "linkTo": "Link to "
+        "linkTo": "Link to ",
+        "scrollDown": "Scroll down to About section",
+        "readingProgress": "Reading progress"
     },
     "demo": {
         "slide": "Slide",

@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { client, urlFor } from '../../sanity/client'
+import { useTranslation } from 'react-i18next'
 
 const BlogListPage = () => {
   const [posts, setPosts] = useState([])
   const [settings, setSettings] = useState(null)
   const [loading, setLoading] = useState(true)
+  const { t } = useTranslation()
 
   const { lang } = useParams();
 
@@ -45,7 +47,7 @@ const BlogListPage = () => {
     fetchData();
   }, [lang])
 
-  if (loading) return <div className="blog-loading">Loading...</div>
+  if (loading) return <div className="blog-loading">{t('common.loading')}</div>
 
   const { 
     blogTitle = "Blog", 
@@ -112,7 +114,7 @@ const BlogListPage = () => {
             ))}
           </div>
         ) : (
-          <p className="no-posts">{lang === 'ca' ? "No s'han trobat articles." : "No posts found yet. Check back soon!"}</p>
+          <p className="no-posts">{t('blog.noPosts')}</p>
         )}
       </section>
     </main>

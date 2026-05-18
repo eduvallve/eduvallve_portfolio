@@ -1358,6 +1358,16 @@ body:has(main.homepage) .header {
     align-self: center;
   }
 }
+.home__hero-greet-role-container {
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+[lang=ca] .home__hero-greet-role-container {
+  flex-direction: row-reverse;
+}
 .home__hero-greet h1 {
   margin: 0;
   display: inline;
