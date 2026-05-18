@@ -194,8 +194,8 @@
     justify-content: center;
 
     &.has-image {
-      padding: 160px 0 80px;
-      min-height: 60vh;
+      padding: 160px 0 24px;
+      min-height: 40vh;
 
       .blog-post__hero-content {
         text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -283,11 +283,15 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 40px;
-    padding: 30px;
+    padding: 16px;
     background: rgba($white, 0.03);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     border: 1px solid rgba($white, 0.05);
+
+    @media screen and (min-width: 992px) {
+      padding: 32px;
+    }
 
     &-item {
       display: flex;

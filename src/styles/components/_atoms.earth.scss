@@ -7,11 +7,9 @@
         .home__hero & {
             position: absolute;
             bottom: 0;
-            overflow: visible;
+            overflow: hidden;
             z-index: -1;
-            width: var(--content-size);
-            max-width: calc(100vw - 32px);
-            margin: auto;
+            width: 100vw;
             left: 50%;
             transform: translateX(-50%);
 
