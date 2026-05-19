@@ -111,8 +111,7 @@
                 text-transform: capitalize;
                 transition: color 0.3s ease;
 
-                &:hover,
-                &.active {
+                &:hover {
                     color: $pale-green;
                 }
             }
@@ -139,6 +138,22 @@
                 &:hover,
                 &.active {
                     color: $pale-green;
+                }
+
+                &.active {
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -8px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 8px;
+                        height: 8px;
+                        background-color: $pale-green;
+                        border-radius: 50%;
+                    }
                 }
             }
         }

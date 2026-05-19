@@ -3,9 +3,11 @@ import { structureTool } from 'sanity/structure'
 import { documentInternationalization } from '@sanity/document-internationalization'
 import { post } from './sanity/schemas/post'
 import siteSettings from './sanity/schemas/siteSettings';
+import { category } from './sanity/schemas/category'
 import { ADMIN_BASE_PATH } from './config'
 
 import SocialPreview from './sanity/components/SocialPreview'
+import { markdownSchema } from 'sanity-plugin-markdown'
 
 export default defineConfig({
   name: 'default',
@@ -16,6 +18,7 @@ export default defineConfig({
   basePath: ADMIN_BASE_PATH,
 
   plugins: [
+    markdownSchema(),
     structureTool({
       structure: (S) =>
         S.list()
@@ -53,6 +56,6 @@ export default defineConfig({
   ],
 
   schema: {
-    types: [post, siteSettings],
+    types: [post, siteSettings, category],
   },
 })

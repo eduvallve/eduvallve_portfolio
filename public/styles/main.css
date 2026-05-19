@@ -1017,11 +1017,20 @@ a {
   color: #93d2d1;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 4px solid #fff;
   width: 0;
   max-width: fit-content;
   line-height: 1.2;
-  animation: typing 1s 0.5s steps(var(--steps), end) forwards, unwrite 1s 2.5s steps(var(--steps), end) forwards, blink 0.75s step-end infinite;
+  animation: typing 1s 0.5s steps(var(--steps), end) forwards, unwrite 1s 2.5s steps(var(--steps), end) forwards;
+  position: relative;
+}
+.marquee__item:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #dbdbdb;
+  animation: blink 0.75s 0s step-end infinite;
 }
 .marquee__item:not(.active) {
   display: none;
@@ -1044,11 +1053,14 @@ a {
   }
 }
 @keyframes blink {
-  from, to {
+  from {
     border-color: transparent;
   }
   50% {
-    border-color: #fff;
+    border-color: initial;
+  }
+  to {
+    border-color: transparent;
   }
 }
 .separator {
@@ -1268,7 +1280,7 @@ body:has(main.homepage) .header {
   text-transform: capitalize;
   transition: color 0.3s ease;
 }
-.header__navigation-item a:hover, .header__navigation-item a.active {
+.header__navigation-item a:hover {
   color: #93d2d1;
 }
 .header__navigation .header__language-switcher {
@@ -1291,6 +1303,20 @@ body:has(main.homepage) .header {
 }
 .header__navigation .header__language-switcher button:hover, .header__navigation .header__language-switcher button.active {
   color: #93d2d1;
+}
+.header__navigation .header__language-switcher button.active {
+  position: relative;
+}
+.header__navigation .header__language-switcher button.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #93d2d1;
+  border-radius: 50%;
 }
 @media screen and (max-width: 991px) {
   .header__hamburger {
@@ -2201,6 +2227,9 @@ body:has(main.tree) .footer {
   line-height: 1.5;
   color: #dbdbdb;
   border-radius: 0 12px 12px 0;
+}
+.blog-post__content .blog-post__body .blog-post__quote > :last-child {
+  margin-bottom: 0;
 }
 .blog-post__content .blog-post__body ul,
 .blog-post__content .blog-post__body ol {

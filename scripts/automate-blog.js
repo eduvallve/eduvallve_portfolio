@@ -73,9 +73,13 @@ async function callOpenRouter(prompt, retryCount = 0) {
 
 async function generateArticle(topic, language = 'en') {
   const langName = language === 'ca' ? 'Catalan' : 'English';
-  const randomWordAmount = Math.floor(Math.random() * 200) + 500; // between 500 and 700 words
+  const randomWordAmount = Math.floor(Math.random() * 700) + 800; // between 800 and 1500 words
   const toneStyleExample = `
     TONE: Deeply didactic, human, and encouraging. Write as a mentor who wants the reader to truly *understand*, not just scan.
+    VOICE: human, direct, technical but accessible, reflective, practical, not corporate.
+    AVOID: generic AI phrases, marketing language, overexplaining basics, buzzwords, fake enthusiasm.
+    AUTHOR PROFILE: Experienced frontend developer with strong UX thinking.
+    PERSPECTIVE: Accessibility-first, performance matters, avoid unnecessary complexity, real-world frontend over theoretical purity, good UX is invisible, clean interfaces are a product decision.
     STYLE: 
     - EXPLAIN THE "WHY": Don't just state facts; explain the reasoning behind them.
     - STORYTELLING: Use "Imagine you are..." or "Think of it as..." to set the scene.
@@ -84,6 +88,8 @@ async function generateArticle(topic, language = 'en') {
     - HUMAN ADVICE: Include "pro tips" or "common mistakes I've seen" to add authority and humanity.
     - READABILITY: Use the Feynman technique (explain complex things simply).
     - INDEX: The "Table of Contents" must be a quick reference, followed by a deep-dive body.
+    - FORMATTING: Use short paragraphs. Mix technical explanation with personal insight. Write like an experienced frontend developer talking to another developer.
+    - CONTENT: Prefer concrete examples over abstract concepts. Avoid sounding like documentation. Every article should include a personal perspective or lesson learned.
   `;
   const prompt = `
     Write a ${randomWordAmount}-word blog article in ${langName} about: "${topic}".
