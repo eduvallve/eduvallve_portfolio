@@ -84,6 +84,7 @@ const BlogPostPage = () => {
           publishedAt,
           body,
           "tags": tags[],
+          "categories": categories[]->title,
           "translations": coalesce(
             *[_type == "translation.metadata" && references(^._id)][0].translations[].value->{
               language,
@@ -272,6 +273,17 @@ const BlogPostPage = () => {
                   <span className="blog-post__reading-time">
                     {readingTime(post.body)} {i18n.t('blog.minRead')}
                   </span>
+                </div>
+              )}
+
+              {post.categories && post.categories.length > 0 && (
+                <div className="blog-post__meta-item">
+                  <span className="label">{i18n.t('blog.categories', { defaultValue: 'Categories' })}</span>
+                  <div className="blog-post__tags">
+                    {post.categories.map((cat) => (
+                      <span key={cat} className="tag category-tag">{cat}</span>
+                    ))}
+                  </div>
                 </div>
               )}
 

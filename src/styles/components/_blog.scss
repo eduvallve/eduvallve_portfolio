@@ -393,6 +393,10 @@
         line-height: 1.5;
         color: $white;
         border-radius: 0 12px 12px 0;
+
+        &> :last-child {
+          margin-bottom: 0;
+        }
       }
 
       ul,

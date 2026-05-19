@@ -11,6 +11,7 @@ import Tree from "./components/templates/templates.tree";
 import BlogListPage from "./components/templates/templates.blogListPage";
 import BlogPostPage from "./components/templates/templates.blogPostPage";
 import AdminPage from "./components/templates/templates.adminPage";
+import Umami from "./components/atoms/atoms.umami";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
@@ -49,6 +50,7 @@ function Layout() {
 
   return (
     <TranslationContext.Provider value={{ translations, setTranslations }}>
+      {!isAdmin && <Umami />}
       {!isAdmin && <Header />}
       <Routes>
         <Route path="admin/*" element={<AdminPage />}></Route>

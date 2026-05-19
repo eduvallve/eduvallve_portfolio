@@ -108,7 +108,7 @@ export const post = {
     {
       name: 'body',
       title: 'Body',
-      type: 'text',
+      type: 'markdown',
       group: 'content',
       description: 'The article content in Markdown format.',
     },
@@ -121,6 +121,13 @@ export const post = {
       options: {
         layout: 'tags',
       },
+    },
+    {
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      group: 'content',
+      of: [{ type: 'reference', to: { type: 'category' } }],
     },
     // --- Social & Distribution Group ---
     {

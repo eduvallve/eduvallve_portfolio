@@ -18,7 +18,7 @@ const ExternalLink = (props) => {
   const fullUrl = `${window.location.origin}${BASE_PATH}/${language}/blog/${slug.current}`
 
   return (
-    <Card padding={3} border borderStyle="dashed" tone="transparent">
+    <Card padding={3} border tone="transparent">
       <Flex align="center" justify="space-between">
         <Box flex={1}>
           <Text size={1} weight="semibold">Enllaç de l'article:</Text>
