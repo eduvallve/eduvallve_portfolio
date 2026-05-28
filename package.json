@@ -41,7 +41,7 @@
   "scripts": {
     "start": "react-scripts start",
     "sitemap": "node scripts/generate-sitemap.js",
-    "build": "react-scripts build && npm run sitemap",
+    "build": "npm run sitemap && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

@@ -15,6 +15,7 @@ const sanityClient = createClient({
 const languages = ['en', 'ca'];
 const staticRoutes = ["", "privacy", "tree", "blog"];
 
+// Fetch all blog posts with their slugs and languages
 async function getBlogPosts() {
   const query = `*[_type == "post"] { "slug": slug.current, language }`;
   return await sanityClient.fetch(query);
