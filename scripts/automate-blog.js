@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '../.env') });
 const { getBulkSocialInstructions, slugSpecification } = require('../src/utils/dynamicPrompts');
+const writingGuidelines = require('../src/static/json/blog/blogWritingGuidelines.json');
 
 // Configuration from environment variables
 const OPENROUTER_API_KEY = process.env.REACT_APP_OPENROUTER_API_KEY || process.env.OPENROUTER_API_KEY;
@@ -105,7 +106,7 @@ async function generateArticle(topic, language = 'en') {
     IMPORTANT: The "body" must be in raw Markdown. It must start with a "Table of Contents" section (max 5 items) linked to headers.
     IMPORTANT: Any code snippet or programming fragment MUST be wrapped in Markdown code blocks with the language name (e.g., \`\`\`php, \`\`\`javascript).
     IMPORTANT: Prioritize storytelling and deep explanations. Avoid articles that are just a collection of lists.
-    IMPORTANT about the TONE and STYLE: ${toneStyleExample}
+    IMPORTANT about the TONE and STYLE: ${toneStyleExample}. Check the "blogWritingGuidelines.json" for more details and examples on the desired tone and style: ${JSON.stringify(writingGuidelines)}.
     Return ONLY the JSON string.
   `;
 
