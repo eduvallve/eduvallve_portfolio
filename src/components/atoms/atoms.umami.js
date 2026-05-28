@@ -20,10 +20,8 @@ const Umami = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("IP fetched:", data.ip);
-
         if (data.ip === adminIp) {
-          console.warn("Xarxa local. NO inicialitza Umami.");
+          console.info("Xarxa local. NO inicialitza Umami.");
           return;
         }
 
