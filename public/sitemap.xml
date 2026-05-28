@@ -56,4 +56,128 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/blog"/>
     <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/blog"/>
   </url>
+  <url>
+    <loc>https://eduvallve.com/en/portfolio</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/portfolio</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/en/blog/blog-manifest</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/blog/blog-manifest"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/blog/manifest-del-blog</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/blog/manifest-del-blog"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/en/portfolio/edurl</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio/edurl"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio/edurl"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/portfolio/edurl</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio/edurl"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio/edurl"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/en/portfolio/my-carousel</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio/my-carousel"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio/my-carousel"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/portfolio/my-carousel</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio/my-carousel"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio/my-carousel"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/en/portfolio/my-dictionary</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio/my-dictionary"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio/my-dictionary"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/portfolio/my-dictionary</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio/my-dictionary"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio/my-dictionary"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/en/portfolio/museu-picasso-bcn</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio/museu-picasso-bcn"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio/museu-picasso-bcn"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/portfolio/museu-picasso-bcn</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio/museu-picasso-bcn"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio/museu-picasso-bcn"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/en/portfolio/ca-les-taronges</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio/ca-les-taronges"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio/ca-les-taronges"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/portfolio/ca-les-taronges</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio/ca-les-taronges"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio/ca-les-taronges"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/en/portfolio/magi-pomes-rif</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio/magi-pomes-rif"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio/magi-pomes-rif"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/portfolio/magi-pomes-rif</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio/magi-pomes-rif"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio/magi-pomes-rif"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/en/portfolio/jewelsbarcelona</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio/jewelsbarcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio/jewelsbarcelona"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/portfolio/jewelsbarcelona</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/portfolio/jewelsbarcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio/jewelsbarcelona"/>
+  </url>
 </urlset>
