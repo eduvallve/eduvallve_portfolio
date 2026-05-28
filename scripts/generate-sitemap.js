@@ -13,7 +13,16 @@ const sanityClient = createClient({
 });
 
 const languages = ['en', 'ca'];
-const staticRoutes = ["", "privacy", "tree", "blog"];
+const staticRoutes = ["", "privacy", "tree", "blog", "portfolio"];
+const projectSlugs = [
+  'edurl',
+  'my-carousel',
+  'my-dictionary',
+  'museu-picasso-bcn',
+  'ca-les-taronges',
+  'magi-pomes-rif',
+  'jewelsbarcelona',
+];
 
 // Fetch all blog posts with their slugs and languages
 async function getBlogPosts() {
@@ -50,12 +59,25 @@ ${languages.map(l => `    <xhtml:link rel="alternate" hreflang="${l}" href="${BA
   </url>\n`;
     });
 
+    // 3. Portfolio Projects
+    projectSlugs.forEach(slug => {
+        languages.forEach(lang => {
+            const loc = `${BASE_URL}/${lang}/portfolio/${slug}`;
+            urlEntries += `  <url>
+    <loc>${loc}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+${languages.map(l => `    <xhtml:link rel="alternate" hreflang="${l}" href="${BASE_URL}/${l}/portfolio/${slug}"/>`).join("\n")}
+  </url>\n`;
+        });
+    });
+
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${urlEntries}</urlset>`;
 
     fs.writeFileSync(OUTPUT_FILE, sitemap);
-    console.log(`Sitemap generated with ${posts.length} blog posts in all languages.`);
+    console.log(`Sitemap generated with ${posts.length} blog posts and ${projectSlugs.length} portfolio projects in all languages.`);
 };
 
 generateSitemap().catch(console.error);
