@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Studio } from 'sanity'
 import config from '../../sanity.config'
 import { createGlobalStyle } from 'styled-components'
@@ -20,6 +21,13 @@ const StudioStyles = createGlobalStyle`
 `
 
 const AdminPage = () => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.localStorage?.setItem('umami.disabled', '1')
+      console.info('Umami desactivat automàticament per a aquest navegador (Admin).')
+    }
+  }, [])
+
   return (
     <div style={{ height: '100vh', minHeight: '100dvh' }}>
       <StudioStyles />

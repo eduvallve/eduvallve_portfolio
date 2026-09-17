@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 
 const Umami = () => {
-  const adminIp = process.env.REACT_APP_ADMIN_IP;
   const umamiId = process.env.REACT_APP_UMAMI_ID;
 
   useEffect(() => {
@@ -10,36 +9,35 @@ const Umami = () => {
       return;
     }
 
-    let script;
+    // 1. Comprovació de desactivació nativa d'Umami guardada al navegador
+    if (typeof window !== "undefined" && window.localStorage?.getItem("umami.disabled") === "1") {
+      console.info("Umami desactivat per a aquest navegador (admin).");
+      return;
+    }
 
-    fetch("https://api.ipify.org?format=json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`IP fetch failed (${response.status})`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        if (data.ip === adminIp) {
-          console.info("Xarxa local. NO inicialitza Umami.");
-          return;
-        }
+    // 2. Comprovació d'entorn de desenvolupament o xarxa local
+    const isLocal =
+      process.env.NODE_ENV === "development" ||
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1" ||
+      window.location.hostname.startsWith("192.168.");
 
-        script = document.createElement("script");
-        script.src = "https://cloud.umami.is/script.js";
-        script.defer = true;
-        script.setAttribute("data-website-id", umamiId);
+    if (isLocal) {
+      console.info("Entorn local. NO inicialitza Umami.");
+      return;
+    }
 
-        document.head.appendChild(script);
-      })
-      .catch((error) => console.error("Error al obtener la IP:", error));
+    const script = document.createElement("script");
+    script.src = "https://cloud.umami.is/script.js";
+    script.defer = true;
+    script.setAttribute("data-website-id", umamiId);
+
+    document.head.appendChild(script);
 
     return () => {
-      if (script) {
-        document.head.removeChild(script);
-      }
+      document.head.removeChild(script);
     };
-  }, [adminIp, umamiId]);
+  }, [umamiId]);
 
   return null;
 };
