@@ -40,7 +40,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "scss": "sass --watch src/styles/main.scss public/styles/main.css",
+    "start": "npm run scss & react-scripts start",
     "sitemap": "node scripts/generate-sitemap.js",
     "build": "npm run sitemap && react-scripts build",
     "test": "react-scripts test",
