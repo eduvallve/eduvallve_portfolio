@@ -107,6 +107,40 @@ const AIInput = (props) => {
     setTimeout(() => setCopied(false), 2000)
   }, [value, toast])
 
+  const fieldName = props.path[props.path.length - 1]
+  const socialPlatforms = ['twitterSnippet', 'linkedinPost', 'facebookPost']
+  const showSocialButton = socialPlatforms.includes(fieldName)
+
+  const getSocialUrl = useCallback(() => {
+    if (!value && fieldName !== 'linkedinPost') return null
+
+    const text = value || ''
+    switch (fieldName) {
+      case 'twitterSnippet':
+        return `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
+      case 'facebookPost':
+        return `https://www.facebook.com/sharer/sharer.php`
+      case 'linkedinPost':
+        return `https://www.linkedin.com/shareArticle`
+      default:
+        return null
+    }
+  }, [value, fieldName]);
+
+  const handleOpenSocial = useCallback(() => {
+    const url = getSocialUrl()
+    if (!url) return
+    window.open(url, '_blank', 'noopener,noreferrer')
+  }, [getSocialUrl])
+
+  const socialButtonText = fieldName === 'twitterSnippet'
+    ? 'Obrir esborrany X'
+    : fieldName === 'facebookPost'
+      ? 'Obrir finestra de Facebook'
+      : fieldName === 'linkedinPost'
+        ? 'Obrir finestra de LinkedIn'
+        : ''
+
   return (
     <Stack space={3}>
       {/* Input original de Sanity */}
@@ -133,6 +167,18 @@ const AIInput = (props) => {
             disabled={!value}
             title="Copiar text"
           />
+          {showSocialButton && (
+            <Button
+              fontSize={1}
+              padding={3}
+              text={socialButtonText}
+              tone="positive"
+              mode="ghost"
+              onClick={handleOpenSocial}
+              disabled={!getSocialUrl()}
+              style={{ width: '100%' }}
+            />
+          )}
         </Flex>
       </Box>
     </Stack>
