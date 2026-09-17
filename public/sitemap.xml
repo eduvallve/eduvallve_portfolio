@@ -71,16 +71,112 @@
     <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/portfolio"/>
   </url>
   <url>
+    <loc>https://eduvallve.com/en/blog/how-to-improve-the-performance-of-your-site</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/blog/how-to-improve-the-performance-of-your-site"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/blog/perds-figma-errors-comuns</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/blog/perds-figma-errors-comuns"/>
+  </url>
+  <url>
     <loc>https://eduvallve.com/en/blog/blog-manifest</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/blog/blog-manifest"/>
   </url>
   <url>
+    <loc>https://eduvallve.com/en/blog/get-lost-figma-common-errors</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/blog/get-lost-figma-common-errors"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/blog/com-millorar-performance-web</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/blog/com-millorar-performance-web"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/blog/wordpress-2026-pros-contres-meva-postura-actual</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/blog/wordpress-2026-pros-contres-meva-postura-actual"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/en/blog/zapier-vs-make-newsletter</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/blog/zapier-vs-make-newsletter"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/en/blog/wordpress-2026-pros-cons-my-current-opinion</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/blog/wordpress-2026-pros-cons-my-current-opinion"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/en/blog/ml-for-fe-mediapipe</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/blog/ml-for-fe-mediapipe"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/blog/zapier-vs-make-comparacio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/blog/zapier-vs-make-comparacio"/>
+  </url>
+  <url>
     <loc>https://eduvallve.com/ca/blog/manifest-del-blog</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/blog/manifest-del-blog"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/blog/ux-affordance-a-interficies-grafiques</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/blog/ux-affordance-a-interficies-grafiques"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/en/blog/ux-affordance-in-graphical-interfaces</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/blog/ux-affordance-in-graphical-interfaces"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/en/blog/cors-policies-2026-common-errors</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/blog/cors-policies-2026-common-errors"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/blog/ml-per-fe-mediapipe</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/blog/ml-per-fe-mediapipe"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/blog/cors-policies-2026-errors-comuns</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/blog/cors-policies-2026-errors-comuns"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/en/blog/web-a11y-starting-guide-devs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduvallve.com/en/blog/web-a11y-starting-guide-devs"/>
+  </url>
+  <url>
+    <loc>https://eduvallve.com/ca/blog/a11y-web-guia-inicial-devs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://eduvallve.com/ca/blog/a11y-web-guia-inicial-devs"/>
   </url>
   <url>
     <loc>https://eduvallve.com/en/portfolio/edurl</loc>

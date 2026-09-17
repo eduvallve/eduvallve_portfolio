@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { client, urlFor } from '../../sanity/client'
 import ReactMarkdown from 'react-markdown'
 import rehypeSlug from 'rehype-slug'
+import rehypeRaw from 'rehype-raw'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TranslationContext } from '../../Layout'
@@ -307,7 +308,7 @@ const BlogPostPage = () => {
               <div className="blog-post__body">
                 {typeof post.body === 'string' ? (
                   <ReactMarkdown
-                    rehypePlugins={[rehypeSlug]}
+                    rehypePlugins={[rehypeRaw, rehypeSlug]}
                     components={{
                       h2: ({ children }) => <h2 className="blog-post__h2">{children}</h2>,
                       h3: ({ children }) => <h3 className="blog-post__h3">{children}</h3>,
